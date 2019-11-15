@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IT培训专题页-中睿信息技术有限公司</title>
+    <link rel="shortcut icon" href="../img/index/itlead.ico">
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="stylesheet" href="../css/common/main.css">
+    <link rel="stylesheet" href="../css/itTrain.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("into itTrain");
+            var container = new Swiper(".swiper-container1", {
+                loop: true,
+                pagination: {
+                    clickable: true,
+                    el: '.swiper-pagination',
+                }
+            });
+
+            var name = $(".train_banner_name");
+            var value1 = $(".train_banner_value_1");
+            var value2 = $(".train_banner_value_2");
+            var value3 = $(".train_banner_value_3");
+            var value4 = $(".train_banner_value_4");
+            var value5 = $(".train_banner_value_5");
+            var value6 = $(".train_banner_value_6");
+            $(".train_banner12").mouseover(function () {
+                name.text("鹿传明");
+                value1.text("中睿信息技术有限公司创办人");
+                value2.text("敏捷研发管理过程iScrum创始人");
+                value3.text("战场服务实战专家");
+                value4.text("资深敏捷教练");
+                value5.text("国际项目管理师PMP");
+                value6.text("SAFe规模化敏捷认证专家");
+            });
+            $(".train_banner13").mouseover(function () {
+                name.text("朱磊");
+                value1.text("16年以上市场营销管理经验");
+                value2.text("资深市场营销专家");
+                value3.text("资深行业场景应用专家");
+                value4.text("计算机科学与技术学士学位");
+                value5.text("数字城市杂志期刊封面人物");
+                value6.text("智慧城市领域的带头建设者之一");
+            });
+            $(".train_banner14").mouseover(function () {
+                name.text("黄月明");
+                value1.text("副总经理，分管项目管理办公室(PMO)");
+                value2.text("首席项目管理专家和企业咨询顾问");
+                value3.text("国家项目管理师(CPMP)");
+                value4.text("国际项目管理师(PMI-PMP®)");
+                value5.text("国际商业分析师(PMI-PBA®)");
+                value6.text("OGC(英国商务部) MSP 项目群管理专业人士");
+            });
+            $(".train_banner15").mouseover(function () {
+                name.text("陈国星");
+                value1.text("研发迭代领域专家");
+                value2.text("创业团队管理领域专家");
+                value3.text("阿里云企业级互联网架构师");
+                value4.text("阿里云受邀讲师");
+                value5.text("大数据架构研究者");
+                value6.text("网络安全领域专家");
+            });
+            $(".train_banner16").mouseover(function () {
+                name.text("李巍");
+                value1.text("产品创新管理专家");
+                value2.text("产品规划管理专家");
+                value3.text("Adobe中国认证产品专家");
+                value4.text("Adobe中国认证设计师");
+                value5.text("首席Web产品架构师");
+                value6.text("");
+            });
+            $(".train_banner18").mouseover(function () {
+                name.text("艾彪");
+                value1.text("最早的Hybrid跨平台移动开发推动者");
+                value2.text("云计算领域的先行者和实践者");
+                value3.text("iOS/Android技术顾问");
+                value4.text("前端框架技术专家");
+                value5.text("python爬虫技术专家");
+                value6.text("跨平台移动开发技术专家");
+            });
+            $(".train_banner17").mouseover(function () {
+                name.text("雷辉");
+                value1.text("devops与持续集成专家");
+                value2.text("性能测试专家");
+                value3.text("自动化测试专家");
+                value4.text("精益和敏捷思想践行者");
+                value5.text("国际项目管理师(PMI-PMP®)");
+                value6.text("");
+            });
+
+            var playBack = new Swiper('.swiper-playBack', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                slidesPerGroup: 3,
+                loop: true,
+                pagination: {
+                    clickable: true,
+                    el: '.swiper-pagination',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
+
+            var state = 0;
+            $(".search_submit").click(function () {
+                console.log("into click");
+                var keyword = $(".search_keyword").val();
+                if (state === 0) {
+                    $(".head_link").css("display", "none");
+                    $(".search").width("453px"); /*耦合*/
+                    state = 1;
+                } else if (state === 1) {
+                    window.location.href = "sourseClass.html?keyword=" + keyword;
+                    // $(".search_keyword").val("");
+                }
+            });
+            $(".search_cancel").click(function () {
+                $(".search").width("26px"); /*耦合*/
+                $(".search_keyword").val("");
+                state = 0;
+                setTimeout(function () {
+                    $(".head_link").css("display", "block");
+                }, 300); /*耦合*/
+            });
+
+            $(".ad_cancel").click(function () {
+                // $(".ad").animate({height:"0"},300);
+                $(".ad").height(0);
+            })
+
+            $(".sourseClass-content-allclass-content-raw>div").on('click', function () {
+                $(this).siblings('.active').removeClass('active');
+                $(this).addClass('active');
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="it_train_page">
+        <!-- <div class="ad">
+            <span>广告</span>
+            <button class="ad_cancel">
+              </button>
+        </div> -->
+        <div class="page_head">
+            <div class="clear_float">
+                <img class="head_logo" src="../img/itTrain/logo.png" alt="">
+                <div>
+                    <ul class="head_link clear_float">
+                        <li>
+                            <a href="./index.html">首页</a>
+                        </li>
+                        <li>
+                            <a href="#">IT服务</a>
+                        </li>
+                        <li>
+                            <a href="./itTrain.html">IT培训</a>
+                        </li>
+                        <li>
+                            <a href="http://www.itlead.com.cn/New20180706View/AboutUs.aspx">关于我们</a>
+                        </li>
+                    </ul>
+                    <div class="search clear_float">
+                        <div>
+                            <button class="search_cancel"></button>
+                            <input type="text" class="search_keyword">
+                            <button class="search_submit"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="it_train_banner">
+            <div class="swiper-container swiper-container1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide-it-1">
+                        <img class="train_banner" src="../img/itTrain/banner/banner-2.png" alt="">
+                    </div>
+                    <div class="swiper-slide swiper-slide-it-2">
+                        <img class="train_banner" src="../img/itTrain/banner/banner-1.png" alt="">
+                        <img class="train_banner11" src="../img/itTrain/banner/banner-1-1.png" alt="">
+                        <img class="train_banner19" src="../img/itTrain/banner/banner-1-9.png" alt="">
+                        <img class="train_banner12" src="../img/itTrain/banner/banner-1-2.png" alt="">
+                        <img class="train_banner13" src="../img/itTrain/banner/banner-1-3.png" alt="">
+                        <img class="train_banner14" src="../img/itTrain/banner/banner-1-4.png" alt="">
+                        <img class="train_banner15" src="../img/itTrain/banner/banner-1-5.png" alt="">
+                        <img class="train_banner16" src="../img/itTrain/banner/banner-1-6.png" alt="">
+                        <img class="train_banner18" src="../img/itTrain/banner/banner-1-8.png" alt="">
+                        <img class="train_banner17" src="../img/itTrain/banner/banner-1-7.png" alt="">
+                        <div class="train_banner_msg">
+                            <span class="train_banner_name">鹿传明</span>
+                            <span class="train_banner_value_1">项目管理（PMP/软件研发/外包等）</span>
+                            <span class="train_banner_value_2">从技术岗位如何转向管理岗位</span>
+                            <span class="train_banner_value_3">产品需求分析与管理</span>
+                            <span class="train_banner_value_4">Scrum敏捷开发过程</span>
+                            <span class="train_banner_value_5">面向对象的分析与设计</span>
+                            <span class="train_banner_value_6">企业架构与软件架构设计</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-it-3">
+                        <img class="train_banner" src="../img/itTrain/banner/banner-3.png" alt="">
+                    </div>
+                    <div class="swiper-slide swiper-slide-it-4">
+                        <img class="train_banner" src="../img/itTrain/banner/banner-4.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="classification_courses">
+            <div class="it_train_title">
+                <span>CLASSIFICATION COURSES</span>
+                <span>课程分类</span>
+                <img src="../img/itTrain/classification_courses.png" alt="">
+            </div>
+            <div class="courses_list">
+                <div class="value_inner flex">
+                    <div class="courses_list_card"
+                        style="background-image: url('../img/itTrain/courses_list_card_1.png')">
+                        <span class="courses_title">开发技术</span>
+                        <span class="courses_text">基于Django框架的python Web项目实战</span>
+                        <span class="courses_text">软件高质量代码体系最佳实践</span>
+                        <span class="courses_text">UIPath 机器自动化流程技术实战</span>
+                        <span class="courses_text">···</span>
+                        <a href="./sourseClass.html">更多<div>
+                                <!--do not delete it-->
+                            </div></a>
+                    </div>
+                    <div class="courses_list_card"
+                        style="background-image: url('../img/itTrain/courses_list_card_2.png')">
+                        <span class="courses_title">开发技术</span>
+                        <span class="courses_text">基于Django框架的python Web项目实战</span>
+                        <span class="courses_text">软件高质量代码体系最佳实践</span>
+                        <span class="courses_text">UIPath 机器自动化流程技术实战</span>
+                        <span class="courses_text">···</span>
+                        <a href="">更多<div>
+                                <!--do not delete it-->
+                            </div></a>
+                    </div>
+                    <div class="courses_list_card"
+                        style="background-image: url('../img/itTrain/courses_list_card_3.png')">
+                        <span class="courses_title">开发技术</span>
+                        <span class="courses_text">基于Django框架的python Web项目实战</span>
+                        <span class="courses_text">软件高质量代码体系最佳实践</span>
+                        <span class="courses_text">UIPath 机器自动化流程技术实战</span>
+                        <span class="courses_text">···</span>
+                        <a href="">更多<div>
+                                <!--do not delete it-->
+                            </div></a>
+                    </div>
+                    <div class="courses_list_card"
+                        style="background-image: url('../img/itTrain/courses_list_card_4.png')">
+                        <span class="courses_title">开发技术</span>
+                        <span class="courses_text">基于Django框架的python Web项目实战</span>
+                        <span class="courses_text">软件高质量代码体系最佳实践</span>
+                        <span class="courses_text">UIPath 机器自动化流程技术实战</span>
+                        <span class="courses_text">···</span>
+                        <a href="">更多<div>
+                                <!--do not delete it-->
+                            </div></a>
+                    </div>
+                    <div class="courses_list_card"
+                        style="background-image: url('../img/itTrain/courses_list_card_5.png')">
+                        <span class="courses_title">开发技术</span>
+                        <span class="courses_text">基于Django框架的python Web项目实战</span>
+                        <span class="courses_text">软件高质量代码体系最佳实践</span>
+                        <span class="courses_text">UIPath 机器自动化流程技术实战</span>
+                        <span class="courses_text">···</span>
+                        <a href="">更多<div>
+                                <!--do not delete it-->
+                            </div></a>
+                    </div>
+                    <div class="courses_list_card"
+                        style="background-image: url('../img/itTrain/courses_list_card_6.png')">
+                        <span class="courses_title">开发技术</span>
+                        <span class="courses_text">基于Django框架的python Web项目实战</span>
+                        <span class="courses_text">软件高质量代码体系最佳实践</span>
+                        <span class="courses_text">UIPath 机器自动化流程技术实战</span>
+                        <span class="courses_text">···</span>
+                        <a href="">更多<div>
+                                <!--do not delete it-->
+                            </div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="training_schedule">
+            <div class="it_train_title">
+                <span>TRAINING SCHEDULE</span>
+                <span>培训日程</span>
+                <img src="../img/itTrain/training_schedule.png" alt="">
+            </div>
+            <div class="value_inner">
+                <div class="schedule_top">
+                    <span>时间</span>
+                    <button class="all_schedule">全部</button>
+                    <span>
+                        <button class="schedule_time">xxxx.xx</button>
+                        <button class="schedule_time">xxxx.xx</button>
+                        <button class="schedule_time">xxxx.xx</button>
+                    </span>
+                </div>
+                <div class="schedule_mid flex">
+                    <div class="schedule_card">
+                        <div class="schedule_card_top" style="background-image: url('../img/itTrain/test02.jpg')">
+                            <div class="schedule_card_top_mask">
+
+                                <span class="schedule_card_title">移动产品的用户体验实战</span>
+                                <div class="schedule_card_tip">课程技能</div>
+                                <div class="schedule_card_point clear_float">
+                                    <div>Web</div>
+                                    <div>Python</div>
+                                    <div>开发技术</div>
+                                    <div>开发人员</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="schedule_card_mid">
+                            <span>讲师：</span>
+                            <span>艾彪</span>
+                        </div>
+                        <div class="schedule_card_but">
+                            <span>开课时间：</span>
+                            <span>x月x日-x日</span>
+                        </div>
+                    </div>
+                    <div class="schedule_card">
+                        <div class="schedule_card_top"
+                            style="background-image: url('../img/itTrain/schedule_card_img_1.png')">
+                            <div class="schedule_card_top_mask">
+
+                                <span class="schedule_card_title">移动产品的用户体验实战</span>
+                                <div class="schedule_card_tip">课程技能</div>
+                                <div class="schedule_card_point clear_float">
+                                    <div>Web</div>
+                                    <div>Python</div>
+                                    <div>开发技术</div>
+                                    <div>开发人员</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="schedule_card_mid">
+                            <span>讲师：</span>
+                            <span>艾彪</span>
+                        </div>
+                        <div class="schedule_card_but">
+                            <span>开课时间：</span>
+                            <span>x月x日-x日</span>
+                        </div>
+                    </div>
+                    <div class="schedule_card">
+                        <div class="schedule_card_top"
+                            style="background-image: url('../img/itTrain/schedule_card_img_1.png')">
+                            <div class="schedule_card_top_mask">
+
+                                <span class="schedule_card_title">移动产品的用户体验实战</span>
+                                <div class="schedule_card_tip">课程技能</div>
+                                <div class="schedule_card_point clear_float">
+                                    <div>Web</div>
+                                    <div>Python</div>
+                                    <div>开发技术</div>
+                                    <div>开发人员</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="schedule_card_mid">
+                            <span>讲师：</span>
+                            <span>艾彪</span>
+                        </div>
+                        <div class="schedule_card_but">
+                            <span>开课时间：</span>
+                            <span>x月x日-x日</span>
+                        </div>
+                    </div>
+                    <div class="schedule_card">
+                        <div class="schedule_card_top"
+                            style="background-image: url('../img/itTrain/schedule_card_img_1.png')">
+                            <div class="schedule_card_top_mask">
+
+                                <span class="schedule_card_title">移动产品的用户体验实战</span>
+                                <div class="schedule_card_tip">课程技能</div>
+                                <div class="schedule_card_point clear_float">
+                                    <div>Web</div>
+                                    <div>Python</div>
+                                    <div>开发技术</div>
+                                    <div>开发人员</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="schedule_card_mid">
+                            <span>讲师：</span>
+                            <span>艾彪</span>
+                        </div>
+                        <div class="schedule_card_but">
+                            <span>开课时间：</span>
+                            <span>x月x日-x日</span>
+                        </div>
+                    </div>
+                    <div class="schedule_card">
+                        <div class="schedule_card_top"
+                            style="background-image: url('../img/itTrain/schedule_card_img_1.png')">
+                            <div class="schedule_card_top_mask">
+
+                                <span class="schedule_card_title">移动产品的用户体验实战</span>
+                                <div class="schedule_card_tip">课程技能</div>
+                                <div class="schedule_card_point clear_float">
+                                    <div>Web</div>
+                                    <div>Python</div>
+                                    <div>开发技术</div>
+                                    <div>开发人员</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="schedule_card_mid">
+                            <span>讲师：</span>
+                            <span>艾彪</span>
+                        </div>
+                        <div class="schedule_card_but">
+                            <span>开课时间：</span>
+                            <span>x月x日-x日</span>
+                        </div>
+                    </div>
+                    <div class="schedule_card">
+                        <div class="schedule_card_top"
+                            style="background-image: url('../img/itTrain/schedule_card_img_1.png')">
+                            <div class="schedule_card_top_mask">
+
+                                <span class="schedule_card_title">移动产品的用户体验实战</span>
+                                <div class="schedule_card_tip">课程技能</div>
+                                <div class="schedule_card_point clear_float">
+                                    <div>Web</div>
+                                    <div>Python</div>
+                                    <div>开发技术</div>
+                                    <div>开发人员</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="schedule_card_mid">
+                            <span>讲师：</span>
+                            <span>艾彪</span>
+                        </div>
+                        <div class="schedule_card_but">
+                            <span>开课时间：</span>
+                            <span>x月x日-x日</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule_but">
+                    <div class="schedule_card_page">
+                        <button class="schedule_card_page_button schedule_card_page_button_active">1</button>
+                        <button class="schedule_card_page_button">2</button>
+                        <button class="schedule_card_page_button">3</button>
+                        <button class="schedule_card_page_button">下一页</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="live_broadcast_playback">
+            <div class="it_train_title">
+                <span>LIVE BROADCAST PLAYBACK</span>
+                <span>活动直播回放</span>
+                <img src="../img/itTrain/live_broadcast_playback.png" alt="">
+            </div>
+            <div class="sourseClass-content-allclass-content-raw">
+                <div class="sourseClass-content-allclass-content-raw-menu active">开发技术</div>
+                <div class="sourseClass-content-allclass-content-raw-menu">软件工程</div>
+                <div class="sourseClass-content-allclass-content-raw-menu">AI与物联网</div>
+                <div class="sourseClass-content-allclass-content-raw-menu">IT管理</div>
+                <div class="sourseClass-content-allclass-content-raw-menu">产品规划</div>
+                <div class="sourseClass-content-allclass-content-raw-menu">大数据与云计算</div>
+            </div>
+            <div class="value_inner">
+
+                <div class="swiper-container swiper-playBack">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide playBack_card">
+                            <div
+                                onclick="abc('http://1252524126.vod2.myqcloud.com/e33d04fdvodgzp1252524126/98d42c8a5285890793088103261/5e84fce8ef6c06338bc6e14c.mp4')">
+                                <div>
+                                    <img src="../img/itTrain/p-1.png" alt="">
+                                    <i class="b"></i>
+                                </div>
+                                <span class="line_nowrap">基于Django框架的python Web项目实战</span>
+                                <span class="line_nowrap">软件高质量代码体系最佳实践</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide playBack_card">
+                            <div
+                                onclick="abc('http://1252524126.vod2.myqcloud.com/e33d04fdvodgzp1252524126/98d42c8a5285890793088103261/5e84fce8ef6c06338bc6e14c.mp4')">
+                                <div>
+                                    <img src="../img/itTrain/p-1.png" alt="">
+                                    <i class="b"></i>
+                                </div>
+                                <span class="line_nowrap">基于Django框架的python Web项目实战</span>
+                                <span class="line_nowrap">软件高质量代码体系最佳实践2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-black"></div>
+                </div>
+                <div class="list">
+                    <div class="video" style="display: none;">
+                        <div class="video_media">
+                            <video id="videoUrl" src="" controls="" name="media">
+                                <source src="" type="video/mp4">
+                            </video>
+                            <span class="video_close"></span>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(".video_close").on('click', function () {
+                        $(this).parent().parent()[0].style.display = "none";
+                    })
+
+                    function abc(i) {
+                        $(".video")[0].style.display = "block";
+                        $("#videoUrl").attr('src', i);
+                    }
+                </script>
+            </div>
+        </div>
+        <!--<div class="it_train_course">
+        <div class="it_train_title">
+            <span>TRUMP COURSE</span>
+            <span>王牌课程</span>
+            <img src="../img/itTrain/trump_course.png" alt="">
+        </div>
+        <div>
+            <div class="value_inner clear_float">
+                <div class="it_train_course_class clear_float">
+                    <div class="course_class_active">&lt;!&ndash;循环 course_class_active 激活态&ndash;&gt;
+                        <img src="../img/itTrain/class_1.png" alt="">
+                        <div>
+                            <span>大数据与云计算</span>
+                        </div>
+                    </div>
+                    <div class="course_class_new">&lt;!&ndash;course_class_new 新动态&ndash;&gt;
+                        <img src="../img/itTrain/class_2.png" alt="">
+                        <div>
+                            <span>最新课程</span>
+                        </div>
+                    </div>
+                    <div>&lt;!&ndash;循环&ndash;&gt;
+                        <img src="../img/itTrain/class_2.png" alt="">
+                        <div>
+                            <span>最新课程</span>
+                        </div>
+                    </div>
+                    <div>&lt;!&ndash;循环&ndash;&gt;
+                        <img src="../img/itTrain/class_2.png" alt="">
+                        <div>
+                            <span>最新课程</span>
+                        </div>
+                    </div>
+                    <div>&lt;!&ndash;循环&ndash;&gt;
+                        <img src="../img/itTrain/class_2.png" alt="">
+                        <div>
+                            <span>最新课程</span>
+                        </div>
+                    </div>
+                    <div>&lt;!&ndash;循环&ndash;&gt;
+                        <img src="../img/itTrain/class_2.png" alt="">
+                        <div>
+                            <span>最新课程</span>
+                        </div>
+                    </div>
+                    <div>&lt;!&ndash;循环&ndash;&gt;
+                        <img src="../img/itTrain/class_2.png" alt="">
+                        <div>
+                            <span>最新课程</span>
+                        </div>
+                    </div>
+                    <div>&lt;!&ndash;循环&ndash;&gt;
+                        <img src="../img/itTrain/class_2.png" alt="">
+                        <div>
+                            <span>最新课程</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="it_train_course_msg">
+                    <div>&lt;!&ndash;循环&ndash;&gt;
+                        <div class="it_train_course_msg_title clear_float">
+                            <div></div>
+                            <span>大数据与云计算</span>
+                            <a href="">查看详情 ></a>
+                        </div>
+                        <div class="it_train_course_msg_value">
+                            <span>
+                                有人把数据比喻为蕴藏能量的煤矿。煤炭按照性质有焦煤、无烟煤、肥煤、贫煤等分类，而露天煤矿、深山煤矿的挖掘成本又不一样。与此类似，大数据并不在“大”，而在于“有用”。价值含量、挖掘成本比数量更为重要。对于很多行业而言，如何利用这些大规模数据是成为赢得竞争的关键
+                            </span>
+                        </div>
+                        <div class="it_train_course_msg_list clear_float">
+                            <div>&lt;!&ndash;循环&ndash;&gt;
+                                <img src="../img/itTrain/details_class.png" alt="">
+                                <span>基于R/Python的数据分析与挖掘</span>
+                            </div>
+                            <div>&lt;!&ndash;循环&ndash;&gt;
+                                <img src="../img/itTrain/details_class.png" alt="">
+                                <span>基于R/Python的数据分析与挖掘</span>
+                            </div>
+                            <div>&lt;!&ndash;循环&ndash;&gt;
+                                <img src="../img/itTrain/details_class.png" alt="">
+                                <span>基于R/Python的数据分析与挖掘</span>
+                            </div>
+                            <div>&lt;!&ndash;循环&ndash;&gt;
+                                <img src="../img/itTrain/details_class.png" alt="">
+                                <span>基于R/Python的数据分析与挖掘</span>
+                            </div>
+                            <div>&lt;!&ndash;循环&ndash;&gt;
+                                <img src="../img/itTrain/details_class.png" alt="">
+                                <span>基于R/Python的数据分析与挖掘</span>
+                            </div>
+                            <div>&lt;!&ndash;循环&ndash;&gt;
+                                <img src="../img/itTrain/details_class.png" alt="">
+                                <span>基于R/Python的数据分析与挖掘</span>
+                            </div>
+                            <div>&lt;!&ndash;循环&ndash;&gt;
+                                <img src="../img/itTrain/details_class.png" alt="">
+                                <span>基于R/Python的数据分析与挖掘</span>
+                            </div>
+                            <div>&lt;!&ndash;循环&ndash;&gt;
+                                <img src="../img/itTrain/details_class.png" alt="">
+                                <span>基于R/Python的数据分析与挖掘</span>
+                            </div>
+                            <div>&lt;!&ndash;循环&ndash;&gt;
+                                <img src="../img/itTrain/details_class.png" alt="">
+                                <span>基于R/Python的数据分析与挖掘</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+        <!--<div>
+        <div class="it_train_title">
+            <span>TRAINING SCHEDULE</span>
+            <span>培训日程</span>
+            <img src="../img/itTrain/training_class.png" alt="">
+        </div>
+        <div>
+            <div class="value_inner clear_float">
+                <div style="width: 1200px;height: 342px;margin: 30px auto;" id="rili"></div>
+            </div>
+        </div>
+    </div>-->
+        <div class="internal_training">
+            <div class="it_train_title">
+                <span>INTERNAL TRAINING PROCESS</span>
+                <span>内训流程</span>
+                <img src="../img/itTrain/internal_training.png" alt="">
+            </div>
+            <div>
+                <div class="value_inner internal_training_details">
+                    <div class="internal_training_details_box1">
+                        <span>调研阶段</span>
+                        <span>培训课程设计</span><span>调研/调研分析</span><span>能力评估</span><span>技能差异性分析</span><span>培训课程设计评审</span>
+                    </div>
+                    <div class="internal_training_details_next"></div>
+                    <div class="internal_training_details_box2">
+                        <span>培训阶段</span><span>培训班及设计</span><span>线上要点回复</span>
+                    </div>
+                    <div class="internal_training_details_next"></div>
+                    <div class="internal_training_details_box3">
+                        <span>售后阶段</span><span>测评</span><span>跟踪答疑</span><span>能力评估报告</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="wonderful_review">
+        <div class="it_train_title">
+            <span>WONDERFYUL REVIEW</span>
+            <span>精彩回顾</span>
+            <img src="../img/itTrain/wonderful_review.png" alt="">
+        </div>
+        <div>
+            <div class="value_inner">
+                <div class="entrance-center-left">
+                    <div class="entrance-center-center-border clear_float">
+                        <div class="entrance-center-center-head">
+                            最新活动
+                        </div>
+                        <div class="entrance-center-center-right"><a href="#">[更多]</a></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="entrance-center-left-news clearfix">
+                        <div class="entrance-center-center-left-text1">
+                            <div class="left-text1-top">Mar</div>
+                            <div class="left-text1-bottom">14</div>
+                        </div>
+                        <div class="entrance-center-center-left-text2"><a href="activity.html">软件研发项目如何管理？</a></div>
+                        <div class="entrance-center-center-left-text3">2016年3月14日在科技园，就软件研发项目实施管理提上日程</div>
+                        <div class="entrance-center-center-left-time">1分钟前</div>
+                    </div>
+                    <div class="entrance-center-left-news clearfix">
+                        <div class="entrance-center-center-left-text1">
+                            <div class="left-text1-top">Mar</div>
+                            <div class="left-text1-bottom">14</div>
+                        </div>
+                        <div class="entrance-center-center-left-text2"><a href="activity.html">软件研发项目如何管理？</a></div>
+                        <div class="entrance-center-center-left-text3">2016年3月14日在科技园，就软件研发项目实施管理提上日程</div>
+                        <div class="entrance-center-center-left-time">1分钟前</div>
+                    </div>
+                    <div class="entrance-center-left-news clearfix">
+                        <div class="entrance-center-center-left-text1">
+                            <div class="left-text1-top">Mar</div>
+                            <div class="left-text1-bottom">14</div>
+                        </div>
+                        <div class="entrance-center-center-left-text2"><a href="activity.html">软件研发项目如何管理？</a></div>
+                        <div class="entrance-center-center-left-text3">2016年3月14日在科技园，就软件研发项目实施管理提上日程</div>
+                        <div class="entrance-center-center-left-time">1分钟前</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+        <div class="it_advantages">
+            <div class="it_train_title">
+                <span>LIVE BROADCAST PLAYBACK</span>
+                <span>中睿IT培训优势</span>
+                <img src="../img/itTrain/live_broadcast_playback.png" alt="">
+            </div>
+            <div class="it_advantages">
+                <div class="it_advantages_box">
+                    <div class="it_advantages_single_box">
+                        <div class="list">◣</div>
+                        <div class="list">◣</div>
+                        <span>真正的案例驱动</span>
+                        <span>中睿信息不但是一家培训机构，也是一家专业的软件研发机构，课程案例来自于真实项目。</span>
+                    </div>
+                    <div class="it_advantages_single_box">
+                        <div class="list">◣</div>
+                        <span>能力测试</span> <span>通过鲲测评IT专业测评与能力提升平台辅助教学。</span>
+                    </div>
+                    <div class="it_advantages_single_box">
+                        <div class="list">◣</div>
+                        <span>线上线下</span> <span>课堂培训与线上直播、录播结合的授课方式。</span>
+                    </div>
+                    <div class="it_advantages_single_box">
+                        <div class="list">◣</div>
+                        <span>软件研发培训专家</span> <span>中睿信息坚持软件研发培训服务，并映射到其他IT培训体系。</span>
+                    </div>
+                    <div class="it_advantages_single_box">
+                        <div class="list">◣</div>
+                        <span>讲师团队</span> <span>拥有超过100位行业专家讲师，并且专职老师超过20%。</span>
+                    </div>
+                    <div class="it_advantages_single_box">
+                        <div class="list">◣</div>
+                        <span>培训合作伙伴</span> <span>与北大、山大、武大等学校相关专业建立长期合作关系，确保理论与实践结合。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot_bot">
+            <div class="fb_top">
+                <div class="fb_QR">
+                    <span class="contact">联系我们<span class="contact_us">CONTACT</span></span>
+                    <img class="QRcode" src="../img/index/QRcode.png" alt="">
+                    <span class="scanner">扫一扫</span>
+                </div>
+                <table class="fb_table" summary="基本信息及联系方式">
+                    <tr>
+                        <td colspan="3">
+                            <span class="provide">愿景：成为最专业的软件研发服务领航者</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>中睿信息技术有限公司 广州•深圳</td>
+                        <td>Tel：020-38931912</td>
+                        <td>务实 Pragmatic</td>
+                    </tr>
+                    <tr>
+                        <td>广州：广州市天河区翰景路1号金星大厦18层中睿信息</td>
+                        <td>Fax：020-38931912</td>
+                        <td>专业 Professional</td>
+                    </tr>
+                    <tr>
+                        <td>深圳：深圳市南山区粤海街道科技园科技路9号526</td>
+                        <td>Tel：0755-25855012</td>
+                        <td>诚信 Integrity</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="fb_but">
+                <span>版权所有：广州中睿信息技术有限公司 粤ICP备13082838号-2</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

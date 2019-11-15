@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular6技术与实践</title>
+    <link rel="stylesheet" href="../css/common/main.css">
+    <link rel="stylesheet" href="../css/Angular6.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var container = new Swiper(".swiper-playBack", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                slidesPerGroup: 3,
+                // loop: true,
+                pagination: {
+                    clickable: true,
+                    el: '.swiper-pagination',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
+            $('.sourseContent-zi').hide();
+
+            $('#allzhankai').click(function (e) {
+                console.log($(this).html())
+                if ($(this).html() == "全部展开") {
+                    $('.dowm').css('display', 'inline-block');
+                    $('.right').css('display', 'none');
+                    $('.sourseContent-zi').show();
+                    document.getElementById("allzhankai").innerHTML="全部折叠";
+                } else {
+                    $('.sourseContent-zi').hide();
+                    $('.dowm').css('display', 'none');
+                    $('.right').css('display', 'inline-block');
+                    document.getElementById("allzhankai").innerHTML="全部展开";
+                }
+            })
+
+            $('.right').click(function () {
+                $(this).parent().next().next().show();
+                $(this).css('display', 'none');
+                $(this).next().css('display', 'inline-block');
+            })
+            $('.dowm').click(function () {
+                $(this).parent().next().next().hide();
+                $(this).css('display', 'none');
+                $(this).prev().css('display', 'inline-block');
+            })
+            $(".search_submit").click(function () {
+                console.log("into click");
+                $(".head_link").css("display", "none");
+                $(".search").css("width", "453px"); /*耦合*/
+            });
+            $(".search_cancel").click(function () {
+                $(".search").css("width", "26px"); /*耦合*/
+                $(".search_keyword").val("");
+                setTimeout(function () {
+                    $(".head_link").css("display", "block");
+                }, 300); /*耦合*/
+            });
+
+            $('#btnQuXiao').on('click', function () {
+                $('.baoming-mask').css('display', 'none');
+            })
+            $('#baoming').on('click', function () {
+                $('.baoming-mask').css('display', 'block');
+            })
+
+            $(".video_close").on('click', function () {
+                $(this).parent().parent()[0].style.display = "none";
+            })
+
+        })
+
+        function abc(i) {
+            $(".video")[i].style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="angular">
+        <div class="ad">
+            <span>广告位</span>
+            <button>X</button>
+        </div>
+        <div class="page_head">
+            <div class="clear_float">
+                <img class="head_logo" src="../img/Angular/logo.png" alt="">
+                <div>
+                    <ul class="head_link clear_float">
+                        <li>
+                            <a href="./index.html">首页</a>
+                        </li>
+                        <li>
+                            <a href="#">IT服务</a>
+                        </li>
+                        <li>
+                            <a href="./itTrain.html">IT培训</a>
+                        </li>
+                        <li>
+                            <a href="http://www.itlead.com.cn/New20180706View/AboutUs.aspx">关于我们</a>
+                        </li>
+                    </ul>
+                    <div class="search clear_float">
+                        <div>
+                            <button class="search_cancel"></button>
+                            <input type="text" class="search_keyword">
+                            <button class="search_submit"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="main">
+            <div class="main-top">
+                <div class="main-top-left">
+                    <img width="500px" height="336px" src="../img/Angular/2019092910331174248120.jpg"
+                        alt="Angular6技术与实践">
+                    <span class="main-top-left-title">Angular6技术与实践</span>
+                </div>
+                <div class="main-top-right">
+                    <div class="main-top-right-title oneline">Angular6技术与实践</div>
+                    <div class="main-top-right-time">开课时间：9月5-7日</div>
+                    <div class="main-top-right-xinxi clear_float">
+                        <div class="main-top-right-xinxi-teacher"><span
+                                class="main-top-right-xinxi-teachername">授课讲师：</span><span
+                                class="main-top-right-xinxi-teachernameai">艾彪</span></div>
+                        <div>
+                            <div id="baoming" class="main-top-right-xinxi-baoming">在线报名</div>
+                            <div class="main-top-right-xinxi-tel">报名电话：020-38931912</div>
+                        </div>
+                    </div>
+                    <div class="baoming-mask" style="display: none;">
+
+                        <div class="mask-popup">
+                            <div class="mask-popup-header">课程报名</div>
+                            <div class="mask-popup-info">
+                                <div class="mask-popup-info-text">课程名称</div>
+                                <input name="cousename" type="text" id="cousename" readonly="readonly"
+                                    value="Angular6技术与实践">
+                            </div>
+                            <div class="mask-popup-info">
+                                <div class="mask-popup-info-text">公司名称</div>
+                                <input type="text" id="company">
+                            </div>
+                            <div class="mask-popup-info">
+                                <div class="mask-popup-info-text">姓名</div>
+                                <input type="text" id="username">
+                            </div>
+
+                            <div class="mask-popup-info">
+                                <div class="mask-popup-info-text">手机</div>
+                                <input type="text" id="phone">
+                            </div>
+                            <div class="mask-popup-info">
+                                <div class="mask-popup-info-text">Email</div>
+                                <input type="text" id="email">
+                            </div>
+                            <div class="mask-popup-button">
+                                <input name="couseId" type="hidden" id="couseId" value="20160503051133">
+                                <button id="btnQuXiao">取消</button>
+                                <button id="btnSubmit">确认</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="main-top-right-kun">课程技能测试(鲲测评)</div>
+                    <div class="main-top-right-kun-jishu">
+                        <div>Web</div>
+                        <div>Python</div>
+                        <div>开发技术</div>
+                        <div>开发技术</div>
+                        <div>开发技术</div>
+                        <div>开发人员</div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-title">
+                <a href="#sourseIntro" class="active">
+                    <div>课程介绍</div>
+                </a>
+                <a href="#sourseContent">
+                    <div>课程内容</div>
+                </a>
+                <a href="#teacherIntro">
+                    <div>讲师简介</div>
+                </a>
+                <a href="#studentPj">
+                    <div>学员评价</div>
+                </a>
+                <a href="#guanlianhuodong">
+                    <div>关联活动</div>
+                </a>
+            </div>
+            <div class="sourseIntro">
+                <a name="sourseIntro">
+                    <div class="sourseIntro-title">课程介绍</div>
+                </a>
+                <div class="sourseIntro-intro">
+                    <span class="sourseIntro-intro1">课程描述：</span>
+                    <span
+                        class="sourseIntro-intro2">前端开发技术日新月异，angular框架目前已经受到众多技术控的青睐。本课程结合实际案例讲解基于最新angular6框架的前端项目开发。<br>
+                        本课程内容丰富，涵盖面广，讲解由浅入深，并始终以案例讲解和一线开发经验贯穿始终。通过本课程的学习，可使得学员对Angular6开发有一个很好的了解，对
+                        具体开发工作游刃有余。</span>
+                </div>
+                <div class="sourseIntro-object">
+                    <span>授课对象：</span>
+                    <span>前端相关技术人员</span>
+                </div>
+            </div>
+            <div class="sourseContent">
+                <div class="sourseContent-title">
+                    <a name="sourseContent">
+                        <div class="sourseIntro-title">课程内容</div>
+                    </a>
+                    <div class="allzhankai" id="allzhankai">全部展开</div>
+                </div>
+                <div class="sourseContent-content">
+                    <div class="sourseContent-content-fir">
+                        <div class="day">第1天</div>
+                        <div class="daycontent">
+                            <div>
+                                <div class="sourseContent-img">
+                                    <img class="right" src="../img/Angular/zhaikairight.png">
+                                    <img class="dowm" src="../img/Angular/zhaikaidown.png">
+                                </div>
+                                <span>1. Angular6开发语言学习</span>
+                                <div class="sourseContent-zi">
+                                    <div>1. 1 ES6（ECMA2015）</div>
+                                    <div>1. 2 TypeScript介绍</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="sourseContent-img"></div>
+                                <!-- <img src="../asset/img/Angular/zhaikairight.png">
+                                <img src="../asset/img/Angular/zhaikaidown.png"> -->
+                                <span>2.【案例】银行账号业务案例</span>
+                                <!-- <div class="sourseContent-zi">
+                                        <div>1. 1 ES6（ECMA2015）</div>
+                                        <div>1. 2 TypeScript介绍</div>
+                                    </div> -->
+                            </div>
+                            <div>
+                                <div class="sourseContent-img">
+                                    <img class="right" src="../img/Angular/zhaikairight.png">
+                                    <img class="dowm" src="../img/Angular/zhaikaidown.png">
+                                </div>
+                                <span>3. Angular概要</span>
+                                <div class="sourseContent-zi">
+                                    <div>1. 1 ES6（ECMA2015）</div>
+                                    <div>1. 2 TypeScript介绍</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sourseContent-content-fir">
+                        <div class="day">第2天</div>
+                        <div class="daycontent">
+                            <div>
+                                <div class="sourseContent-img">
+                                    <img class="right" src="../img/Angular/zhaikairight.png">
+                                    <img class="dowm" src="../img/Angular/zhaikaidown.png">
+                                </div>
+                                <span>1. Angular6技术初探</span>
+                            </div>
+                            <div>
+                                <div class="sourseContent-img">
+                                    <img class="right" src="../img/Angular/zhaikairight.png">
+                                    <img class="dowm" src="../img/Angular/zhaikaidown.png">
+                                </div>
+                                <span>2. Angular6程序架构</span>
+                            </div>
+                            <div>
+                                <div class="sourseContent-img">
+                                    <img class="right" src="../img/Angular/zhaikairight.png">
+                                    <img class="dowm" src="../img/Angular/zhaikaidown.png">
+                                </div>
+                                <span>3. Angular6进阶（一）</span>
+                            </div>
+                            <div>
+                                <div class="sourseContent-img"></div>
+                                <span>4.【案例】产品展示系统</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="sourseContent-content-fir">
+                        <div class="day">第3天</div>
+                        <div class="daycontent">
+                            <div>
+                                <div class="sourseContent-img">
+                                    <img class="right" src="../img/Angular/zhaikairight.png">
+                                    <img class="dowm" src="../img/Angular/zhaikaidown.png">
+                                </div>
+                                <span>1. Angular6进阶（二）</span>
+                            </div>
+                            <div>
+                                <div class="sourseContent-img">
+                                    <!-- <img src="../asset/img/Angular/zhaikairight.png">
+                                        <img src="../asset/img/Angular/zhaikaidown.png"> -->
+                                </div>
+                                <span>2.【案例】基于Angular6的管理系统</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="teacherIntro">
+                <a name="teacherIntro">
+                    <div class="sourseIntro-title">讲师简介</div>
+                </a>
+                <div class="teacherIntro-content clear_float">
+                    <div class="teacherIntro-content-left">
+                        <div class="teacherIntro-content-left-touxiang"></div>
+                        <div class="teacherIntro-content-left-name">艾彪</div>
+                    </div>
+                    <div class="teacherIntro-content-right">
+                        <div class="teacherIntro-content-right-touxian">最早的Hybrid跨平台移动开发推动者<br>
+                            iOS/Android技术顾问<br>
+                            前端框架技术专家<br>
+                            跨平台移动开发技术专家
+                        </div>
+                        <div class="teacherIntro-content-right-gx">
+                            波导手机、中国银行、中南空管局等许多企、事业单位开发移动端项目。精通iOS、Android、Node.JS,微信及 Html5等开发技术;精通
+                            angular，vueJS,React等主流前端框架以及前端框架的设计;多平台架构设计协同开发倡导者。曾先后主持开发大型网络游戏iOS和Android
+                            客户端开发、海关移动查巡系统、中国银行移动文档查阅系统等。在 App Store发布多款应用软件，擅长移动平台的应用和移动架构的搭
+                            建。长期研究手机和互联网前端开发技术，在互联网的安全、手机端安全方面积累了不少实战经验。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="studentPj">
+                <a name="studentPj">
+                    <div class="sourseIntro-title">学员评价</div>
+                </a>
+                <div class="studentPj-count">
+                    <span style="padding-left: 18px;">学员评价&nbsp;&nbsp;</span><span>(50)</span>
+                    <div>我要评价</div>
+                </div>
+                <div class="studentPj-content">
+                    <!--聊天左-->
+                    <div class="index_lt_left">
+                        <div class="index_lt_left_tx">
+                            <img src="../img/Angular/touxleft.png" alt="" />
+                        </div>
+                        <!--昵称-->
+                        <div>
+                            <div class="index_lt_left_name"> 学员名称1</div>
+                        </div>
+                        <div class="index_lt_left_nr">
+                            <div>Angular6技术与实践，赞！这课程讲得不错!</div>
+                        </div>
+                    </div>
+                    <!--聊天右-->
+                    <div class="index_lt_right">
+                        <div class="index_lt_right_tx">
+                            <img src="../img/Angular/touxright.png" alt="" />
+                        </div>
+                        <div class="index_lt_right_nr">
+                            <div>赞！这课程讲得不错，内容很丰富细致。</div>
+                        </div>
+                    </div>
+                    <!--聊天左-->
+                    <div class="index_lt_left">
+                        <div class="index_lt_left_tx">
+                            <img src="../img/Angular/touxleft.png" alt="" />
+                        </div>
+                        <!--昵称-->
+                        <div>
+                            <div class="index_lt_left_name"> 学员名称1</div>
+                        </div>
+                        <div class="index_lt_left_nr">
+                            <div>Angular6技术与实践，赞！这课程讲得不错!</div>
+                        </div>
+                    </div>
+                    <!--聊天左-->
+                    <div class="index_lt_left">
+                        <div class="index_lt_left_tx">
+                            <img src="../img/Angular/touxleft.png" alt="" />
+                        </div>
+                        <!--昵称-->
+                        <div>
+                            <div class="index_lt_left_name"> 学员名称1</div>
+                        </div>
+                        <div class="index_lt_left_nr">
+                            <div>Angular6技术与实践，赞！这课程讲得不错!</div>
+                        </div>
+                    </div>
+                    <!--聊天左-->
+                    <div class="index_lt_left">
+                        <div class="index_lt_left_tx">
+                            <img src="../img/Angular/touxleft.png" alt="" />
+                        </div>
+                        <!--昵称-->
+                        <div>
+                            <div class="index_lt_left_name"> 学员名称1</div>
+                        </div>
+                        <div class="index_lt_left_nr">
+                            <div>Angular6技术与实践，赞！这课程讲得不错!</div>
+                        </div>
+                    </div>
+                    <!--聊天左-->
+                    <div class="index_lt_left">
+                        <div class="index_lt_left_tx">
+                            <img src="../img/Angular/touxleft.png" alt="" />
+                        </div>
+                        <!--昵称-->
+                        <div>
+                            <div class="index_lt_left_name"> 学员名称1</div>
+                        </div>
+                        <div class="index_lt_left_nr">
+                            <div>Angular6技术与实践，赞！这课程讲得不错!</div>
+                        </div>
+                    </div>
+                    <!--聊天左-->
+                    <div class="index_lt_left">
+                        <div class="index_lt_left_tx">
+                            <img src="../img/Angular/touxleft.png" alt="" />
+                        </div>
+                        <!--昵称-->
+                        <div>
+                            <div class="index_lt_left_name"> 学员名称1</div>
+                        </div>
+                        <div class="index_lt_left_nr">
+                            <div>Angular6技术与实践，赞！这课程讲得不错!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="value_inner">
+            <a name="guanlianhuodong">
+                <div class="sourseIntro-title" style="margin-bottom: 18px;">关联活动</div>
+            </a>
+            <div class="swiper-container swiper-playBack">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide playBack_card">
+                        <div onclick="abc(0)">
+                            <div>
+                                <img src="../img/Angular/p-1.png" alt="">
+                                <i class="b"></i>
+                            </div>
+                            <span class="line_nowrap">基于Django框架的python Web项目实战</span>
+                            <span class="line_nowrap">软件高质量代码体系最佳实践</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide playBack_card">
+                        <div onclick="abc(0)">
+                            <div>
+                                <img src="../img/Angular/p-1.png" alt="">
+                                <i class="b"></i>
+                            </div>
+                            <span class="line_nowrap">基于Django框架的python Web项目实战</span>
+                            <span class="line_nowrap">软件高质量代码体系最佳实践</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-black"></div>
+            </div>
+            <div class="list">
+                <div class="video" style="display: none;">
+                    <div class="video_media">
+                        <video controls="" name="media">
+                            <source
+                                src="http://1252524126.vod2.myqcloud.com/e33d04fdvodgzp1252524126/98d42c8a5285890793088103261/5e84fce8ef6c06338bc6e14c.mp4"
+                                type="video/mp4">
+                        </video>
+                        <span class="video_close"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="foot_bot">
+            <div class="fb_top">
+                <div class="fb_QR">
+                    <span class="contact">联系我们<span class="contact_us">CONTACT</span></span>
+                    <img class="QRcode" src="../img/Angular/QRcode.png" alt="">
+                    <span class="scanner">扫一扫</span>
+                </div>
+                <table class="fb_table" summary="基本信息及联系方式">
+                    <tr>
+                        <td colspan="3">
+                            <span class="provide">愿景：成为最专业的软件研发服务领航者</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>中睿信息技术有限公司 广州•深圳</td>
+                        <td>Tel：020-38931912</td>
+                        <td>务实 Pragmatic</td>
+                    </tr>
+                    <tr>
+                        <td>广州：广州市天河区翰景路1号金星大厦18层中睿信息</td>
+                        <td>Fax：020-38931912</td>
+                        <td>专业 Professional</td>
+                    </tr>
+                    <tr>
+                        <td>深圳：深圳市南山区粤海街道科技园科技路9号526</td>
+                        <td>Tel：0755-25855012</td>
+                        <td>诚信 Integrity</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="fb_but">
+                <span>版权所有：广州中睿信息技术有限公司 粤ICP备13082838号-2</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

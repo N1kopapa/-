@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../img/index/itlead.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>课程分类</title>
+    <link rel="stylesheet" href="../css/sourseClass.css">
+    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var url = location.search;
+            console.error(url);
+
+            $(".ad_cancel").click(function () {
+                // $(".ad").animate({height:"0"},300);
+                $(".ad").height(0);
+            })
+            //一级分类
+            var menu_list = $(".sourseClass-content-allclass-content-cloum-left>div");
+            menu_list.on('click',function(){
+                $(this).siblings('.active').removeClass('active');
+                $(this).addClass('active');
+                //展开对应二级分类
+                var menu_list_ul = $(this).siblings('ul');
+                for(var i = 0;i < menu_list_ul.length;i++){
+                    menu_list_ul[i].style.display = "none";
+                }
+                var index = menu_list.index(this);
+                menu_list_ul[index].style.display = "block";
+                //重置二级分类到未激活
+                $(menu_list_ul[index]).children().removeClass('active');
+                // $(menu_list_ul[index]).children().first().addClass('active');
+            })
+            var menu_item_init = function(){
+                $(menu_item_list).removeClass('active');
+                $(menu_item_list).siblings().first().addClass('active');
+            }
+            //二级分类
+            var menu_item_list = $(".sourseClass-content-allclass-content-cloum-left-menu-item");
+            menu_item_list.on('click',function(){
+                $(this).siblings('.active').removeClass('active');
+                $(this).addClass('active');
+            })
+            
+        })
+    </script>
+</head>
+
+<body>
+    <div class="sourseClass">
+        <div class="ad">
+            <span>广告</span>
+            <button class="ad_cancel"><!--cancel--></button>
+        </div>
+        <div class="page_head">
+            <div class="clear_float">
+                <img class="head_logo" src="../img/itTrain/logo.png" alt="">
+                <div>
+                    <ul class="head_link clear_float">
+                        <li>
+                            <a href="./index.html">首页</a>
+                        </li>
+                        <li>
+                            <a href="#">IT服务</a>
+                        </li>
+                        <li>
+                            <a href="./itTrain.html">IT培训</a>
+                        </li>
+                        <li>
+                            <a href="http://www.itlead.com.cn/New20180706View/AboutUs.aspx">关于我们</a>
+                        </li>
+                    </ul>
+                    <div class="search"><!--do not delete it--></div>
+                </div>
+            </div>
+        </div>
+        <div class="sourseClass-content">
+            <div class="sourseClass-content-search">
+                <div class="sourseClass-content-search-China">
+                    <span class="sourseClass-content-search-num">5000</span>
+                    <span class="sourseClass-content-search-zi">门课程等你发现</span>
+                </div>
+                <!-- <div class="sourseClass-content-search-input-div"> -->
+                    <div class="sourseClass-content-search-input">
+                        <input type="text" placeholder="请输入搜索内容">
+                        <button class="sourseClass-content-search-input-search">搜索</button>
+                    </div>
+                <!-- </div> -->
+            </div>
+            <div class="sourseClass-content-allclass">
+                <div class="sourseClass-content-allclass-top">
+                    <div class="sourseClass-content-allclass-title">
+                        <span>ALL COURSES</span>
+                        <span>全部课程</span>
+                        <img src="../img/sourseClass/quanbukecheng.png" alt="">
+                    </div>
+                </div>
+                <div class="sourseClass-content-allclass-content">
+                    <!-- <div class="sourseClass-content-allclass-content-raw">
+                        <div class="sourseClass-content-allclass-content-raw-menu active">最新课程</div>
+                        <div class="sourseClass-content-allclass-content-raw-menu">开发技术</div>
+                        <div class="sourseClass-content-allclass-content-raw-menu">软件工程</div>
+                        <div class="sourseClass-content-allclass-content-raw-menu">AI与物联网</div>
+                        <div class="sourseClass-content-allclass-content-raw-menu">IT管理</div>
+                        <div class="sourseClass-content-allclass-content-raw-menu">产品规划</div>
+                        <div class="sourseClass-content-allclass-content-raw-menu">大数据与云计算</div>
+                    </div> -->
+                    <div class="sourseClass-content-allclass-content-cloum">
+                        <div class="sourseClass-content-allclass-content-cloum-left">
+                            <div class="sourseClass-content-allclass-content-cloum-left-menu active">
+                                <div>最新课程</div>
+                                <img class="img" src="../img/sourseClass/upjt.png">
+                                <img class="imgactive" src="../img/sourseClass/downjtActive.png">
+                                
+                            </div>
+                            <hr>
+                            <ul>
+                                <li class="sourseClass-content-allclass-content-cloum-left-menu-item">架构</li>
+                                <li class="sourseClass-content-allclass-content-cloum-left-menu-item">软件架构</li>
+                            </ul>
+                            
+                            <div class="sourseClass-content-allclass-content-cloum-left-menu">
+                                <div>开发技术</div>
+                                <img class="img" src="../img/sourseClass/upjt.png">
+                                <img class="imgactive" src="../img/sourseClass/downjtActive.png">
+                            </div>
+                            <hr>
+                            <ul style="display: none;">
+                                <li class="sourseClass-content-allclass-content-cloum-left-menu-item">架构</li>
+                                <li class="sourseClass-content-allclass-content-cloum-left-menu-item">软件架构</li>
+                                <li class="sourseClass-content-allclass-content-cloum-left-menu-item">企业架构</li>
+                            </ul>
+                            
+                        </div>
+                        <div class="sourseClass-content-allclass-content-cloum-right">
+                            <!-- <div class="sourseClass-content-allclass-content-cloum-right-out"> -->
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论无论无论无论</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <div class="sourseClass-content-allclass-content-cloum-right-div">
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-1">
+
+                                </div>
+                                <div class="sourseClass-content-allclass-content-cloum-right-div-2">
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-title">
+                                        互联网运维与DevOps实战</div>
+                                    <div class="sourseClass-content-allclass-content-cloum-right-div-2-content">
+                                        DevOps
+                                        方法加快并维持您在规划、开发、
+                                        测试和交付方面的软件推动的创新。无论···</div>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot_bot">
+            <div class="fb_top">
+                <div class="fb_QR">
+                    <span class="contact">联系我们<span class="contact_us">CONTACT</span></span>
+                    <img class="QRcode" src="../img/index/QRcode.png" alt="">
+                    <span class="scanner">扫一扫</span>
+                </div>
+                <table class="fb_table" summary="基本信息及联系方式">
+                    <tr>
+                        <td colspan="3">
+                            <span class="provide">愿景：成为最专业的软件研发服务领航者</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>中睿信息技术有限公司 广州•深圳</td>
+                        <td>Tel：020-38931912</td>
+                        <td>务实 Pragmatic</td>
+                    </tr>
+                    <tr>
+                        <td>广州：广州市天河区翰景路1号金星大厦18层中睿信息</td>
+                        <td>Fax：020-38931912</td>
+                        <td>专业 Professional</td>
+                    </tr>
+                    <tr>
+                        <td>深圳：深圳市南山区粤海街道科技园科技路9号526</td>
+                        <td>Tel：0755-25855012</td>
+                        <td>诚信 Integrity</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="fb_but">
+                <span>版权所有：广州中睿信息技术有限公司  粤ICP备13082838号-2</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

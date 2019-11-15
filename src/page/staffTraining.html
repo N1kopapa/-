@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>IT内训-企业IT培训-项目管理实战培训-中睿信息技术有限公司</title>
+    <meta name="description"
+        content="中睿信息-致力于解决企业信息化所遇到的最棘手问题：协助企业建立项目管理办公室、开展项目管理实战培训、IT内训、企业IT培训内训、技术分享、敏捷项目管理、后PMP、项目组合、项目需求、及多项目管理。" />
+    <link rel="shortcut icon" href="../img/index/itlead.ico">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/css.css">
+    <link rel="stylesheet" href="../css/common/main.css">
+    <link rel="stylesheet" href="../css/staffTraining.css">
+    <style type="text/css">
+        .fixed_ad {
+            width: 70px;
+            background-color: #FFFFFF;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            z-index: 2;
+            -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .fixed_ad>div {
+            /*width: 30px;
+            height: 30px;*/
+            margin: 30px auto;
+        }
+
+        .scroll_top {
+            width: 27px;
+            height: 15px;
+            background: url("../img/index/返回顶部.png") no-repeat;
+            background-size: cover;
+        }
+
+        .Ontrst {
+            width: 31px;
+            height: 31px;
+            background: url("../img/index/在线咨询.png") no-repeat;
+            background-size: cover;
+        }
+
+        .ad_qq {
+            width: 35px;
+            height: 40px;
+            background: url("../img/index/QQ咨询.png") no-repeat;
+            background-size: cover;
+        }
+
+        .ad_qrcode {
+            width: 31px;
+            height: 31px;
+            background: url("../img/index/关注微信.png") no-repeat 100%/100% 100%;
+        }
+
+        .ad_qrcode>div {
+            opacity: 0;
+            /*width: 150px;*/
+            width: 0;
+            height: 150px;
+            position: absolute;
+            bottom: 0;
+            right: 80px;
+            -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            -webkit-transition: opacity 500ms ease-in-out;
+            -moz-transition: opacity 500ms ease-in-out;
+            -ms-transition: opacity 500ms ease-in-out;
+            -o-transition: opacity 500ms ease-in-out;
+            transition: opacity 500ms ease-in-out;
+        }
+
+        .ad_qrcode>div:after {
+            position: absolute;
+            bottom: 30px;
+            right: -10px;
+            display: block;
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 10px solid #FFFFFF;
+            border-top: 10px solid transparent;
+            border-right: none;
+            border-bottom: 10px solid transparent;
+        }
+
+        .ad_qrcode:hover>div {
+            opacity: 1;
+            width: 150px;
+            overflow: visible;
+        }
+
+        .ad_qrcode>div>img {
+            /*width: 150px;*/
+            height: 100%;
+        }
+    </style>
+    <script src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/someJsFunction.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // banner图片切换
+            var mySwiper = new Swiper('.swiper-container1', {
+                loop: true,
+                pagination: {
+                    clickable: true,
+                    el: '.swiper-pagination',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
+            // 首页顶部搜索
+            var state = 0;
+            $(".search_submit").click(function () {
+                console.log("into click");
+                var keyword = $(".search_keyword").val();
+                if (state === 0) {
+                    $(".head_link").css("display", "none");
+                    $(".search").width("453px");
+                    state = 1;
+                } else if (state === 1) {
+                    window.location.href = "sourseClass.html?keyword=" + keyword;
+                    // $(".search_keyword").val("");
+                }
+            });
+            // 首页顶部搜索取消
+            $(".search_cancel").click(function () {
+                $(".search").width("26px");
+                $(".search_keyword").val("");
+                state = 0;
+                setTimeout(function () {
+                    $(".head_link").css("display", "block");
+                }, 300);
+            });
+            // 首页顶部广告取消
+            $(".ad_cancel").click(function () {
+                // $(".ad").animate({height:"0"},300);
+                $(".ad").height(0);
+                $(".page_head").css("top", "0");
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="page_all">
+        <!-- 广告位 -->
+        <!-- <div class="ad" style="height: 80px;">
+            <span>广告位</span>
+            <button class="ad_cancel">
+            </button>
+        </div> -->
+        <!-- 导航header -->
+        <div class="page_head" style="top: 0px;">
+            <div class="clear_float">
+                <img class="head_logo" src="../img/index/logo.png" alt="">
+                <div>
+                    <ul class="head_link clear_float">
+                        <li>
+                            <a href="./index.html">首页</a>
+                        </li>
+                        <li>
+                            <a href="#">IT服务</a>
+                        </li>
+                        <li>
+                            <a href="./itTrain.html">IT培训</a>
+                        </li>
+                        <li>
+                            <a href="http://www.itlead.com.cn/New20180706View/AboutUs.aspx">关于我们</a>
+                        </li>
+                    </ul>
+                    <div class="search clear_float">
+                        <div>
+                            <button class="search_cancel"></button>
+                            <input type="text" class="search_keyword">
+                            <button class="search_submit"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 页面banner -->
+        <div class="page_title">
+            <div class="title_bot">
+                <div class="swiper-container swiper-container1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-slide5">
+                            <div class="tb_text">
+                                培训
+                            </div>
+                            <div class="tb_text1">以企业现阶段及未来面临的技术做实战派IT新员工培训</div>
+                            <img class="tb_banimg" src="../img/staffTraining/staffTraining_0004s_0004_400125023.png"
+                                alt="鲲测评">
+                            <img class="tb_banimg51" name="inner_img"
+                                src="../img/staffTraining/staffTraining_0004s_0000_矩形-1-拷贝-6.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-white"></div>
+                    <div class="swiper-button-prev swiper-button-prev-banner"></div>
+                    <div class="swiper-button-next swiper-button-next-banner"></div>
+                </div>
+            </div>
+        </div>
+        <!-- IT类新员工来到公司面临的困局 -->
+        <div class="page_body">
+            <div class="body_course">
+                <div class="pb_btitle pb_btitle_top">
+                    <span>IT类新员工来到公司面临的困局</span>
+                </div>
+                <div class="body_course_list clear_float">
+                    <div class="new_worker_box">
+                        <div class="new_worker_single_box">
+                            新员工
+                        </div>
+                        <div class="new_worker_single_box1">
+                            学校学习的技术，实践工作中未能运用。
+                        </div>
+                        <div class="new_worker_single_box2">
+                            对于企业的现阶段技术项目工作未能充分理解、参与。
+                        </div>
+                        <div class="new_worker_single_box3">
+                            企业相关技术项目团队负责人时间压力大，未能抽出时间全面内训。
+                        </div>
+                        <div class="new_worker_single_box4">
+                            急需新员工进入角色，减少公司、部门的人力时间成本、项目投入成本等。
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- 新员工培训流程 -->
+            <div class="body_develop">
+                <div class="pb_btitle pb_btitle_top">
+                    <span>新员工培训流程</span>
+                </div>
+                <div class="body_develop_list clear_float">
+                    <div class="new_worker_tranining_box">
+
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 课程推荐 -->
+            <div class="body_table">
+                <div class="pb_btitle pb_btitle_top">
+                    <span>课程推荐</span>
+                </div>
+                <div class="pb_btop">
+                    <div class="pb_list clear_float">
+                        <div>
+                            <div alt="软件工程" class="new_worker_course_box">
+                                <div class="new_worker_tranining_box_title">
+                                    <span>软件工程</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0003s_0002s_0000_500369454.png" />
+                                    <span>面向对象分析设计与UML建模培训</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0003s_0001s_0000_500566863.png" />
+                                    <span>需求开发管理入门</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0003s_0000s_0001_500553852.png" />
+                                    <span>项目管理软件项目基础</span>
+                                </div>
+                                <div class="new_worker_tranining_box_more">
+                                    <a href="http://www.itlead.com.cn/NewSept19View/ItTarin.aspx">更多</a>
+                                </div>
+                            </div>
+                            <div alt="软件工程">
+                                <div class="new_worker_tranining_box_title1">
+                                    <span>开发技术</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0002s_0002s_0001_500268722.png" />
+                                    <span>Java入门</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0002s_0001s_0001_501183661.png" />
+                                    <span>前端开发入门</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0002s_0000s_0001_501272578.png" />
+                                    <span>数据库研发管理基础</span>
+                                </div>
+                                <div class="new_worker_tranining_box_more">
+                                    <a href="http://www.itlead.com.cn/NewSept19View/ItTarin.aspx">更多</a>
+                                </div>
+                            </div>
+                            <div alt="软件工程">
+                                <div class="new_worker_tranining_box_title2">
+                                    <span>IT人员素质</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0001s_0002s_0000_500296369.png" />
+                                    <span>IT人员素质</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0001s_0001s_0000_500438640.png" />
+                                    <span>IT人员服务意识</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0001s_0000s_0000_500459640.png" />
+                                    <span>高效的程序员</span>
+                                </div>
+                                <div class="new_worker_tranining_box_more">
+                                    <a href="http://www.itlead.com.cn/NewSept19View/ItTarin.aspx">更多</a>
+                                </div>
+                            </div>
+                            <div alt="软件工程">
+                                <div class="new_worker_tranining_box_title3">
+                                    <span>通用技能</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0000s_0002s_0000_501269557.png" />
+                                    <span>高效沟通</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0000s_0001s_0000_501314237.png" />
+                                    <span>金字塔原理</span>
+                                </div>
+                                <div class="new_worker_tranining_box_content">
+                                    <img
+                                        src="../img/staffTraining/staffTraining_0002s_0000s_0000s_0000_500615012.png" />
+                                    <span>项目管理基础</span>
+                                </div>
+                                <div class="new_worker_tranining_box_more">
+                                    <a href="http://www.itlead.com.cn/NewSept19View/ItTarin.aspx">更多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 案例 -->
+            <div class="body_banner">
+                <div class="pb_btitle pb_btitle_bot">
+                    <span>案例</span>
+                </div>
+                <div class="pb_zs">
+                    <div class="pb_zs clear_float">
+                        <div class="pb_zs_box">
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;">
+                                    <img src="../img/staffTraining/NEW_0000_图层-1.png">
+                                </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0001_图层-2.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0002_图层-3.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0003_图层-4.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0004_图层-5.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0005_图层-6.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0006_图层-7.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0007_图层-8.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0008_图层-9.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0009_图层-10.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0014_图层-15.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0010_图层-11.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0011_图层-12.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0012_图层-13.png"> </a>
+                            </div>
+                            <div class="pb_zs_singlebox">
+                                <a href="javascript:;"> <img
+                                        src="../img/staffTraining/NEW_0013_图层-14.png"> </a>
+                            </div>
+                            <!-- 修改结束 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部footer -->
+        <div class="page_foot">
+            <div class="foot_bot">
+                <div class="fb_top">
+                    <div class="fb_QR">
+                        <span class="contact">联系我们<span class="contact_us">CONTACT</span></span>
+                        <img class="QRcode" src="../img/index/QRcode.png" alt="">
+                        <span class="scanner">扫一扫</span>
+                    </div>
+                    <table class="fb_table" summary="基本信息及联系方式">
+                        <tr>
+                            <td colspan="3">
+                                <span class="provide">愿景：成为最专业的软件研发服务领航者</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>中睿信息技术有限公司 广州•深圳</td>
+                            <td>Tel：020-38931912</td>
+                            <td>务实 Pragmatic</td>
+                        </tr>
+                        <tr>
+                            <td>广州：广州市天河区翰景路1号金星大厦18层中睿信息</td>
+                            <td>Fax：020-38931912</td>
+                            <td>专业 Professional</td>
+                        </tr>
+                        <tr>
+                            <td>深圳：深圳市福田区车公庙有色金属大厦509~510</td>
+                            <td>Tel：0755-25855012</td>
+                            <td>诚信 Integrity</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="fb_but">
+                    <span>版权所有：广州中睿信息技术有限公司 粤ICP备13082838号-2</span>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="fixed_ad">
+            <div class="scroll_top" title="返回顶部"></div>
+            <div class="Ontrst" title="在线客服"></div>
+            <div class="ad_qq" title="QQ客服"></div>
+            <div class="ad_qrcode" title="公众号">
+                <div>
+                    <img src="../img/index/QRcode.png" alt="">
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+</body>
+
+</html>
