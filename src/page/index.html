@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="../img/index/itlead.ico">
     <link rel="stylesheet" href="../css/swiper.min.css">
     <link rel="stylesheet" href="../css/css.css">
-
     <link rel="stylesheet" href="../css/common/main.css">
     <link rel="stylesheet" href="../css/index.css">
     <style type="text/css">
@@ -159,6 +158,7 @@
                     prevEl: '.swiper-button-prev',
                 }
             });
+            // 替换结束
 
             var courseSwiper = new Swiper('.swiper-container3', {
                 slidesPerView: 4,
@@ -168,10 +168,10 @@
                 loopFillGroupWithBlank: true,
                 observer: true,
                 // observeParents: true,
-                /*pagination: {
-                    clickable: true,
-                    el: '.swiper-pagination',
-                },*/
+                // pagination: {
+                //     clickable: true,
+                //     el: '.swiper-pagination',
+                // },
                 navigation: {
                     nextEl: '.swiper-button-next-course',
                     prevEl: '.swiper-button-prev-course',
@@ -183,25 +183,22 @@
                 slidesPerGroup: 6,
                 // loop: true,
                 loopFillGroupWithBlank: true,
-                /*pagination: {
-                    clickable: true,
-                    el: '.swiper-pagination',
-                },*/
+                // pagination: {
+                //     clickable: true,
+                //     el: '.swiper-pagination',
+                // },
                 navigation: {
                     nextEl: '.swiper-button-next-course1',
                     prevEl: '.swiper-button-prev-course1',
                 }
             });
+            // 替换开始
             var casesSwiper5 = new Swiper('.swiper-container5', {
                 slidesPerView: 6,
                 spaceBetween: 30,
                 slidesPerGroup: 6,
                 // loop: true,
                 loopFillGroupWithBlank: true,
-                pagination: {
-                    clickable: true,
-                    el: '.swiper-pagination',
-                },
                 navigation: {
                     nextEl: '.swiper-button-next-course1',
                     prevEl: '.swiper-button-prev-course1',
@@ -213,10 +210,6 @@
                 slidesPerGroup: 6,
                 // loop: true,
                 loopFillGroupWithBlank: true,
-                pagination: {
-                    clickable: true,
-                    el: '.swiper-pagination',
-                },
                 navigation: {
                     nextEl: '.swiper-button-next-course1',
                     prevEl: '.swiper-button-prev-course1',
@@ -228,16 +221,12 @@
                 slidesPerGroup: 6,
                 // loop: true,
                 loopFillGroupWithBlank: true,
-                pagination: {
-                    clickable: true,
-                    el: '.swiper-pagination',
-                },
                 navigation: {
                     nextEl: '.swiper-button-next-course1',
                     prevEl: '.swiper-button-prev-course1',
                 }
             });
-
+            // 替换结束
             var state = 0;
             $(".search_submit").click(function () {
                 console.log("into click");
@@ -428,7 +417,6 @@
             <div class="title_bot">
                 <div class="swiper-container swiper-container1">
                     <div class="swiper-wrapper">
-
                         <div class="swiper-slide swiper-slide2">
                             <img class="tb_banimg" src="../img/index/banner-2.png" alt="IT服务">
                             <img class="tb_banimg21" name="inner_img" src="../img/index/banner-2-1.png" alt="">
@@ -436,7 +424,6 @@
                             <img class="tb_banimg23" name="inner_img" src="../img/index/banner-2-3.png" alt="">
 
                         </div>
-
                         <div class="swiper-slide swiper-slide4">
                             <img class="tb_banimg" src="../img/index/banner-4.png" alt="IT实战培训">
                             <img class="tb_banimg41" name="inner_img" src="../img/index/banner-4-1.png" alt="">
@@ -737,7 +724,7 @@
                                 <div class="swiper-button-prev swiper-button-prev-course1"></div>
                                 <div class="swiper-button-next swiper-button-next-course1"></div>
                             </div>
-                            
+
                             <div class="swiper-container swiper-container5" style="height: 0;">
                                 <div class="swiper-wrapper tbody">
                                     <div class="swiper-slide cases_box">
@@ -1128,10 +1115,11 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="swiper-pagination"></div>
-                            <!--<div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>-->
+                            <div class="swiper-button-prev" style="height:0px;"></div>
+                            <div class="swiper-button-next" style="height:0px;"></div>
                         </div>
                     </div>
                 </div>

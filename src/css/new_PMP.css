@@ -402,7 +402,7 @@ ul {
     -o-transition: transform 700ms;
     transition: transform 700ms;
 }
-/* 修改开始 */
+/* 替换开始 */
 .tb_text {
     height: 0;
     width: 50%;
@@ -564,7 +564,7 @@ ul {
     display: block;
     margin-bottom: 2px;
 }
-/* 修改结束 */
+/* 替换结束 */
 .swiper-slide3:hover img {
     -webkit-transform: scale(1.05, 1.05);
     -moz-transform: scale(1.05, 1.05);
@@ -1167,7 +1167,7 @@ ul {
     height: 165px;
     background-image: url(../img/staffTraining/staffTraining_0002s_0000s_0000_S.png);
 }
-/* 修改开始 */
+/* 替换开始 */
 .new_worker_tranining_box_title span {
     display: block;
     margin: auto;
@@ -1227,7 +1227,7 @@ ul {
     color: #5c3600;
     font-size: 55px;
 }
-/* 修改结束 */
+/* 替换结束 */
 .new_worker_tranining_box_content {
     margin: 8px 5px 2px 5px;
     float: left;

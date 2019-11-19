@@ -1149,8 +1149,8 @@ ul {
 
 /* 标记 */
 .pb_teacher_banner>.swiper-container2>.swiper-wrapper>div {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     /* justify-content: space-between; */
 }
 

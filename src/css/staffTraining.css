@@ -746,13 +746,13 @@ ul {
     border: 1px solid rgb(224, 224, 224);
     background: #ffffff;
 }
-
+/* 修改开始 */
 .pb_zs_singlebox img {
-    width: 165px;
-    height: 97px;
-    margin: 5px 25px 5px 25px;
-
+    width: 215px;
+    height: 107px;
+    margin: 0px 0px 0px 0px;
 }
+/* 修改结束 */
 
 .bb_banimg {
     height: 210px;
