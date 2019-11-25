@@ -2,12 +2,14 @@ html,
 body {
     margin: 0;
     padding: 0;
-    font-family: "MicrosoftYaHei", serif;
+    /* 修改开始 */
+    /* font-family: "MicrosoftYaHei", serif; */
+    /* 修改结束 */
 }
 
 a {
     text-decoration: none;
-    color: #333333;
+    color: #ffffff;
 }
 
 .value_inner {
@@ -478,15 +480,16 @@ a {
     margin-bottom: 55px;
 }
 
+/* 修改开始 */
 .courses_list_card,
 .schedule_card {
     float: left;
     width: 386px;
-    margin-right: 21px;
+    margin-right: 14px;
     margin-bottom: 18px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
-    border-radius: 10px;
+    border-radius: 0px;
     overflow: hidden;
     -webkit-transition: box-shadow 300ms;
     -moz-transition: box-shadow 300ms;
@@ -494,10 +497,47 @@ a {
     -o-transition: box-shadow 300ms;
     transition: box-shadow 300ms;
 }
+.courses_list_card>span:first-of-type{
+    position: absolute;
+    top: 12%;
+    font-size: 30px;
+    color: #e0e0e0;
+    z-index: 1;
+    opacity: 20%;
+}
+.flex>.courses_list_card:last-of-type>a {   
+    position: absolute;
+    right: 30%;
+    bottom: 50%;
+    font-size: 26px;
 
-.courses_list_card:nth-of-type(3n),
-.schedule_card:nth-of-type(3n) {
+}
+
+.courses_list_card:nth-of-type(3),
+.courses_list_card:nth-of-type(7) .schedule_card:nth-of-type(3n) {
     margin-right: 0;
+}
+
+.courses_list_card:nth-of-type(1) {
+    width: 299px;
+}
+
+.courses_list_card:nth-of-type(2) {
+    width: 405px;
+}
+
+.courses_list_card:nth-of-type(3) {
+    width: 455px;
+}
+
+.courses_list_card:nth-of-type(4) {
+    width: 285px;
+}
+
+.courses_list_card:nth-of-type(5),
+.courses_list_card:nth-of-type(6),
+.courses_list_card:nth-of-type(7) {
+    width: 285px;
 }
 
 .courses_list_card {
@@ -508,6 +548,7 @@ a {
     position: relative;
 }
 
+/* 修改结束 */
 .schedule_card {
     height: 375px;
     background-color: #ffffff;
@@ -519,8 +560,9 @@ a {
     box-shadow: 1px 2px 7px 0 #333333;
 }
 
-.courses_list_card>span {
-    display: inline-block;
+.courses_list_card>span,
+.courses_list_card>.courses_text>a {
+    z-index: 2;
     width: 84%;
     margin-left: 8%;
     margin-right: 8%;
@@ -532,8 +574,9 @@ a {
     line-height: 70px;
 }
 
+/* 替换开始 */
 .courses_title:after {
-    display: block;
+    display: none;
     content: "";
     width: 50px;
     height: 5px;
@@ -545,26 +588,35 @@ a {
 }
 
 .courses_text {
+    display: inline;
     font-size: 18px;
     line-height: 36px;
 }
 
-.courses_list_card>a {
-    position: absolute;
-    left: 325px;
-    bottom: 10px;
-    margin-right: 5%;
-    font-size: 14px;
-    /* font-family: PingFang-SC-Medium ,serif; */
-    color: #666666;
+.courses_text>a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
+.courses_list_card>a {
+    position: absolute;
+    right: 5%;
+    bottom: 10px;
+    font-size: 14px;
+    /* font-family: PingFang-SC-Medium ,serif; */
+    color: #ffffff;
+}
+
+/* 替换结束 */
 .courses_list_card>a>div {
     display: inline-block;
     width: 10px;
     height: 10px;
-    border-top: 1px solid #666666;
-    border-right: 1px solid #666666;
+    border-top: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -823,6 +875,7 @@ a {
     width: 1200px;
     margin-bottom: 80px;
 }
+
 .internal_training_details_box1 {
     float: left;
     height: 209px;
@@ -831,7 +884,7 @@ a {
 }
 
 .internal_training_details_box1 span {
-    margin: 5px 0px 0px 30px; 
+    margin: 5px 0px 0px 30px;
     font-size: 20px;
     display: block;
     color: #ffffff;
@@ -841,7 +894,7 @@ a {
 
 .internal_training_details_box1 span:first-of-type {
     text-align: center;
-    margin: 0px 0px 20px 0px; 
+    margin: 0px 0px 20px 0px;
     display: block;
     font-size: 28px;
     color: #ff7b03;
@@ -853,8 +906,9 @@ a {
     width: 289px;
     background-image: url("../img/itTrain/NEW_0000s_0003_组-22-拷贝.png");
 }
+
 .internal_training_details_box2 span {
-    margin: 5px 0px 0px 30px; 
+    margin: 5px 0px 0px 30px;
     font-size: 20px;
     display: block;
     color: #ffffff;
@@ -864,7 +918,7 @@ a {
 
 .internal_training_details_box2 span:first-of-type {
     text-align: center;
-    margin: 0px 0px 20px 0px; 
+    margin: 0px 0px 20px 0px;
     display: block;
     font-size: 28px;
     color: #ff4a58;
@@ -876,8 +930,9 @@ a {
     width: 289px;
     background-image: url("../img/itTrain/NEW_0000s_0000_组-22-拷贝-2.png");
 }
+
 .internal_training_details_box3 span {
-    margin: 5px 0px 0px 30px; 
+    margin: 5px 0px 0px 30px;
     font-size: 20px;
     display: block;
     color: #ffffff;
@@ -887,7 +942,7 @@ a {
 
 .internal_training_details_box3 span:first-of-type {
     text-align: center;
-    margin: 0px 0px 20px 0px; 
+    margin: 0px 0px 20px 0px;
     display: block;
     font-size: 28px;
     color: #5875fe;
@@ -908,18 +963,21 @@ a {
     background: url("../img/itTrain/NEW_0000s_0001__剪切组_.png") no-repeat;
     margin: 0 auto;
 }
-.it_advantages_box{
+
+.it_advantages_box {
     margin: 0 auto;
     width: 1200px;
 }
-.it_advantages_single_box{
+
+.it_advantages_single_box {
     float: left;
     margin: 10px 10px 10px 10px;
     background: rgba(255, 255, 255, 0.7);
     width: 370px;
     height: 160px;
 }
-.it_advantages_single_box .list{
+
+.it_advantages_single_box .list {
     position: relative;
     height: 0;
     top: 20px;
@@ -927,18 +985,21 @@ a {
     font-size: 20px;
     color: #245bae;
 }
-.it_advantages_single_box span{
+
+.it_advantages_single_box span {
     font-size: 22px;
     display: block;
     margin: 15px 20px 5px 30px;
     color: #505050;
 }
-.it_advantages_single_box span:first-of-type{
+
+.it_advantages_single_box span:first-of-type {
     margin: 10px 5px 5px 50px;
     display: block;
     font-size: 30px;
     color: #245bae;
 }
+
 /*.wonderful_review{
     background: url("../img/itTrain/wonderful_review_background.png") no-repeat 50%;
     overflow: hidden;

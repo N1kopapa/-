@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
     <meta charset="UTF-8">
     <title>战场服务-中睿信息技术有限公司</title>
@@ -7,50 +8,159 @@
     <link rel="stylesheet" href="../css/battlefieldService.css">
     <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
+        // 替换开始
         $(document).ready(function () {
-            $(".b_s_top_center_click_1").click(function () {
+            $(".b_s_top_center_click_1,.Ontrst1").click(function () {
                 hidden();
                 show($(".b_s_mid_one"));
+                jump();
             });
-            $(".b_s_top_center_click_2").click(function () {
+            $(".b_s_top_center_click_1").mouseover(function () {
+                show($(".b_s_top_center_1>.b_s_top_center_hexagon>.slider"));
+            });
+            $(".b_s_top_center_click_1").mouseout(function () {
+                hiddenSilder();
+            });
+            $(".b_s_top_center_click_2,.Ontrst2").click(function () {
                 hidden();
                 show($(".b_s_mid_three"));
+                jump();
             });
-            $(".b_s_top_center_click_4").click(function () {
+            $(".b_s_top_center_click_2").mouseover(function () {
+                show($(".b_s_top_center_2>.b_s_top_center_hexagon>.slider"));
+            });
+            $(".b_s_top_center_click_2").mouseout(function () {
+                hiddenSilder();
+            });
+            $(".b_s_top_center_click_4,.Ontrst4").click(function () {
                 hidden();
                 show($(".b_s_mid_two"));
+                jump();
             });
-            $(".b_s_top_center_click_5").click(function () {
+            $(".b_s_top_center_click_4").mouseover(function () {
+                show($(".b_s_top_center_4>.b_s_top_center_hexagon>.slider"));
+            });
+            $(".b_s_top_center_click_4").mouseout(function () {
+                hiddenSilder();
+            });
+            $(".b_s_top_center_click_5,.Ontrst5").click(function () {
                 hidden();
                 show($(".b_s_mid_four"));
+                jump();
             });
-            $(".b_s_top_center_click_8").click(function () {
+            $(".b_s_top_center_click_5").mouseover(function () {
+                show($(".b_s_top_center_5>.b_s_top_center_hexagon>.slider"));
+            });
+            $(".b_s_top_center_click_5").mouseout(function () {
+                hiddenSilder();
+            });
+            $(".b_s_top_center_click_8,.Ontrst8").click(function () {
                 hidden();
                 show($(".b_s_mid_seven"));
+                jump();
             });
+            $(".b_s_top_center_click_8").mouseover(function () {
+                show($(".b_s_top_center_8>.b_s_top_center_hexagon>.slider"));
+            });
+            $(".b_s_top_center_click_8").mouseout(function () {
+                hiddenSilder();
+            });
+            $(".scroll_top").click(function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
+            })
+
             function hidden() {
                 let allValue = $(".b_s_mid_one,.b_s_mid_two,.b_s_mid_three,.b_s_mid_four,.b_s_mid_seven");
                 allValue.animate({
-                    opacity:0
-                },300);
+                    opacity: 0
+                }, 300);
                 window.setTimeout(function () {
-                    allValue.css("display","none");
-                },300);
+                    allValue.css("display", "none");
+                }, 300);
             }
+
+            function hiddenSilder() {
+                let allValue = $(".slider");
+                allValue.animate({
+                    opacity: 0
+                }, 300);
+                window.setTimeout(function () {
+                    allValue.css("display", "none");
+                }, 300);
+            }
+
             function show(t) {
                 window.setTimeout(function () {
                     t.css("display", "block");
                     t.animate({
-                        opacity:1
-                    }, 300);
-                },300);
+                        opacity: 1
+                    }, 0);
+                }, 300);
             }
+
+            function jump() {
+                let positionTop = $(".page_head").outerHeight() + $(".b_s_top").outerHeight();
+                console.log(positionTop)
+                window.scrollTo({
+                    top: positionTop,
+                    behavior: 'smooth'
+                });
+            }
+            $(window).scroll(
+                function () {
+                    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                    if (scrollTop == 0) {
+                        console.log("scrollTop");
+                        $(".fixed_ad").css("top", "250px");
+                    } else {
+                        $(".fixed_ad").css("top", "100px");
+                    }
+                });
+
         })
+        // 替换结束
     </script>
 </head>
+
 <body>
-<div class="battlefield_service">
-    <div class="page_head">
+    <div class="battlefield_service">
+        <div class="ad" style="height: 0;">
+            <span>广告</span>
+            <button class="ad_cancel">
+                <!--cancel--></button>
+        </div>
+        <div class="page_head">
+            <div class="clear_float">
+                <img class="head_logo" src="../img/battlefieldService/logo.png" alt="">
+                <div>
+                    <ul class="head_link clear_float">
+                        <li>
+                            <a href="./index.html">首页</a>
+                        </li>
+                        <li>
+                            <a href="#">IT服务</a>
+                        </li>
+                        <li>
+                            <a href="./itTrain.html">IT培训</a>
+                        </li>
+                        <li>
+                            <a href="http://www.itlead.com.cn/New20180706View/AboutUs.aspx">关于我们</a>
+                        </li>
+                    </ul>
+                    <div class="search clear_float">
+                        <div>
+                            <button class="search_cancel"></button>
+                            <input type="text" class="search_keyword">
+                            <button class="search_submit"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="page_head">
         <div class="clear_float">
 
             <img class="head_logo" src="../img/itTrain/logo.png" alt="">
@@ -87,79 +197,89 @@
                 </li>
             </ul>
         </div>
-    </div>
-    <div class="b_s_top">
-        
-        <div class="b_s_top_left">
-            <img src="../img/battlefieldService/b_s_top_left.gif" alt="">
-        </div>
-        <div class="b_s_top_center">
-            <div class="b_s_top_center_1" name="b_s_top_center">
-                <div class="b_s_top_center_click_1" name="b_s_top_center_click">
-                    <!-- do not delete it -->
+    </div> -->
+        <div class="b_s_top">
+
+            <div class="b_s_top_left">
+                <img src="../img/battlefieldService/b_s_top_left.gif" alt="">
+            </div>
+            <!-- 替换开始 -->
+            <div class="b_s_top_center">
+                <div class="b_s_top_center_1" name="b_s_top_center">
+                    <div class="b_s_top_center_click_1" name="b_s_top_center_click">
+                        <!-- do not delete it -->
+                    </div>
+                    <div class="b_s_top_center_hexagon">
+                        <img src="../img/battlefieldService/service-1.png" alt="">
+                        <img class="slider" src="../img/battlefieldService/little_banner1_0000_形状-31.png">
+                    </div>
                 </div>
-                <div class="b_s_top_center_hexagon">
-                    <img src="../img/battlefieldService/service-1.png" alt="">
+                <div class="b_s_top_center_2" name="b_s_top_center">
+                    <div class="b_s_top_center_click_2" name="b_s_top_center_click">
+                        <!-- do not delete it -->
+                    </div>
+                    <div class="b_s_top_center_hexagon">
+                        <img src="../img/battlefieldService/service-2.png" alt=""><img class="slider"
+                            src="../img/battlefieldService/little_banner1_0000_形状-31.png">
+                    </div>
+                </div>
+                <div class="b_s_top_center_3" name="b_s_top_center">
+                    <div class="b_s_top_center_click_3" name="b_s_top_center_click">
+                        <!-- do not delete it -->
+                    </div>
+                    <div class="b_s_top_center_hexagon">
+                        <img src="../img/battlefieldService/service-3.png" alt=""><img class="slider"
+                            src="../img/battlefieldService/little_banner1_0000_形状-31.png">
+                    </div>
+                </div>
+                <div class="b_s_top_center_4" name="b_s_top_center">
+                    <div class="b_s_top_center_click_4" name="b_s_top_center_click">
+                        <!-- do not delete it -->
+                    </div>
+                    <div class="b_s_top_center_hexagon">
+                        <img src="../img/battlefieldService/service-4.png" alt=""><img class="slider"
+                            src="../img/battlefieldService/little_banner1_0000_形状-31.png">
+                    </div>
+                </div>
+                <div class="b_s_top_center_5" name="b_s_top_center">
+                    <div class="b_s_top_center_click_5" name="b_s_top_center_click">
+                        <!-- do not delete it -->
+                    </div>
+                    <div class="b_s_top_center_hexagon">
+                        <img src="../img/battlefieldService/service-5.png" alt=""><img class="slider"
+                            src="../img/battlefieldService/little_banner1_0000_形状-31.png">
+                    </div>
+                </div>
+                <div class="b_s_top_center_6" name="b_s_top_center">
+                    <div class="b_s_top_center_click_6" name="b_s_top_center_click">
+                        <!-- do not delete it -->
+                    </div>
+                    <div class="b_s_top_center_hexagon">
+                        <img src="../img/battlefieldService/service-6.png" alt=""><img class="slider"
+                            src="../img/battlefieldService/little_banner1_0000_形状-31.png">
+                    </div>
+                </div>
+                <div class="b_s_top_center_7" name="b_s_top_center">
+                    <div class="b_s_top_center_click_7" name="b_s_top_center_click">
+                        <!-- do not delete it -->
+                    </div>
+                    <div class="b_s_top_center_hexagon">
+                        <img src="../img/battlefieldService/service-7.png" alt=""><img class="slider"
+                            src="../img/battlefieldService/little_banner1_0000_形状-31.png">
+                    </div>
+                </div>
+                <div class="b_s_top_center_8" name="b_s_top_center">
+                    <div class="b_s_top_center_click_8" name="b_s_top_center_click">
+                        <!-- do not delete it -->
+                    </div>
+                    <div class="b_s_top_center_hexagon">
+                        <img src="../img/battlefieldService/service-8.png" alt=""><img class="slider"
+                            src="../img/battlefieldService/little_banner1_0000_形状-31.png">
+                    </div>
                 </div>
             </div>
-            <div class="b_s_top_center_2" name="b_s_top_center">
-                <div class="b_s_top_center_click_2" name="b_s_top_center_click">
-                    <!-- do not delete it -->
-                </div>
-                <div class="b_s_top_center_hexagon">
-                    <img src="../img/battlefieldService/service-2.png" alt="">
-                </div>
-            </div>
-            <div class="b_s_top_center_3" name="b_s_top_center">
-                <div class="b_s_top_center_click_3" name="b_s_top_center_click">
-                    <!-- do not delete it -->
-                </div>
-                <div class="b_s_top_center_hexagon">
-                    <img src="../img/battlefieldService/service-3.png" alt="">
-                </div>
-            </div>
-            <div class="b_s_top_center_4" name="b_s_top_center">
-                <div class="b_s_top_center_click_4" name="b_s_top_center_click">
-                    <!-- do not delete it -->
-                </div>
-                <div class="b_s_top_center_hexagon">
-                    <img src="../img/battlefieldService/service-4.png" alt="">
-                </div>
-            </div>
-            <div class="b_s_top_center_5" name="b_s_top_center">
-                <div class="b_s_top_center_click_5" name="b_s_top_center_click">
-                    <!-- do not delete it -->
-                </div>
-                <div class="b_s_top_center_hexagon">
-                    <img src="../img/battlefieldService/service-5.png" alt="">
-                </div>
-            </div>
-            <div class="b_s_top_center_6" name="b_s_top_center">
-                <div class="b_s_top_center_click_6" name="b_s_top_center_click">
-                    <!-- do not delete it -->
-                </div>
-                <div class="b_s_top_center_hexagon">
-                    <img src="../img/battlefieldService/service-6.png" alt="">
-                </div>
-            </div>
-            <div class="b_s_top_center_7" name="b_s_top_center">
-                <div class="b_s_top_center_click_7" name="b_s_top_center_click">
-                    <!-- do not delete it -->
-                </div>
-                <div class="b_s_top_center_hexagon">
-                    <img src="../img/battlefieldService/service-7.png" alt="">
-                </div>
-            </div>
-            <div class="b_s_top_center_8" name="b_s_top_center">
-                <div class="b_s_top_center_click_8" name="b_s_top_center_click">
-                    <!-- do not delete it -->
-                </div>
-                <div class="b_s_top_center_hexagon">
-                    <img src="../img/battlefieldService/service-8.png" alt="">
-                </div>
-            </div>
-        </div>
-        <!-- <div class="b_s_top_right clear_float">
+            <!-- 替换结束 -->
+            <!-- <div class="b_s_top_right clear_float">
             <div class="b_s_top_right_1" name="click_table">
                 <div>
                     <span class="b_s_top_right_title">
@@ -204,329 +324,334 @@
                 </div>
             </div>
         </div> -->
-    </div>
-    <div class="b_s_mid">
-        <!--one-->
-        <div class="value_inner b_s_mid_one">
-            <div>
-                <div class="b_s_mid_flex">
-                    <img class="b_s_mid_left" src="../img/battlefieldService/one/b_s_mid_one_left_img.png" alt="">
-                    <div class="b_s_mid_right">
-                        <div>
-                            <span class="b_s_mid_title">iScrum敏捷开发过程的规划服务</span>
-                        </div>
-                        <div>
-                            <img src="../img/battlefieldService/one/blue.png" alt="">
-                        </div>
-                        <div>
-                            <span>iScrum是中睿信息多年在国内实施Scrum的经验结晶，是一套符合中国使用的敏捷开发过程。iScrum已经帮忙千家企业实现敏捷开发过程，使企业开发团队工作高效及规范完成开发流程。</span>
-                        </div>
-                        <div>
-                            <span>中睿iScrum的实施专家会根据不同企业不同项目不同团队的特殊性定制出相应的iScrum实施方案，全方位帮助企业实施好开发过程。</span>
+        </div>
+        <div class="b_s_mid">
+            <!--one-->
+            <div class="value_inner b_s_mid_one">
+                <div>
+                    <div class="b_s_mid_flex">
+                        <img class="b_s_mid_left" src="../img/battlefieldService/one/b_s_mid_one_left_img.png" alt="">
+                        <div class="b_s_mid_right">
+                            <div>
+                                <span class="b_s_mid_title">iScrum敏捷开发过程的规划服务</span>
+                            </div>
+                            <div>
+                                <img src="../img/battlefieldService/one/blue.png" alt="">
+                            </div>
+                            <div>
+                                <span>iScrum是中睿信息多年在国内实施Scrum的经验结晶，是一套符合中国使用的敏捷开发过程。iScrum已经帮忙千家企业实现敏捷开发过程，使企业开发团队工作高效及规范完成开发流程。</span>
+                            </div>
+                            <div>
+                                <span>中睿iScrum的实施专家会根据不同企业不同项目不同团队的特殊性定制出相应的iScrum实施方案，全方位帮助企业实施好开发过程。</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--two-->
-        <div class="value_inner b_s_mid_two">
-            <div>
-                <div class="b_s_mid_flex">
-                    <img class="b_s_mid_left" src="../img/battlefieldService/two/b_s_mid_two_left_img.png" alt="">
-                    <div class="b_s_mid_right">
-                        <div>
-                            <span class="b_s_mid_title">数据库仓库开发服务</span>
-                        </div>
-                        <div>
-                            <img src="../img/battlefieldService/one/blue.png" alt="">
-                        </div>
-                        <div>
-                            <span>如何高效使用企业信息化产生的海量数据经过大数据分析与处理平台一系列的数据分析与处理，为决策者的科学管理提供数据支撑，这需要构建企业级的数据仓库、大数据分析与处理平台、数据共享服务支撑平台；运用它降低企业内部的数据分析与处理成本，提速海量数据的分析与处理，实现数据应用研发部门与数据支撑部门的无缝对接，为企业的发展燃点动力，提供有价值的决策信息，并大幅削减企业的成本。</span>
-                        </div>
-                        <!--<div>
+            <!--two-->
+            <div class="value_inner b_s_mid_two">
+                <div>
+                    <div class="b_s_mid_flex">
+                        <img class="b_s_mid_left" src="../img/battlefieldService/two/b_s_mid_two_left_img.png" alt="">
+                        <div class="b_s_mid_right">
+                            <div>
+                                <span class="b_s_mid_title">数据库仓库开发服务</span>
+                            </div>
+                            <div>
+                                <img src="../img/battlefieldService/one/blue.png" alt="">
+                            </div>
+                            <div>
+                                <span>如何高效使用企业信息化产生的海量数据经过大数据分析与处理平台一系列的数据分析与处理，为决策者的科学管理提供数据支撑，这需要构建企业级的数据仓库、大数据分析与处理平台、数据共享服务支撑平台；运用它降低企业内部的数据分析与处理成本，提速海量数据的分析与处理，实现数据应用研发部门与数据支撑部门的无缝对接，为企业的发展燃点动力，提供有价值的决策信息，并大幅削减企业的成本。</span>
+                            </div>
+                            <!--<div>
                             <span>基于常用的 MySQL \ Oracle \ SQLServer \ DB2 \ HDFS \ MR \ Spark \ Storm \ HBase \ Hive \ ElasticSearch 等产品我们提供的服务主要有：</span>
                         </div>-->
+                        </div>
+                    </div>
+                </div>
+                <span class="b_s_mid_database_title">基于常用的 MySQL \ Oracle \ SQLServer \ DB2 \ HDFS \ MR \ Spark \ Storm
+                    \ HBase \ Hive \ ElasticSearch 等产品，我们提供的服务主要有：</span>
+                <div class="b_s_mid_database_list">
+                    <div class="clear_float">
+                        <div>
+                            <img src="../img/battlefieldService/two/b_s_mid_database_list_img_1.png" alt="">
+                            <span>大数据平台基础架构的方案设计和搭建</span>
+                        </div>
+                        <div>
+                            <img src="../img/battlefieldService/two/b_s_mid_database_list_img_2.png" alt="">
+                            <span>数据采集的方案设计与实施</span>
+                        </div>
+                        <div>
+                            <img src="../img/battlefieldService/two/b_s_mid_database_list_img_3.png" alt="">
+                            <span>传统数据仓库与大数据融合方案的设计与实施</span>
+                        </div>
+                    </div>
+                    <div class="clear_float">
+                        <div>
+                            <img src="../img/battlefieldService/two/b_s_mid_database_list_img_4.png" alt="">
+                            <span>大数据分析平台的模型定义与实施</span>
+                        </div>
+                        <div>
+                            <img src="../img/battlefieldService/two/b_s_mid_database_list_img_5.png" alt="">
+                            <span>数据标准分析、制定与下发</span>
+                        </div>
+                        <div>
+                            <img src="../img/battlefieldService/two/b_s_mid_database_list_img_6.png" alt="">
+                            <span>数据服务平台的搭建与实施</span>
+                        </div>
+                        <div>
+                            <img src="../img/battlefieldService/two/b_s_mid_database_list_img_7.png" alt="">
+                            <span>数据应用开发</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <span class="b_s_mid_database_title">基于常用的 MySQL \ Oracle \ SQLServer \ DB2 \ HDFS \ MR \ Spark \ Storm \ HBase \ Hive \ ElasticSearch 等产品，我们提供的服务主要有：</span>
-            <div class="b_s_mid_database_list">
+            <!--three-->
+            <div class="value_inner b_s_mid_three">
+                <span class="b_s_title_span">软件产品规划服务</span>
+                <span class="b_s_three_title_span">我们提供需求开发与管理的服务有：</span>
                 <div class="clear_float">
-                    <div>
-                        <img src="../img/battlefieldService/two/b_s_mid_database_list_img_1.png" alt="">
-                        <span>大数据平台基础架构的方案设计和搭建</span>
+                    <div class="b_s_mid_three_left">
+                        <img src="../img/battlefieldService/three/b_s_mid_three_left_img.png" alt="">
+                        <span class="b_s_three_list_title_span">产品策划设计</span>
+                        <span>用户调研</span>
+                        <span>市场分析、竞品分析</span>
+                        <span>行业产品模式分析</span>
+                        <span>对产品进行商业模式和运营模式设计</span>
+                        <span>产品功能架构设计 </span>
                     </div>
-                    <div>
-                        <img src="../img/battlefieldService/two/b_s_mid_database_list_img_2.png" alt="">
-                        <span>数据采集的方案设计与实施</span>
+                    <div class="b_s_mid_three_right">
+                        <img src="../img/battlefieldService/three/b_s_mid_three_right_img.png" alt="">
+                        <span class="b_s_three_list_title_span">企业需求分析</span>
+                        <span>对业务进行电子化需求设计</span>
+                        <span>企业用户研究</span>
+                        <span>企业业务流程与使用流程优化</span>
+                        <span>企业系统信息架构设计</span>
+                        <span>企业业务需求细化表达</span>
+                        <span>软件需求开发与管理</span>
                     </div>
-                    <div>
-                        <img src="../img/battlefieldService/two/b_s_mid_database_list_img_3.png" alt="">
-                        <span>传统数据仓库与大数据融合方案的设计与实施</span>
+                    <div class="b_s_mid_three_bottom clear_float">
+                        <div>
+                            <span class="b_s_three_list_title_span">项目“前期规划服务”</span>
+                            <span>服务流程如下：</span>
+                            <img src="../img/battlefieldService/three/b_s_mid_three_bottom_img_1.png" alt="">
+                        </div>
+                        <div>
+                            <span class="b_s_three_list_title_span">
+                                <!--do not delete it-->
+                            </span>
+                            <span>标准服务计划如下：</span>
+                            <img src="../img/battlefieldService/three/b_s_mid_three_bottom_img_2.png" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="clear_float">
+                <span class="b_s_three_bot_span">主要的交付物有：</span>
+                <span class="b_s_three_bot_book">
+                    《项目视图与范围文档》 《市场分析/竞品分析》 《干系人分析》 《业务规则及流程》 《Backlog列表》 《需求规格说明书》 《交互式原型》 《项目发布计划》 《UI总体风格》 《UI/UE规范》
+                    《可用性测试测试任务》
+                </span>
+            </div>
+            <!--four-->
+            <div class="value_inner b_s_mid_four">
+                <div>
+                    <div class="b_s_mid_flex">
+                        <img class="b_s_mid_left" src="../img/battlefieldService/four/b_s_mid_four_left_img.png" alt="">
+                        <div class="b_s_mid_right">
+                            <div>
+                                <span class="b_s_mid_title">软件系统体系架构的规划、设计与审核</span>
+                            </div>
+                            <div>
+                                <img src="../img/battlefieldService/one/blue.png" alt="">
+                            </div>
+                            <div>
+                                <span>软件系统架构的设计对应用系统将来的稳定、性能、扩展、维护及实施都有重要的影响。一个良好的设计保证了系统项目的成功，并收到事半功倍的效果。</span>
+                            </div>
+                            <div>
+                                <span>优质的服务来自优秀的理论指导，“中睿软件研发战场服务”即是在对SCRUM、XP以及RUP （Rational Unified
+                                    Process）过程充分吸收并根据实际情况进行改造的理论指导下运作的。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="b_s_mid_four_mid">
                     <div>
-                        <img src="../img/battlefieldService/two/b_s_mid_database_list_img_4.png" alt="">
-                        <span>大数据分析平台的模型定义与实施</span>
+                        <img src="../img/battlefieldService/four/b_s_mid_four_1.png" alt="">
+                        <div class="b_s_mid_four_msg">
+                            <span>微服务架构设计与研发服务：</span>
+                            <span>微服务需求分析与定义</span>
+                            <span>微服务开发平台的搭建与实施</span>
+                            <span>微服务运维平台的搭建与实施</span>
+                            <span>微服务基础服务组件的研发与实施</span>
+                            <span>微服务的开发</span>
+                            <span>基于阿里云EDAS的微服务开发与集成</span>
+                        </div>
                     </div>
                     <div>
-                        <img src="../img/battlefieldService/two/b_s_mid_database_list_img_5.png" alt="">
-                        <span>数据标准分析、制定与下发</span>
+                        <img src="../img/battlefieldService/four/b_s_mid_four_2.png" alt="">
+                        <div class="b_s_mid_four_msg">
+                            <span>基于iOS或是Android移动平台的架构设计服务：</span>
+                            <span>基于iOS或Android的移动计算平台架构设计</span>
+                            <span>架构规范（移动端及云端）</span>
+                            <span>应用实践</span>
+                            <span>编码规范</span>
+                            <span>移动应用系统部署</span>
+                            <span>移动应用系统的性能评估及调优</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="b_s_mid_four_bot">
+                    <div>
+                        <img src="../img/battlefieldService/four/b_s_mid_four_3.png" alt="">
                     </div>
                     <div>
-                        <img src="../img/battlefieldService/two/b_s_mid_database_list_img_6.png" alt="">
-                        <span>数据服务平台的搭建与实施</span>
+                        <img src="../img/battlefieldService/four/b_s_mid_four_4.png" alt="">
+                        <div class="b_s_mid_four_msg">
+                            <span>基于Java平台的架构设计服务：</span>
+                            <span>Java EE架构设计</span>
+                            <span>架构规范</span>
+                            <span>应用实践</span>
+                            <span>编码规范</span>
+                            <span>Java EE应用部署</span>
+                            <span>Java平台性能测试与调优</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="b_s_mid_four_fot">
+                    <span>软件架构设计过程：</span>
+                    <img src="../img/battlefieldService/four/b_s_mid_four_5.png" alt="">
+                </div>
+            </div>
+            <!--seven-->
+            <div class="value_inner b_s_mid_seven">
+                <div>
+                    <div class="b_s_mid_flex">
+                        <img class="b_s_mid_left" src="../img/battlefieldService/seven/b_s_mid_seven_left_img.png"
+                            alt="">
+                        <div class="b_s_mid_right">
+                            <div>
+                                <span class="b_s_mid_title">移动项目开发指导服务</span>
+                            </div>
+                            <div>
+                                <img src="../img/battlefieldService/one/blue.png" alt="">
+                            </div>
+                            <div>
+                                <span>传统企业信息化以PC为主，因为企业IT技术与业务很难融合、PC应用使用不方便、IT部门对业务理解不透等、项目实施方能力不够、高大上的应用无法落地等很多原因，导致很多企业信息化水平不是很高，仍然停留在“烟囱”阶段，开发了大量的无法整合的应用。而实施传统应用需要采购大量的服务器产品及PC产品，导致企业IT成本越来越大。同时，移动互联网已经改变人得生活，企业信息化发展方向一定是移动信息化，“移动为主、PC为辅”。</span>
+                            </div>
+                            <div>
+                                <span>现在企业IT部门存在的问题是移动应用开发的能力不足。基于以上原因，我们提供移动App的开发之道服务，旨在解决企业IT部分在信息化转型过程中得痛处。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="b_s_mid_seven_list_title">我们提供基于移动App的开发指导服务：</span>
+                <div class="b_s_mid_mobile_list clear_float">
+                    <div>
+                        <img src="../img/battlefieldService/seven/b_s_mid_seven_1.png" alt="">
+                        <span>平台包括iOS、Android、HTML5、微信公众号、微信小程序、支付宝小程序等</span>
                     </div>
                     <div>
-                        <img src="../img/battlefieldService/two/b_s_mid_database_list_img_7.png" alt="">
-                        <span>数据应用开发</span>
+                        <img src="../img/battlefieldService/seven/b_s_mid_seven_2.png" alt="">
+                        <span>数据仓库架构设计与规划服务</span>
+                    </div>
+                    <div>
+                        <img src="../img/battlefieldService/seven/b_s_mid_seven_3.png" alt="">
+                        <span>数据仓库的行业模型设计与研发服务</span>
+                    </div>
+                    <div>
+                        <img src="../img/battlefieldService/seven/b_s_mid_seven_4.png" alt="">
+                        <span>数据仓库项目研发与实施服务</span>
+                    </div>
+                    <div>
+                        <img src="../img/battlefieldService/seven/b_s_mid_seven_5.png" alt="">
+                        <span>数据挖掘项目研发与实施服务</span>
+                    </div>
+                    <div>
+                        <img src="../img/battlefieldService/seven/b_s_mid_seven_6.png" alt="">
+                        <span>数据仓库的实施方案与研发</span>
+                    </div>
+                    <div>
+                        <img src="../img/battlefieldService/seven/b_s_mid_seven_7.png" alt="">
+                        <span>数据仓库项目研发与实施服务</span>
+                    </div>
+                    <div>
+                        <img src="../img/battlefieldService/seven/b_s_mid_seven_8.png" alt="">
+                        <span>数据挖掘项目研发与实施服务</span>
+                    </div>
+                    <div>
+                        <img src="../img/battlefieldService/seven/b_s_mid_seven_9.png" alt="">
+                        <span>数据仓库的实施方案与研发</span>
                     </div>
                 </div>
             </div>
         </div>
-        <!--three-->
-        <div class="value_inner b_s_mid_three">
-            <span class="b_s_title_span">软件产品规划服务</span>
-            <span class="b_s_three_title_span">我们提供需求开发与管理的服务有：</span>
-            <div class="clear_float">
-                <div class="b_s_mid_three_left">
-                    <img src="../img/battlefieldService/three/b_s_mid_three_left_img.png" alt="">
-                    <span class="b_s_three_list_title_span">产品策划设计</span>
-                    <span>用户调研</span>
-                    <span>市场分析、竞品分析</span>
-                    <span>行业产品模式分析</span>
-                    <span>对产品进行商业模式和运营模式设计</span>
-                    <span>产品功能架构设计 </span>
-                </div>
-                <div class="b_s_mid_three_right">
-                    <img src="../img/battlefieldService/three/b_s_mid_three_right_img.png" alt="">
-                    <span class="b_s_three_list_title_span">企业需求分析</span>
-                    <span>对业务进行电子化需求设计</span>
-                    <span>企业用户研究</span>
-                    <span>企业业务流程与使用流程优化</span>
-                    <span>企业系统信息架构设计</span>
-                    <span>企业业务需求细化表达</span>
-                    <span>软件需求开发与管理</span>
-                </div>
-                <div class="b_s_mid_three_bottom clear_float">
+        <div class="b_s_bot">
+            <div class="value_inner">
+                <span class="b_s_title_span">中睿软件研发战场服务典型案例</span>
+                <span
+                    class="b_s_bot_msg">中睿自推出战场顾问服务后，专业的技术服务方式和强大的服务支持后盾迅速赢得了众多企业客户的认可，众多的知名企业成为中睿的客户，并先后为他们提供了令客户非常满意的支持服务，典型客户包括：</span>
+                <div class="b_s_bot_body clear_float">
                     <div>
-                        <span class="b_s_three_list_title_span">项目“前期规划服务”</span>
-                        <span>服务流程如下：</span>
-                        <img src="../img/battlefieldService/three/b_s_mid_three_bottom_img_1.png" alt="">
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-1.png" alt="">
+                        </a>
                     </div>
                     <div>
-                        <span class="b_s_three_list_title_span">
-                            <!--do not delete it-->
-                        </span>
-                        <span>标准服务计划如下：</span>
-                        <img src="../img/battlefieldService/three/b_s_mid_three_bottom_img_2.png" alt="">
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-2.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-3.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-4.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-5.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-6.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-7.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-8.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-9.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-10.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-11.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="javascript:;">
+                            <img src="../img/battlefieldService/kehu/kehu-12.jpg" alt="">
+                        </a>
                     </div>
                 </div>
-            </div>
-            <span class="b_s_three_bot_span">主要的交付物有：</span>
-            <span class="b_s_three_bot_book">
-                《项目视图与范围文档》 《市场分析/竞品分析》 《干系人分析》 《业务规则及流程》 《Backlog列表》 《需求规格说明书》 《交互式原型》 《项目发布计划》 《UI总体风格》 《UI/UE规范》 《可用性测试测试任务》
-            </span>
-        </div>
-        <!--four-->
-        <div class="value_inner b_s_mid_four">
-            <div>
-                <div class="b_s_mid_flex">
-                    <img class="b_s_mid_left" src="../img/battlefieldService/four/b_s_mid_four_left_img.png" alt="">
-                    <div class="b_s_mid_right">
-                        <div>
-                            <span class="b_s_mid_title">软件系统体系架构的规划、设计与审核</span>
-                        </div>
-                        <div>
-                            <img src="../img/battlefieldService/one/blue.png" alt="">
-                        </div>
-                        <div>
-                            <span>软件系统架构的设计对应用系统将来的稳定、性能、扩展、维护及实施都有重要的影响。一个良好的设计保证了系统项目的成功，并收到事半功倍的效果。</span>
-                        </div>
-                        <div>
-                            <span>优质的服务来自优秀的理论指导，“中睿软件研发战场服务”即是在对SCRUM、XP以及RUP （Rational Unified Process）过程充分吸收并根据实际情况进行改造的理论指导下运作的。</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="b_s_mid_four_mid">
-                <div>
-                    <img src="../img/battlefieldService/four/b_s_mid_four_1.png" alt="">
-                    <div class="b_s_mid_four_msg">
-                        <span>微服务架构设计与研发服务：</span>
-                        <span>微服务需求分析与定义</span>
-                        <span>微服务开发平台的搭建与实施</span>
-                        <span>微服务运维平台的搭建与实施</span>
-                        <span>微服务基础服务组件的研发与实施</span>
-                        <span>微服务的开发</span>
-                        <span>基于阿里云EDAS的微服务开发与集成</span>
-                    </div>
-                </div>
-                <div>
-                    <img src="../img/battlefieldService/four/b_s_mid_four_2.png" alt="">
-                    <div class="b_s_mid_four_msg">
-                        <span>基于iOS或是Android移动平台的架构设计服务：</span>
-                        <span>基于iOS或Android的移动计算平台架构设计</span>
-                        <span>架构规范（移动端及云端）</span>
-                        <span>应用实践</span>
-                        <span>编码规范</span>
-                        <span>移动应用系统部署</span>
-                        <span>移动应用系统的性能评估及调优</span>
-                    </div>
-                </div>
-            </div>
-            <div class="b_s_mid_four_bot">
-                <div>
-                    <img src="../img/battlefieldService/four/b_s_mid_four_3.png" alt="">
-                </div>
-                <div>
-                    <img src="../img/battlefieldService/four/b_s_mid_four_4.png" alt="">
-                    <div class="b_s_mid_four_msg">
-                        <span>基于Java平台的架构设计服务：</span>
-                        <span>Java EE架构设计</span>
-                        <span>架构规范</span>
-                        <span>应用实践</span>
-                        <span>编码规范</span>
-                        <span>Java EE应用部署</span>
-                        <span>Java平台性能测试与调优</span>
-                    </div>
-                </div>
-            </div>
-            <div class="b_s_mid_four_fot">
-                <span>软件架构设计过程：</span>
-                <img src="../img/battlefieldService/four/b_s_mid_four_5.png" alt="">
-            </div>
-        </div>
-        <!--seven-->
-        <div class="value_inner b_s_mid_seven">
-            <div>
-                <div class="b_s_mid_flex">
-                    <img class="b_s_mid_left" src="../img/battlefieldService/seven/b_s_mid_seven_left_img.png" alt="">
-                    <div class="b_s_mid_right">
-                        <div>
-                            <span class="b_s_mid_title">移动项目开发指导服务</span>
-                        </div>
-                        <div>
-                            <img src="../img/battlefieldService/one/blue.png" alt="">
-                        </div>
-                        <div>
-                            <span>传统企业信息化以PC为主，因为企业IT技术与业务很难融合、PC应用使用不方便、IT部门对业务理解不透等、项目实施方能力不够、高大上的应用无法落地等很多原因，导致很多企业信息化水平不是很高，仍然停留在“烟囱”阶段，开发了大量的无法整合的应用。而实施传统应用需要采购大量的服务器产品及PC产品，导致企业IT成本越来越大。同时，移动互联网已经改变人得生活，企业信息化发展方向一定是移动信息化，“移动为主、PC为辅”。</span>
-                        </div>
-                        <div>
-                            <span>现在企业IT部门存在的问题是移动应用开发的能力不足。基于以上原因，我们提供移动App的开发之道服务，旨在解决企业IT部分在信息化转型过程中得痛处。</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <span class="b_s_mid_seven_list_title">我们提供基于移动App的开发指导服务：</span>
-            <div class="b_s_mid_mobile_list clear_float">
-                <div>
-                    <img src="../img/battlefieldService/seven/b_s_mid_seven_1.png" alt="">
-                    <span>平台包括iOS、Android、HTML5、微信公众号、微信小程序、支付宝小程序等</span>
-                </div>
-                <div>
-                    <img src="../img/battlefieldService/seven/b_s_mid_seven_2.png" alt="">
-                    <span>数据仓库架构设计与规划服务</span>
-                </div>
-                <div>
-                    <img src="../img/battlefieldService/seven/b_s_mid_seven_3.png" alt="">
-                    <span>数据仓库的行业模型设计与研发服务</span>
-                </div>
-                <div>
-                    <img src="../img/battlefieldService/seven/b_s_mid_seven_4.png" alt="">
-                    <span>数据仓库项目研发与实施服务</span>
-                </div>
-                <div>
-                    <img src="../img/battlefieldService/seven/b_s_mid_seven_5.png" alt="">
-                    <span>数据挖掘项目研发与实施服务</span>
-                </div>
-                <div>
-                    <img src="../img/battlefieldService/seven/b_s_mid_seven_6.png" alt="">
-                    <span>数据仓库的实施方案与研发</span>
-                </div>
-                <div>
-                    <img src="../img/battlefieldService/seven/b_s_mid_seven_7.png" alt="">
-                    <span>数据仓库项目研发与实施服务</span>
-                </div>
-                <div>
-                    <img src="../img/battlefieldService/seven/b_s_mid_seven_8.png" alt="">
-                    <span>数据挖掘项目研发与实施服务</span>
-                </div>
-                <div>
-                    <img src="../img/battlefieldService/seven/b_s_mid_seven_9.png" alt="">
-                    <span>数据仓库的实施方案与研发</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="b_s_bot">
-        <div class="value_inner">
-            <span class="b_s_title_span">中睿软件研发战场服务典型案例</span>
-            <span class="b_s_bot_msg">中睿自推出战场顾问服务后，专业的技术服务方式和强大的服务支持后盾迅速赢得了众多企业客户的认可，众多的知名企业成为中睿的客户，并先后为他们提供了令客户非常满意的支持服务，典型客户包括：</span>
-            <div class="b_s_bot_body clear_float">
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-1.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-2.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-3.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-4.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-5.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-6.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-7.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-8.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-9.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-10.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-11.png" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="javascript:;">
-                        <img src="../img/battlefieldService/kehu/kehu-12.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <!-- <div class="b_s_bot_list clear_float ">
+                <!-- <div class="b_s_bot_list clear_float ">
                 <div>
                     <a href="http://www.itlead.com.cn/showcase.aspx?newid=20161214043029">中外运：O2O物流平台</a>
                 </div>
@@ -561,42 +686,56 @@
                     <a>金元证券：iScrum服务</a>
                 </div>
             </div> -->
-        </div>
-    </div>
-    <div class="foot_bot">
-        <div class="fb_top">
-            <div class="fb_QR">
-                <span class="contact">联系我们<span class="contact_us">CONTACT</span></span>
-                <img class="QRcode" src="../img/index/QRcode.png" alt="">
-                <span class="scanner">扫一扫</span>
             </div>
-            <table class="fb_table" summary="基本信息及联系方式">
-                <tr>
-                    <td colspan="3">
-                        <span class="provide">愿景：成为最专业的软件研发服务领航者</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>中睿信息技术有限公司 广州•深圳</td>
-                    <td>Tel：020-38931912</td>
-                    <td>务实 Pragmatic</td>
-                </tr>
-                <tr>
-                    <td>广州：广州市天河区翰景路1号金星大厦18层中睿信息</td>
-                    <td>Fax：020-38931912</td>
-                    <td>专业 Professional</td>
-                </tr>
-                <tr>
-                    <td>深圳：深圳市南山区粤海街道科技园科技路9号526</td>
-                    <td>Tel：0755-25855012</td>
-                    <td>诚信 Integrity</td>
-                </tr>
-            </table>
         </div>
-        <div class="fb_but">
-            <span>版权所有：广州中睿信息技术有限公司  粤ICP备13082838号-2</span>
+        <div class="foot_bot">
+            <div class="fb_top">
+                <div class="fb_QR">
+                    <span class="contact">联系我们<span class="contact_us">CONTACT</span></span>
+                    <img class="QRcode" src="../img/index/QRcode.png" alt="">
+                    <span class="scanner">扫一扫</span>
+                </div>
+                <table class="fb_table" summary="基本信息及联系方式">
+                    <tr>
+                        <td colspan="3">
+                            <span class="provide">愿景：成为最专业的软件研发服务领航者</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>中睿信息技术有限公司 广州•深圳</td>
+                        <td>Tel：020-38931912</td>
+                        <td>务实 Pragmatic</td>
+                    </tr>
+                    <tr>
+                        <td>广州：广州市天河区翰景路1号金星大厦18层中睿信息</td>
+                        <td>Fax：020-38931912</td>
+                        <td>专业 Professional</td>
+                    </tr>
+                    <tr>
+                        <td>深圳：深圳市南山区粤海街道科技园科技路9号526</td>
+                        <td>Tel：0755-25855012</td>
+                        <td>诚信 Integrity</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="fb_but">
+                <span>版权所有：广州中睿信息技术有限公司 粤ICP备13082838号-2</span>
+            </div>
         </div>
+        <!-- 添加开始 -->
+        <div class="fixed_ad">
+            <div class="scroll_top" title="返回顶部"></div>
+            <div class="Ontrst1" title="iScrum敏捷开发过程的规划服务"></div>
+            <div class="Ontrst2" title="软件产品规划服务"></div>
+            <div class="Ontrst3" title="企业数字化服务"></div>
+            <div class="Ontrst4" title="大数据与人工智能"></div>
+            <div class="Ontrst5" title="架构设计服务"></div>
+            <div class="Ontrst6" title="DevOps工具落地服务"></div>
+            <div class="Ontrst7" title="鲲测评能力提升解决方案"></div>
+            <div class="Ontrst8" title="集团化智能业务协同管理"></div>
+        </div>
+        <!-- 添加结束 -->
     </div>
-</div>
 </body>
+
 </html>
