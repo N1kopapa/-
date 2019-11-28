@@ -1006,17 +1006,6 @@ a {
         transform: translate(0px, 0px);
     }
 }
-@keyframes silder {
-    0% {
-        transform: translate(0px, 0px);
-    }
-    50% {
-        transform: translate(0px, -10px);
-    }
-    100% {
-        transform: translate(0px, 0px);
-    }
-}
 .b_s_top_center_hexagon>.slider {
     display: none;
     opacity: 0;
