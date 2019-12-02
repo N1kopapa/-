@@ -1,0 +1,111 @@
+<div class="Ipopup-box">
+		<div class="Ipopup" style="margin-top:135px">
+			 <div id="applyWin" style="height: 270px; background-color: #1898d5; " >
+                 <div class="mask">
+			<div class="mask-popup">
+				<div class="mask-popup-header">中睿课程申报</div>
+				<div class="mask-popup-info">
+					<div class="mask-popup-info-text">申报课程</div>
+					<input type="text" id="cousename" readonly="readonly" runat="server"/>
+				</div>
+				<div class="mask-popup-info">
+					<div class="mask-popup-info-text">联系人</div>
+					<input type="text" id="username"/>
+				</div>
+				<div class="mask-popup-info">
+					<div class="mask-popup-info-text">公司名称</div>
+					<input type="text" id="company" />
+				</div>
+				<div class="mask-popup-info">
+					<div class="mask-popup-info-text">联系邮箱</div>
+					<input type="text" id="email"/>
+				</div>
+				<div class="mask-popup-info">
+					<div class="mask-popup-info-text">联系电话</div>
+					<input type="text" id="phone"/>
+				</div>
+				<div class="mask-popup-button">
+                     <input type="hidden" id="couseId" runat="server" />
+					<button id="btnQuXiao">取消</button>
+					<button id="btnSubmit">确认</button>
+				</div>
+			</div>
+		</div>
+                  <div class="clear"></div>
+            </div>
+		</div>
+		<div style="width:0;height:100%;vertical-align:middle;display:inline-block;"></div>
+	</div> 
+
+<script type="text/javascript">
+        function ChangeTag(e, id) {
+            if ($(e).hasClass("cur_div")) {
+                return;
+            }
+            $(e).siblings(".cur_div").removeClass("cur_div");
+            $(e).addClass("cur_div");
+            $("#" + id).siblings(".scd_cont").hide();
+            $("#" + id).show();
+        }
+
+        function showAppWin() {
+            $("#applyWin").show(500, function () {
+                $('#username').focus();
+            });
+        }
+        function hideAppWin() {
+            $("#applyWin").hide(500);
+        }
+        function join_favorite() {
+            var url = this.href;
+            var title = $('title').text();
+            try {
+                window.external.addFavorite(url, title);
+            } catch (e) {
+                try {
+                    window.sidebar.addPanel(title, url, "");
+                } catch (e) {
+                    alert("加入收藏失败，请使用Ctrl+D进行添加");
+                }
+            }
+        }
+        function additem() {
+            if ($('#<%=cousename.ClientID %>') == "") {
+                alert("申报课程不能为空！");
+                return false;
+            }
+            if ($('#username').val() == "") {
+                alert("联系人不能为空！");
+                return false;
+            }
+            if ($('#company').val() == "") {
+                alert("公司名称不能为空！");
+                return false;
+            }
+            if (!/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test($('#email').val())) {
+                alert("邮箱格式不正确！");
+                return false;
+            }
+
+            if (!/^0?1[3|4|5|8][0-9]\d{8}$/.test($('#phone').val())) {
+                alert("联系电话格式不正确");
+                return false;
+            }
+            $("#btnSubmit").val("报名中...");
+            $("#btnSubmit").attr("disabled", "disabled");
+            $.post("additem.ashx?t=" + Math.random(), {
+                course: $('#<%=cousename.ClientID %>').val(),
+                contact: $('#username').val(),
+                company: $('#company').val(),
+                email: $('#email').val(),
+                tel: $('#phone').val(),
+                cid: $("#<%=couseId.ClientID %>").val()
+            }, function (data) {
+                alert(data);
+                $("#btnSubmit").val("确认");
+                $("#btnSubmit").removeAttr("disabled");
+                hideAppWin();
+            }, "text")
+            return true;
+        }
+    </script>

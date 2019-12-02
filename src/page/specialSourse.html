@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>战场服务-中睿信息技术有限公司</title>
+    <link rel="shortcut icon" href="../img/index/itlead.ico">
+    <link rel="stylesheet" href="../css/specialSourse.css">
+    <script src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script type="text/javascript">
+        function show(t) {
+            window.setTimeout(function () {
+                t.css("display", "block");
+                t.animate({
+                    opacity: 1
+                }, 0);
+            }, 300);
+        }
+
+        function hidden() {
+            var leftHTML = ""
+            for (let index = 0; index < 30; index++) {
+                leftHTML += ".page_content_left" + index + ",";
+            }
+            var myleftHTML = (leftHTML.substring(leftHTML.length - 1) == ',') ? leftHTML.substring(0,
+                leftHTML.length - 1) : leftHTML;
+            let allValue = $(myleftHTML);
+            allValue.animate({
+                opacity: 0
+            }, 300);
+            window.setTimeout(function () {
+                allValue.css("display", "none");
+            }, 300);
+        }
+
+        function jump() {
+            let positionTop = $(".page_head").outerHeight() + $(".page_title").outerHeight();
+            window.scrollTo({
+                top: positionTop,
+                behavior: 'smooth'
+            });
+        }
+
+        function addHTML(index1) {
+            var html = "";
+            html +=
+                '<div class="source_teacher"><div class="teacher_title">讲师简介</div> <div class="teacher_logo">';
+            html += ' <img src="' + data[index1].teacher_logo + '">';
+            html += '<div class="teacher_info">';
+            html += '<span>' + data[index1].teacher_name + '</span><span>' + data[index1].teacher_info + '</span>';
+            html +=
+                '</div></div></div><div class="sign">在线报名</div><div class="teacher_number">联系电话： 123-15151515</div><div class="source"><div class="source_title">推介课程</div> <div class="source_content">';
+            for (let index = 0; index < data[index1].source.length; index++) {
+                html += '<div class="source_content_box"><img src="' + data[index1].source[index]
+                    .source_img_url + '"> <a href="javascript:;" onclick="changePage(' +
+                    data[index1].source[index].source_id + ')"><div>' + data[index1].source[index].source_name +
+                    '</div></a></div>';
+            }
+            html += '</div></div><div class="live"><div class="live_title">活动直播</div><div class="live_content">';
+            for (let index = 0; index < data[index1].live.length; index++) {
+                html += '<div class="source_content_box"><img src="' + data[index1].live[index].live_img_url +
+                    '"><a href="javascript:;" onclick=&apos;changePage(' + 0 + ')&apos;><div class="">' + data[index1]
+                    .live[index].live_name + '</div></a> </div>';
+            }
+            html += '</div></div></div>';
+            return html;
+        }
+
+        function showTeacher(index) {
+            var html = "";
+            $(".page_content_right").html("");
+            console.log(index)
+            if (index <= 0) { //鹿1
+                html = addHTML(0);
+            } else if (0 < index && index <= 1) { //林2
+                html = addHTML(1);
+            } else if (1 < index && index <= 2) { //黄3
+                html = addHTML(2);
+            } else if (2 < index && index <= 4) { //肖4
+                html = addHTML(3);
+            } else if (5 < index && index <= 7) { //鹿1     
+                html = addHTML(0);
+            } else if (7 < index && index <= 8) { //林2
+                html = addHTML(1);
+            } else if (11 < index && index <= 15) { //艾5
+                html = addHTML(4);
+            } else if (17 < index && index <= 19) { //鹿1
+                html = addHTML(0);
+            } else if (19 < index && index <= 23) { //陈6
+                html = addHTML(5);
+            } else if (23 < index && index <= 28) { //李7
+                html = addHTML(6);
+            } else {
+                console.log("error");
+            }
+            $(".page_content_right").html(html);
+        }
+
+        function changePage(index) {
+
+            let leftPageIndex = ".page_content_left" + index;
+            hidden(); //清除其他页面
+            showTeacher(index); //更改讲师信息
+            show($(leftPageIndex)); //更改主页面
+            jump(); //跳转滚轮位置
+        }
+        var roll = $(document).ready(function () {
+            var that = $(this);
+            $(".tb_content>.page>.cover").hover(function () {
+
+                show($(this).next());
+            });
+            $(".tb_content>.page>.cover").mouseout(function () {
+                hiddenSilder();
+            });
+            $(".tb_content>.page").click(function (e) {
+                let index = $(".tb_content>.page").index(this);
+                changePage(index);
+            });
+
+            function hiddenSilder() {
+                let allValue = $(".tb_content>.page>.slider");
+                allValue.animate({
+                    opacity: 0
+                }, 300);
+                window.setTimeout(function () {
+                    allValue.css("display", "none");
+                }, 300);
+            }
+            // 首页banner
+            var mySwiper = new Swiper('.swiper-container1', {
+                loop: false,
+                pagination: {
+                    clickable: false,
+                    el: '.swiper-pagination',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
+
+
+            var roll = $(window).scroll(
+                function () {
+                    let x = $(".page_content_right").offset().left; //left
+                    var mywidth = $(".page_content_right").outerWidth(); //元素高度
+                    var myheight = $(".page_content_right").outerHeight(); //元素高度
+                    let footy = $(".page_head").outerHeight() + $(".page_title").outerHeight() + $(
+                        ".page_content").outerHeight();
+                    var top = footy - myheight - 20;
+                    let y = document.getElementsByClassName('page_content_main')[0].offsetTop; //top
+                    var scrollTop = $(this).scrollTop();
+                    var scrollHeight = $(document).height();
+                    var windowHeight = $(this).height();
+                    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                    var scrollBottom = scrollHeight - scrollTop - windowHeight;
+                    var yy = myheight + $(".foot_bot").outerHeight() - scrollBottom + 20;
+                    if (scrollTop > y && myheight < $(".page_content_left_box").outerHeight()) {
+                        if (yy > windowHeight) {
+                            $(".page_content_right").css("position", "absolute");
+                            $(".page_content_right").css("left", x + "px");
+                            $(".page_content_right").css("top", top + "px");
+                            $(".page_content_right").css("width", mywidth + "px");
+                        } else {
+                            $(".page_content_right").css("position", "fixed");
+                            $(".page_content_right").css("left", x + "px");
+                            $(".page_content_right").css("top", "0px");
+                            $(".page_content_right").css("width", mywidth + "px");
+                        }
+                    } else if (scrollTop < y) {
+                        $(".page_content_right").removeAttr("style");
+                    }
+                });
+        })
+        var data = [
+            {
+            teacher_logo: "../img/specialSourse/1/img_0000s_0000_lu.png",
+            teacher_name: "鹿传明",
+            teacher_info: "IOS/Android 技术顾问",
+            source: [{
+                source_id: "5",
+                source_img_url: "../img/specialSourse/5.png",
+                source_name: "IT人员从技术走向管理实务"
+            }, {
+                source_id: "6",
+                source_img_url: "../img/specialSourse/6.png",
+                source_name: "软件研发项目管理实战"
+            }, {
+                source_id: "12",
+                source_img_url: "../img/specialSourse/12.png",
+                source_name: "OOAD与UML建模实战课程"
+            }, {
+                source_id: "13",
+                source_img_url: "../img/specialSourse/13.png",
+                source_name: "高级软件架构设计实战"
+            }],
+            live: [{
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }]
+        }, {
+            teacher_logo: "../img/Angular/2019092910331174248120.jpg",
+            teacher_name: "林伟丹",
+            teacher_info: "IOS/Android 技术顾问",
+            source: [{
+                source_id: "1",
+                source_img_url: "../img/specialSourse/1.png",
+                source_name: "DevOps Professional认证培训"
+            }, {
+                source_id: "8",
+                source_img_url: "../img/specialSourse/8.png",
+                source_name: "Leading SAFe（规模化敏捷框架）"
+            }],
+            live: [{
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }]
+        }, {
+            teacher_logo: "../img/Angular/2019092910331174248120.jpg",
+            teacher_name: "黄月明",
+            teacher_info: "IOS/Android 技术顾问",
+            source: [{
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }],
+            live: [{
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }]
+        }, {
+            teacher_logo: "../img/Angular/2019092910331174248120.jpg",
+            teacher_name: "肖杨",
+            teacher_info: "IOS/Android 技术顾问",
+            source: [{
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }],
+            live: [{
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }]
+        }, {
+            teacher_logo: "../img/Angular/2019092910331174248120.jpg",
+            teacher_name: "艾彪",
+            teacher_info: "IOS/Android 技术顾问",
+            source: [{
+                source_id: "1",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }],
+            live: [{
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }]
+        }, {
+            teacher_logo: "../img/Angular/2019092910331174248120.jpg",
+            teacher_name: "陈国星",
+            teacher_info: "IOS/Android 技术顾问",
+            source: [{
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }],
+            live: [{
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }]
+        }, {
+            teacher_logo: "../img/Angular/2019092910331174248120.jpg",
+            teacher_name: "李巍",
+            teacher_info: "IOS/Android 技术顾问",
+            source: [{
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/10.png",
+                source_name: "爬虫与数据分析系"
+            }],
+            live: [{
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }, {
+                live_img_url: "../img/specialSourse/10.png",
+                live_name: "爬虫与数据分析系"
+            }]
+        }]
+    </script>
+</head>
+
+<body>
+    <div class="battlefield_service">
+        <div class="ad" style="height: 0;">
+            <span>广告</span>
+            <button class="ad_cancel">
+                <!--cancel--></button>
+        </div>
+        <div class="page_head">
+            <div class="clear_float">
+                <img class="head_logo" src="../img/battlefieldService/logo.png" alt="">
+                <div>
+                    <ul class="head_link clear_float">
+                        <li>
+                            <a href="./index.html">首页</a>
+                        </li>
+                        <li>
+                            <a href="#">IT服务</a>
+                        </li>
+                        <li>
+                            <a href="./itTrain.html">IT培训</a>
+                        </li>
+                        <li>
+                            <a href="http://www.itlead.com.cn/New20180706View/AboutUs.aspx">关于我们</a>
+                        </li>
+                    </ul>
+                    <div class="search clear_float">
+                        <div>
+                            <button class="search_cancel"></button>
+                            <input type="text" class="search_keyword">
+                            <button class="search_submit"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page_title">
+            <div class="swiper-container swiper-container1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide2">
+                        <div>
+                            <div class="tb_title">数百家企业的选择，真正的实战精品课程</div>
+                            <div class="tb_content">
+                                <div class="tb_content title" src=""><span>后PMP课程</span></div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/0.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/1.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/2.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/3.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/4.png">
+                                </div>
+                                <div class="tb_content page" style="visibility: hidden;">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/5.png">
+                                </div>
+                                <div class="tb_content title" src=""><span>IT项目管理</span></div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/5.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/6.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/7.png">
+                                </div>
+                                <div class="tb_content page" style="visibility: hidden;">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/0.png">
+                                </div>
+                                <div class="tb_content page" style="visibility: hidden;">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/0.png">
+                                </div>
+                                <div class="tb_content page" style="visibility: hidden;">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/0.png">
+                                </div>
+                                <div class="tb_content title" src=""><span>开发技术</span></div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/8.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/9.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/10.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/11.png">
+                                </div>
+                                <div class="tb_content page" style="visibility: hidden;">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/0.png">
+                                </div>
+                                <div class="tb_content page" style="visibility: hidden;">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/0.png">
+                                </div>
+                                <div class="tb_content title" src=""><span>软件架构</span></div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/12.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/13.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/14.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/15.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/16.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/17.png">
+                                </div>
+                                <div class="tb_content title" src="">
+                                    <span>产品规划</span></div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/18.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/19.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/20.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/21.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/22.png">
+                                </div>
+                                <div class="tb_content page" style="visibility: hidden;">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/0.png">
+                                </div>
+
+                            </div>
+
+
+                        </div><img class="tb_banimg" src="../img/specialSourse/banner1111.png" alt="IT服务">
+
+                    </div>
+                </div>
+                <!-- <div class="swiper-pagination swiper-pagination-white"></div>
+                <div class="swiper-button-prev swiper-button-prev-banner"></div>
+                <div class="swiper-button-next swiper-button-next-banner"></div> -->
+            </div>
+        </div>
+        <div class="page_content">
+            <div class="page_content_main">
+                <div class="page_content_left_box">
+                    <div class="page_content_left0">
+                        <div class="left_banner">
+                            <img src="../img/specialSourse/1/img_0000_课程口号及简介-拷贝.png">
+                        </div>
+                        <div class="content0">
+                            <div class="content0_title">
+                                <span>课程亮点</span>
+                            </div>
+                            <div class="content0_main">
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">01</span></div>
+                                    <div>
+                                        项目管理的轻与重，对
+                                        比分析CMMI、RUP、
+                                        瀑布等”重型”过程与
+                                        Scrum. Kanban等“轻
+                                        型”过程
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div>
+                                        <span class="content0_main_span">02</span>
+                                    </div>
+                                    <div>
+                                        敏捷与Scrum框架
+                                        体系精讲
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">03</span></div>
+                                    <div>
+                                        基于案例驱动的方式
+                                        讲述如何进行Scrum
+                                        实施落地
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">04</span></div>
+                                    <div>
+                                        理解敏捷需求体系、
+                                        软件需求开发与管
+                                        理流程，建立最优
+                                        化的需求开发流程
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">05</span></div>
+                                    <div>
+                                        精益开发Kanban
+                                        框架知识体系与实
+                                        施落地演练
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">06</span></div>
+                                    <div>
+                                        学习中睿基于10年.
+                                        战场服务打造符合
+                                        中国国情的iScrum
+                                        敏捷项目管理体系
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">07</span></div>
+                                    <div>
+                                        中南空管局、中广核、
+                                        浩云科技、南方航空
+                                        等多个真实案例剖析;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content1">
+                            <div class="content0_title">
+                                <span>课程内容</span>
+                            </div>
+                            <div class="content1_main">
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>项目管理的轻与重</div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-项目管理体系发展</span>
+                                        <span>-软件过程框架浅析</span>
+                                        <span>-分析对比RUP、CMMI、Scrum、Kanban 等</span>
+                                        <span>-轻=重，分析项目管理的实施策略与方案</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>Scrum敏捷项目
+                                            管理过程精讲
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-敏捷价值观与原则</span>
+                                        <span>- Scrum理论基础、历史、</span>
+                                        <span>-框架及流程</span>
+                                        <span>-Scrum角色与团队</span>
+                                        <span>-Scrum的仪式与工作制品</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>Scrum框架下的需
+                                            求开发与管理
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-软件需求开发与管理概述</span>
+                                        <span>- Epic、 Feature 与Story</span>
+                                        <span>-创建ProductBacklog</span>
+                                        <span>-原型等需求补充文档剖析</span>
+                                        <span>-演练:创建Product</span>
+                                        <span>-Backlog及相关补充文档</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>实施Scrum仪式</div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-构建Scrum团队</span>
+                                        <span>-如何建立发布计划</span>
+                                        <span>-创建Sprint Backlog</span>
+                                        <span>-Scrum计划会议过程详解</span>
+                                        <span>-使用计划扑克估算</span>
+                                        <span>-演练:计划会议过程</span>
+                                        <span>-每日例会、演示会议与回顾会议</span>
+                                        <span>-实战演练</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>实施Kanban</div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-精益生产与精益软件开发</span>
+                                        <span>-Kanban框架详解:可视化流程、限制WIP、度量效率</span>
+                                        <span>-Kanban与Scrum适用场景分析探讨</span>
+                                        <span>-演练:实施Kanban 案例:如何构建适合百人开发团队的项目群kanban</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>iScrum符合中国
+                                            国情的敏捷项目管
+                                            理课程体系
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-中国软件开发特点分析</span>
+                                        <span>-iScum过程介绍</span>
+                                        <span>-iScrum各阶段文档模板展示</span>
+                                        <span>-多个客户案例分享</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content2">
+                            <div class="content0_title">
+                                <span>课程模板</span>
+                            </div>
+                            <div class="content2_main">
+                                <span class="frag">Scrum的全套模板</span>
+                                <span class="frag">Kanban的全套模板</span>
+                                <span class="frag">中睿信息iScrum过程模板</span>
+                                <div class="single_box">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content3">
+                            <div class="content0_title">
+                                <span>运行态势</span>
+                            </div>
+                            <div class="content3_main">
+                                <div class="single_box">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content4">
+                            <div class="content0_title">
+                                <span>课程模板</span>
+                            </div>
+                            <div class="content4_main">
+                                <div class="single_box">
+                                    <div class="left_box"></div>
+                                    <div class="right_box">
+                                        <div class="right_demo_title">
+                                            <div></div>
+                                            <div>项目管理的项目管理的轻与重项目管理的轻与重轻与重</div>
+                                        </div>
+                                        <div class="right_demo_title">
+                                            <div></div>
+                                            <div>项目管理的项目管理的轻与重项目管理的轻与重轻与重</div>
+                                        </div>
+                                        <div class="right_demo_title">
+                                            <div></div>
+                                            <div>项目管理的项目管理的轻与重项目管理的轻与重轻与重</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content5">
+                            <div class="content0_title">
+                                <span>关联课程</span>
+                            </div>
+                            <div class="content5_main">
+                                <div class="frag">软件研发项目管理实战
+                                </div>
+                                <div class="frag">打造高效软件研发团队</div>
+                                <div class="frag">Leading SAFe规模化敏捷框架
+                                </div>
+                                <div class="frag">IT人员从技术走向管理实务
+                                </div>
+                                <div class="single_box">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content6">
+                            <div class="content0_title">
+                                <span>授课老师</span>
+                            </div>
+                            <div class="content6_main">
+                                <div class="single_box_teacher">
+                                    <img src="../img/specialSourse/1/img_0000s_0000_lu.png">
+                                </div>
+                                <div class="single_box_content">
+                                    <div class="single_box_title">
+                                        鹿传明老师
+                                    </div>
+                                    <div class="single_box_word">
+                                        厦门大学EMBA,中睿信息创始人，PMP，Scrum 敏捷教练, iScrum 缔造者之一，企业高级
+                                        顾问,实战派研发项目管理专家，世界五百强[南方航空] [联想]、[中兴通讯]、[中国电信]
+                                        等企业常年特聘培训师及服务顾问。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_content_left1">
+                        <div class="content0">
+                            <div class="content0_title">
+                                <span>课程亮点</span>
+                            </div>
+                            <div class="content0_main">
+                            </div>
+                        </div>
+                        <div class="target">
+                            <div class="target_title">课程技能测试(鲲测评)</div>
+                            <div class="target_content">
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_content_left2">
+
+                        <div class="target">
+                            <div class="target_title">课程技能测试(鲲测评)</div>
+                            <div class="target_content">
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_content_left3">
+
+                        <div class="target">
+                            <div class="target_title">课程技能测试(鲲测评)</div>
+                            <div class="target_content">
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_content_left4">
+
+                        <div class="target">
+                            <div class="target_title">课程技能测试(鲲测评)</div>
+                            <div class="target_content">
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_content_left5">
+
+                        <div class="target">
+                            <div class="target_title">课程技能测试(鲲测评)</div>
+                            <div class="target_content">
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_content_left6">
+
+                        <div class="target">
+                            <div class="target_title">课程技能测试(鲲测评)</div>
+                            <div class="target_content">
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_content_left7">
+
+                        <div class="target">
+                            <div class="target_title">课程技能测试(鲲测评)</div>
+                            <div class="target_content">
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_content_left8">
+
+                        <div class="target">
+                            <div class="target_title">课程技能测试(鲲测评)</div>
+                            <div class="target_content">
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page_content_left9">
+
+                        <div class="target">
+                            <div class="target_title">课程技能测试(鲲测评)</div>
+                            <div class="target_content">
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                                <div>Web</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_content_right">
+                    <div class="source_teacher">
+                        <div class="teacher_title">
+                            讲师简介
+                        </div>
+                        <div class="teacher_logo">
+                            <img src="../img/specialSourse/1/img_0000s_0000_lu.png">
+                            <div class="teacher_info">
+                                <span>鹿传明</span>
+                                <span>IOS/Android 技术顾问</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sign">在线报名</div>
+                    <div class="teacher_number">联系电话： 123-15151515</div>
+                    <div class="source">
+                        <div class="source_title">推介课程</div>
+                        <div class="source_content">
+                            <div class="source_content_box">
+                                <img src="../img/specialSourse/1.png">
+                                <a href="javascript:;" onclick='changePage(0)'>
+                                    <div class="">爬虫与数据分析系</div>
+                                </a>
+                            </div>
+                            <div class="source_content_box">
+                                <img src="../img/specialSourse/1.png">
+                                <a href="#">
+                                    <div class="">爬虫与数据分析系</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="live">
+                        <div class="live_title">活动直播</div>
+                        <div class="live_content">
+                            <div class="source_content_box">
+                                <img src="../img/specialSourse/1.png">
+                                <a href="#">
+                                    <div class="">爬虫与数据分析系</div>
+                                </a>
+                            </div>
+                            <div class="source_content_box">
+                                <img src="../img/specialSourse/1.png">
+                                <a href="#">
+                                    <div class="">爬虫与数据分析系</div>
+                                </a>
+                            </div>
+                            <div class="source_content_box">
+                                <img src="../img/specialSourse/1.png">
+                                <a href="#">
+                                    <div class="">爬虫与数据分析系</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="foot_bot">
+            <div class="fb_top">
+                <div class="fb_QR">
+                    <span class="contact">联系我们<span class="contact_us">CONTACT</span></span>
+                    <img class="QRcode" src="../img/index/QRcode.png" alt="">
+                    <span class="scanner">扫一扫</span>
+                </div>
+                <table class="fb_table" summary="基本信息及联系方式">
+                    <tr>
+                        <td colspan="3">
+                            <span class="provide">愿景：成为最专业的软件研发服务领航者</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>中睿信息技术有限公司 广州•深圳</td>
+                        <td>Tel：020-38931912</td>
+                        <td>务实 Pragmatic</td>
+                    </tr>
+                    <tr>
+                        <td>广州：广州市天河区翰景路1号金星大厦18层中睿信息</td>
+                        <td>Fax：020-38931912</td>
+                        <td>专业 Professional</td>
+                    </tr>
+                    <tr>
+                        <td>深圳：深圳市南山区粤海街道科技园科技路9号526</td>
+                        <td>Tel：0755-25855012</td>
+                        <td>诚信 Integrity</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="fb_but">
+                <span>版权所有：广州中睿信息技术有限公司 粤ICP备13082838号-2</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

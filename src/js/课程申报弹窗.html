@@ -1,0 +1,190 @@
+<style>
+    .Ipopup-box {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        width: 25%;
+        height: 50%;
+        top: 20%;
+        left: 35%;
+        border: 1px solid rgb(196, 196, 196);
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px 0 #ccc;
+    }
+
+    .Ipopup {}
+
+    .mask {}
+
+    .mask-popup {
+        text-align: center;
+    }
+
+    .mask-popup-header {
+        width: 80%;
+        font-size: 20px;
+        margin: 0 auto;
+        padding: 15px;
+        border-bottom: 1px solid rgb(226, 226, 226);
+    }
+
+    .mask-popup-info {
+        padding: 20px;
+    }
+
+    .mask-popup-info>input {
+        /* box-shadow: 1px 1px 1px 1px #ccc;
+        border-radius: 1px; */
+        height: 25px;
+        ;
+        border-bottom: 1px solid rgb(197, 197, 197);
+
+    }
+
+    .mask-popup-info>.mask-popup-info-text {
+        padding-left: 20px;
+        float: left;
+        display: inline
+    }
+
+    .mask-popup-button {
+        margin-top: 10px;
+    }
+
+    .mask-popup-button>button {
+        width: 100px;
+        height: 50px;
+        margin: 0px 5px 5px 5px;
+        /* border-radius: 15px;
+        background-color: #209cee;
+        border-color: transparent;
+        color: white;
+        font-size: 20px; */
+        background: white;
+        border: 1px solid rgb(196, 196, 196);
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px 0 #ccc;
+    }
+</style>
+<button class="main-top-right-xinxi-baoming">123</button>
+<div class="Ipopup-box">
+    <div class="Ipopup">
+        <div id="applyWin">
+            <div class="mask-popup">
+                <div class="mask-popup-header">中睿课程申报</div>
+                <div class="mask">
+                    <div class="mask-popup-info">
+                        <div class="mask-popup-info-text">申报课程</div>
+                        <input type="text" id="cousename" readonly="readonly" runat="server" />
+                    </div>
+                    <div class="mask-popup-info">
+                        <div class="mask-popup-info-text">联系人&nbsp;&nbsp;&nbsp;</div>
+                        <input type="text" id="username" />
+                    </div>
+                    <div class="mask-popup-info">
+                        <div class="mask-popup-info-text">公司名称</div>
+                        <input type="text" id="company" />
+                    </div>
+                    <div class="mask-popup-info">
+                        <div class="mask-popup-info-text">联系邮箱</div>
+                        <input type="text" id="email" />
+                    </div>
+                    <div class="mask-popup-info">
+                        <div class="mask-popup-info-text">联系电话</div>
+                        <input type="text" id="phone" />
+                    </div>
+                    <div class="mask-popup-button">
+                        <input type="hidden" id="couseId" runat="server" />
+                        <button id="btnQuXiao">取消</button>
+                        <button id="btnSubmit">确认</button>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div style="width:0;height:100%;vertical-align:middle;display:inline-block;"></div>
+</div>
+<script type="text/javascript" src="./jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.main-top-right-xinxi-baoming').click(function () {
+            console.log("123")
+            $('.Ipopup-box').css("display","block");
+        })
+    });
+
+    function ChangeTag(e, id) {
+        if ($(e).hasClass("cur_div")) {
+            return;
+        }
+        $(e).siblings(".cur_div").removeClass("cur_div");
+        $(e).addClass("cur_div");
+        $("#" + id).siblings(".scd_cont").hide();
+        $("#" + id).show();
+    }
+
+    function showAppWin() {
+        $("#applyWin").show(500, function () {
+            $('#username').focus();
+        });
+    }
+
+    function hideAppWin() {
+        $("#applyWin").hide(500);
+    }
+
+    function join_favorite() {
+        var url = this.href;
+        var title = $('title').text();
+        try {
+            window.external.addFavorite(url, title);
+        } catch (e) {
+            try {
+                window.sidebar.addPanel(title, url, "");
+            } catch (e) {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+
+    function additem() {
+        if ($('#<%=cousename.ClientID %>') == "") {
+            alert("申报课程不能为空！");
+            return false;
+        }
+        if ($('#username').val() == "") {
+            alert("联系人不能为空！");
+            return false;
+        }
+        if ($('#company').val() == "") {
+            alert("公司名称不能为空！");
+            return false;
+        }
+        if (!/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test($('#email').val())) {
+            alert("邮箱格式不正确！");
+            return false;
+        }
+
+        if (!/^0?1[3|4|5|8][0-9]\d{8}$/.test($('#phone').val())) {
+            alert("联系电话格式不正确");
+            return false;
+        }
+        $("#btnSubmit").val("报名中...");
+        $("#btnSubmit").attr("disabled", "disabled");
+        $.post("additem.ashx?t=" + Math.random(), {
+            course: $('#<%=cousename.ClientID %>').val(),
+            contact: $('#username').val(),
+            company: $('#company').val(),
+            email: $('#email').val(),
+            tel: $('#phone').val(),
+            cid: $("#<%=couseId.ClientID %>").val()
+        }, function (data) {
+            alert(data);
+            $("#btnSubmit").val("确认");
+            $("#btnSubmit").removeAttr("disabled");
+            hideAppWin();
+        }, "text")
+        return true;
+    }
+</script>
