@@ -99,13 +99,13 @@
         }
 
         function changePage(index) {
-
             let leftPageIndex = ".page_content_left" + index;
             hidden(); //清除其他页面
             showTeacher(index); //更改讲师信息
             show($(leftPageIndex)); //更改主页面
             jump(); //跳转滚轮位置
         }
+
         var roll = $(document).ready(function () {
             var that = $(this);
             $(".tb_content>.page>.cover").hover(function () {
@@ -141,8 +141,6 @@
                     prevEl: '.swiper-button-prev',
                 }
             });
-
-
             var roll = $(window).scroll(
                 function () {
                     let x = $(".page_content_right").offset().left; //left
@@ -175,18 +173,17 @@
                     }
                 });
         })
-        var data = [
-            {
+        var data = [{
             teacher_logo: "../img/specialSourse/1/img_0000s_0000_lu.png",
             teacher_name: "鹿传明",
             teacher_info: "IOS/Android 技术顾问",
             source: [{
-                source_id: "5",
-                source_img_url: "../img/specialSourse/5.png",
-                source_name: "IT人员从技术走向管理实务"
-            }, {
                 source_id: "6",
                 source_img_url: "../img/specialSourse/6.png",
+                source_name: "IT人员从技术走向管理实务"
+            }, {
+                source_id: "7",
+                source_img_url: "../img/specialSourse/7.png",
                 source_name: "软件研发项目管理实战"
             }, {
                 source_id: "12",
@@ -196,38 +193,42 @@
                 source_id: "13",
                 source_img_url: "../img/specialSourse/13.png",
                 source_name: "高级软件架构设计实战"
+            }, {
+                source_id: "0",
+                source_img_url: "../img/specialSourse/0.png",
+                source_name: "Scrum敏捷项目管理实战"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }]
         }, {
-            teacher_logo: "../img/Angular/2019092910331174248120.jpg",
+            teacher_logo: "../img/specialSourse/2/img_0000s_0000_图片33.png",
             teacher_name: "林伟丹",
             teacher_info: "IOS/Android 技术顾问",
             source: [{
-                source_id: "1",
-                source_img_url: "../img/specialSourse/1.png",
-                source_name: "DevOps Professional认证培训"
-            }, {
                 source_id: "8",
                 source_img_url: "../img/specialSourse/8.png",
+                source_name: "DevOps Professional认证培训"
+            }, {
+                source_id: "1",
+                source_img_url: "../img/specialSourse/1.png",
                 source_name: "Leading SAFe（规模化敏捷框架）"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }]
         }, {
@@ -235,30 +236,18 @@
             teacher_name: "黄月明",
             teacher_info: "IOS/Android 技术顾问",
             source: [{
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
-                source_name: "爬虫与数据分析系"
-            }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
-                source_name: "爬虫与数据分析系"
-            }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
-                source_name: "爬虫与数据分析系"
-            }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
-                source_name: "爬虫与数据分析系"
+                source_id: "2",
+                source_img_url: "../img/specialSourse/2.png",
+                source_name: "微权力下的项目管理"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }]
         }, {
@@ -266,30 +255,22 @@
             teacher_name: "肖杨",
             teacher_info: "IOS/Android 技术顾问",
             source: [{
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "3",
+                source_img_url: "../img/specialSourse/3.png",
                 source_name: "爬虫与数据分析系"
             }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
-                source_name: "爬虫与数据分析系"
-            }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
-                source_name: "爬虫与数据分析系"
-            }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "4",
+                source_img_url: "../img/specialSourse/4.png",
                 source_name: "爬虫与数据分析系"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }]
         }, {
@@ -297,30 +278,30 @@
             teacher_name: "艾彪",
             teacher_info: "IOS/Android 技术顾问",
             source: [{
-                source_id: "1",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "12",
+                source_img_url: "../img/specialSourse/12.png",
                 source_name: "爬虫与数据分析系"
             }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "13",
+                source_img_url: "../img/specialSourse/13.png",
                 source_name: "爬虫与数据分析系"
             }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "14",
+                source_img_url: "../img/specialSourse/14.png",
                 source_name: "爬虫与数据分析系"
             }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "15",
+                source_img_url: "../img/specialSourse/15.png",
                 source_name: "爬虫与数据分析系"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }]
         }, {
@@ -328,30 +309,30 @@
             teacher_name: "陈国星",
             teacher_info: "IOS/Android 技术顾问",
             source: [{
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "20",
+                source_img_url: "../img/specialSourse/20.png",
                 source_name: "爬虫与数据分析系"
             }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "21",
+                source_img_url: "../img/specialSourse/21.png",
                 source_name: "爬虫与数据分析系"
             }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "22",
+                source_img_url: "../img/specialSourse/22.png",
                 source_name: "爬虫与数据分析系"
             }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "23",
+                source_img_url: "../img/specialSourse/23.png",
                 source_name: "爬虫与数据分析系"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }]
         }, {
@@ -359,30 +340,34 @@
             teacher_name: "李巍",
             teacher_info: "IOS/Android 技术顾问",
             source: [{
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "24",
+                source_img_url: "../img/specialSourse/24.png",
                 source_name: "爬虫与数据分析系"
             }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "25",
+                source_img_url: "../img/specialSourse/25.png",
                 source_name: "爬虫与数据分析系"
             }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "26",
+                source_img_url: "../img/specialSourse/26.png",
                 source_name: "爬虫与数据分析系"
             }, {
-                source_id: "0",
-                source_img_url: "../img/specialSourse/10.png",
+                source_id: "27",
+                source_img_url: "../img/specialSourse/27.png",
+                source_name: "爬虫与数据分析系"
+            }, {
+                source_id: "28",
+                source_img_url: "../img/specialSourse/28.png",
                 source_name: "爬虫与数据分析系"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }, {
-                live_img_url: "../img/specialSourse/10.png",
+                live_img_url: "../img/specialSourse/4.png",
                 live_name: "爬虫与数据分析系"
             }]
         }]
@@ -466,17 +451,17 @@
                                 <div class="tb_content page">
                                     <div class="cover"></div>
                                     <div class="slider"></div>
-                                    <img class="pageimg" src="../img/specialSourse/5.png">
-                                </div>
-                                <div class="tb_content page">
-                                    <div class="cover"></div>
-                                    <div class="slider"></div>
                                     <img class="pageimg" src="../img/specialSourse/6.png">
                                 </div>
                                 <div class="tb_content page">
                                     <div class="cover"></div>
                                     <div class="slider"></div>
                                     <img class="pageimg" src="../img/specialSourse/7.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/8.png">
                                 </div>
                                 <div class="tb_content page" style="visibility: hidden;">
                                     <div class="cover"></div>
@@ -497,37 +482,6 @@
                                 <div class="tb_content page">
                                     <div class="cover"></div>
                                     <div class="slider"></div>
-                                    <img class="pageimg" src="../img/specialSourse/8.png">
-                                </div>
-                                <div class="tb_content page">
-                                    <div class="cover"></div>
-                                    <div class="slider"></div>
-                                    <img class="pageimg" src="../img/specialSourse/9.png">
-                                </div>
-                                <div class="tb_content page">
-                                    <div class="cover"></div>
-                                    <div class="slider"></div>
-                                    <img class="pageimg" src="../img/specialSourse/10.png">
-                                </div>
-                                <div class="tb_content page">
-                                    <div class="cover"></div>
-                                    <div class="slider"></div>
-                                    <img class="pageimg" src="../img/specialSourse/11.png">
-                                </div>
-                                <div class="tb_content page" style="visibility: hidden;">
-                                    <div class="cover"></div>
-                                    <div class="slider"></div>
-                                    <img class="pageimg" src="../img/specialSourse/0.png">
-                                </div>
-                                <div class="tb_content page" style="visibility: hidden;">
-                                    <div class="cover"></div>
-                                    <div class="slider"></div>
-                                    <img class="pageimg" src="../img/specialSourse/0.png">
-                                </div>
-                                <div class="tb_content title" src=""><span>软件架构</span></div>
-                                <div class="tb_content page">
-                                    <div class="cover"></div>
-                                    <div class="slider"></div>
                                     <img class="pageimg" src="../img/specialSourse/12.png">
                                 </div>
                                 <div class="tb_content page">
@@ -545,18 +499,17 @@
                                     <div class="slider"></div>
                                     <img class="pageimg" src="../img/specialSourse/15.png">
                                 </div>
-                                <div class="tb_content page">
+                                <div class="tb_content page" style="visibility: hidden;">
                                     <div class="cover"></div>
                                     <div class="slider"></div>
-                                    <img class="pageimg" src="../img/specialSourse/16.png">
+                                    <img class="pageimg" src="../img/specialSourse/0.png">
                                 </div>
-                                <div class="tb_content page">
+                                <div class="tb_content page" style="visibility: hidden;">
                                     <div class="cover"></div>
                                     <div class="slider"></div>
-                                    <img class="pageimg" src="../img/specialSourse/17.png">
+                                    <img class="pageimg" src="../img/specialSourse/0.png">
                                 </div>
-                                <div class="tb_content title" src="">
-                                    <span>产品规划</span></div>
+                                <div class="tb_content title" src=""><span>软件架构</span></div>
                                 <div class="tb_content page">
                                     <div class="cover"></div>
                                     <div class="slider"></div>
@@ -581,6 +534,38 @@
                                     <div class="cover"></div>
                                     <div class="slider"></div>
                                     <img class="pageimg" src="../img/specialSourse/22.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/23.png">
+                                </div>
+                                <div class="tb_content title" src="">
+                                    <span>产品规划</span></div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/24.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/25.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/26.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/27.png">
+                                </div>
+                                <div class="tb_content page">
+                                    <div class="cover"></div>
+                                    <div class="slider"></div>
+                                    <img class="pageimg" src="../img/specialSourse/28.png">
                                 </div>
                                 <div class="tb_content page" style="visibility: hidden;">
                                     <div class="cover"></div>
@@ -854,26 +839,140 @@
                         </div>
                     </div>
                     <div class="page_content_left1">
+                        <div class="left_banner">
+                            <div class="banner_wrapper">
+                                <div class="banner_title">
+                                    Leading SAFe规模化敏捷框架
+                                </div>
+                                <div class="banner_content">
+                                    快速掌握流行的规模化敏捷方法，将敏捷实践从团队级(team level)有效扩展到项目群级(program level)乃至企业级(portfolio level)。
+                                </div>
+                            </div>
+                            <img src="../img/specialSourse/2/img1_0005_图片11.png">
+                        </div>
+
                         <div class="content0">
-                            <div class="content0_title">
+                            <div class="content1_title">
+                                <div></div>
                                 <span>课程亮点</span>
                             </div>
                             <div class="content0_main">
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse//2/01.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        项目管理的轻与重，对
+                                        比分析CMMI、RUP、
+                                        瀑布等”重型”过程与
+                                        Scrum. Kanban等“轻
+                                        型”过程
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse//2/02.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        项目管理的轻与重，对
+                                        比分析CMMI、RUP、
+                                        瀑布等”重型”过程与
+                                        Scrum. Kanban等“轻
+                                        型”过程
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse//2/03.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        项目管理的轻与重，对
+                                        比分析CMMI、RUP、
+                                        瀑布等”重型”过程与
+                                        Scrum. Kanban等“轻
+                                        型”过程
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse//2/04.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        项目管理的轻与重，对
+                                        比分析CMMI、RUP、
+                                        瀑布等”重型”过程与
+                                        Scrum. Kanban等“轻
+                                        型”过程
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse//2/05.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        项目管理的轻与重，对
+                                        比分析CMMI、RUP、
+                                        瀑布等”重型”过程与
+                                        Scrum. Kanban等“轻
+                                        型”过程
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="target">
-                            <div class="target_title">课程技能测试(鲲测评)</div>
-                            <div class="target_content">
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
+                        <div class="content1">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>课程框架</span>
+                            </div>
+                            <div class="content1_main">
+                                <div class="single_box">
+                                    <span>SAFe核心原则</span>
+                                    <span>企业精益-敏捷转型</span>
+                                    <span>根据环境配置框架</span>
+                                    <span>精益-敏捷投资组合</span>
+                                    <span>敏捷发布火车</span>
+                                    <span>多团队联合计划</span>
+                                    <span>项目群执行</span>
+                                    <span>大型价值流</span>
+                                    <img src="../img/specialSourse/2/center.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content2">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>课程框架</span>
+                            </div>
+                            <div class="content2_main">
+                                <div class="single_box">
+                                    <img src="../img/specialSourse/2/demo.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content3">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>服务案例</span>
+                            </div>
+                            <div class="content3_main">
+                                <div class="single_box1">
+                                    <div class="single_box1_wrapper">
+                                        <div class="single_box1_content"></div>
+                                    </div>
+                                    <div class="single_box1_wrapper">
+                                            <div class="single_box1_content"></div>
+                                        </div>
+                                </div>
+                                <div class="single_box2">
+
+                                </div>
+                                <div class="single_box3">
+
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="page_content_left2">
-
                         <div class="target">
                             <div class="target_title">课程技能测试(鲲测评)</div>
                             <div class="target_content">
