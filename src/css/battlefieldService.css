@@ -93,7 +93,6 @@ a {
 .head_link>li:nth-of-type(4):hover>.IT_services_link{
     height: 160px;
 } */
-/* 替换开始 */
 .ad {
     height: 80px;
     width: 100%;
@@ -246,7 +245,6 @@ a {
 
 
 
-/* 替换结束 */
 .IT_services_link {
     /*display: none;*/
     height: 0;
@@ -447,7 +445,6 @@ a {
     display: none;
 }
 
-/* 替换开始 */
 .b_s_mid_one>div,
 .b_s_mid_two>div:first-of-type,
 .b_s_mid_three>span:first-of-type,
@@ -457,7 +454,6 @@ a {
     margin: 100px 0 65px 0;
 }
 
-/* 替换结束 */
 
 
 
@@ -994,7 +990,6 @@ a {
 .b_s_top_center_hexagon {
     width: 100%;
 }
-/* 新增开始 */
 @keyframes silder {
     0% {
         transform: translate(0px, 0px);
@@ -1017,7 +1012,6 @@ a {
     left: 42%;
 
 }
-/* 新增结束 */
 .b_s_top_center_hexagon img {
     vertical-align: top;
     width: 100%;
@@ -1045,7 +1039,6 @@ a {
     margin-right: 0;
 }
 
-/* 添加开始 */
 .fixed_ad {
     width: 70px;
     background-color: #FFFFFF;
@@ -1175,5 +1168,3 @@ a {
     /*width: 150px;*/
     height: 100%;
 }
-
-/* 添加结束 */

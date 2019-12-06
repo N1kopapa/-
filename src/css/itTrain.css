@@ -2,9 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    /* 修改开始 */
     /* font-family: "MicrosoftYaHei", serif; */
-    /* 修改结束 */
 }
 
 a {
@@ -480,7 +478,6 @@ a {
     margin-bottom: 55px;
 }
 
-/* 修改开始 */
 .courses_list_card,
 .schedule_card {
     float: left;
@@ -548,7 +545,6 @@ a {
     position: relative;
 }
 
-/* 修改结束 */
 .schedule_card {
     height: 375px;
     background-color: #ffffff;
@@ -574,7 +570,6 @@ a {
     line-height: 70px;
 }
 
-/* 替换开始 */
 .courses_title:after {
     display: none;
     content: "";
@@ -610,7 +605,6 @@ a {
     color: #ffffff;
 }
 
-/* 替换结束 */
 .courses_list_card>a>div {
     display: inline-block;
     width: 10px;

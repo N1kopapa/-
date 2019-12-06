@@ -1659,9 +1659,46 @@ s .page_content_left2>.content0>.content0_main>img {
     width: 100%;
 }
 
-.page_content_left2>.content3>.content3_main>.single_box {
+.page_content_left2>.content3>.content3_main>.single_box:nth-of-type(1),
+.page_content_left2>.content3>.content3_main>.single_box:nth-of-type(3) {
     display: grid;
     grid-template-rows: 50% 50%;
+}
+
+.page_content_left2>.content3>.content3_main>.single_box:nth-of-type(2) {
+    position: relative;
+}
+
+.page_content_left2>.content3>.content3_main>.single_box:nth-of-type(2)>span:nth-of-type(1) {
+    position: absolute;
+    float: left;
+    left: 20%;
+    top: 16%;
+    font-size: 24px;
+}
+
+.page_content_left2>.content3>.content3_main>.single_box:nth-of-type(2)>span:nth-of-type(2) {
+    position: absolute;
+    font-size: 24px;
+    float: left;
+    left: 70%;
+    top: 16%;
+}
+
+.page_content_left2>.content3>.content3_main>.single_box:nth-of-type(2)>span:nth-of-type(3) {
+    position: absolute;
+    font-size: 24px;
+    float: left;
+    left: 20%;
+    top: 63%;
+}
+
+.page_content_left2>.content3>.content3_main>.single_box:nth-of-type(2)>span:nth-of-type(4) {
+    position: absolute;
+    font-size: 24px;
+    float: left;
+    left: 70%;
+    top: 63%;
 }
 
 .page_content_left2>.content3>.content3_main>.single_box>.single_box_wrapper {
@@ -1728,26 +1765,30 @@ s .page_content_left2>.content0>.content0_main>img {
     top: 95%;
 
 }
-.page_content_left2>.content5>.content5_main{
+
+.page_content_left2>.content5>.content5_main {
     position: relative;
     left: 5%;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(5,18%)
+    grid-template-columns: repeat(5, 18%)
 }
-.page_content_left2>.content5>.content5_main>.single_box{
+
+.page_content_left2>.content5>.content5_main>.single_box {
     padding: 10px;
-    word-break: normal;	overflow-wrap: break-word; 
+    word-break: normal;
+    overflow-wrap: break-word;
 }
-.page_content_left2>.content5>.content5_main>.single_box>img{
+
+.page_content_left2>.content5>.content5_main>.single_box>img {
     display: block;
-    margin:  0 auto;
+    margin: 0 auto;
     margin-bottom: 20px;
     margin-top: 20px;
 }
-.page_content_left2>.content5>.content5_main>.single_box>.single_box_content{
 
-}
+.page_content_left2>.content5>.content5_main>.single_box>.single_box_content {}
+
 .page_content_left2 {
     background-color: #ffffff;
     float: left;
@@ -2180,7 +2221,6 @@ s .page_content_left2>.content0>.content0_main>img {
     width: 100%;
 }
 
-/* 新增开始 */
 @keyframes silder {
     0% {
         transform: translate(0px, 0px);
