@@ -61,7 +61,7 @@
             html += '</div></div><div class="live"><div class="live_title">活动直播</div><div class="live_content">';
             for (let index = 0; index < data[index1].live.length; index++) {
                 html += '<div class="source_content_box"><img src="' + data[index1].live[index].live_img_url +
-                    '"><a href="javascript:;" onclick=&apos;changePage(' + 0 + ')&apos;><div class="">' + data[index1]
+                    '"><a href="javascript:;" onclick="changePage(' + 0 + ')"><div>' + data[index1]
                     .live[index].live_name + '</div></a> </div>';
             }
             html += '</div></div></div>';
@@ -76,10 +76,10 @@
                 html = addHTML(0);
             } else if (0 < index && index <= 1) { //林2
                 html = addHTML(1);
-            } else if (1 < index && index <= 2) { //黄3
-                html = addHTML(2);
-            } else if (2 < index && index <= 4) { //肖4
+            } else if (1 < index && index <= 3) { //肖4
                 html = addHTML(3);
+            } else if (3 < index && index <= 4) { //黄3
+                html = addHTML(2);
             } else if (5 < index && index <= 7) { //鹿1     
                 html = addHTML(0);
             } else if (7 < index && index <= 8) { //林2
@@ -186,11 +186,11 @@
                 source_img_url: "../img/specialSourse/7.png",
                 source_name: "软件研发项目管理实战"
             }, {
-                source_id: "12",
+                source_id: "18",
                 source_img_url: "../img/specialSourse/12.png",
                 source_name: "OOAD与UML建模实战课程"
             }, {
-                source_id: "13",
+                source_id: "19",
                 source_img_url: "../img/specialSourse/13.png",
                 source_name: "高级软件架构设计实战"
             }, {
@@ -199,14 +199,14 @@
                 source_name: "Scrum敏捷项目管理实战"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0000_2038484_9559.png",
+                live_name: "UIPath机器自动化流程技术实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0001_1966834_e9d2_2.png",
+                live_name: "基于Django框架的pythonWeb项目实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0002_1719582_d298_3.png",
+                live_name: "软件高质量代码体系最佳实践"
             }]
         }, {
             teacher_logo: "../img/specialSourse/2/img_0000s_0000_图片33.png",
@@ -222,56 +222,56 @@
                 source_name: "Leading SAFe（规模化敏捷框架）"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0000_2038484_9559.png",
+                live_name: "UIPath机器自动化流程技术实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0001_1966834_e9d2_2.png",
+                live_name: "基于Django框架的pythonWeb项目实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0002_1719582_d298_3.png",
+                live_name: "软件高质量代码体系最佳实践"
             }]
         }, {
-            teacher_logo: "../img/Angular/2019092910331174248120.jpg",
+            teacher_logo: "../img/specialSourse/5/img_0000s_0000_图层-22.png",
             teacher_name: "黄月明",
             teacher_info: "IOS/Android 技术顾问",
             source: [{
-                source_id: "2",
-                source_img_url: "../img/specialSourse/2.png",
-                source_name: "微权力下的项目管理"
+                source_id: "4",
+                source_img_url: "../img/specialSourse/4.png",
+                source_name: "多项目管理与项目组合管理实践"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0000_2038484_9559.png",
+                live_name: "UIPath机器自动化流程技术实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0001_1966834_e9d2_2.png",
+                live_name: "基于Django框架的pythonWeb项目实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0002_1719582_d298_3.png",
+                live_name: "软件高质量代码体系最佳实践"
             }]
         }, {
-            teacher_logo: "../img/Angular/2019092910331174248120.jpg",
+            teacher_logo: "../img/specialSourse/4/img11_0000_xiao.png",
             teacher_name: "肖杨",
             teacher_info: "IOS/Android 技术顾问",
             source: [{
                 source_id: "3",
                 source_img_url: "../img/specialSourse/3.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "微权力的项目管理办公室（PMO）"
             }, {
-                source_id: "4",
-                source_img_url: "../img/specialSourse/4.png",
-                source_name: "爬虫与数据分析系"
+                source_id: "2",
+                source_img_url: "../img/specialSourse/2.png",
+                source_name: "微权力下的项目管理"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0000_2038484_9559.png",
+                live_name: "UIPath机器自动化流程技术实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0001_1966834_e9d2_2.png",
+                live_name: "基于Django框架的pythonWeb项目实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0002_1719582_d298_3.png",
+                live_name: "软件高质量代码体系最佳实践"
             }]
         }, {
             teacher_logo: "../img/Angular/2019092910331174248120.jpg",
@@ -280,29 +280,29 @@
             source: [{
                 source_id: "12",
                 source_img_url: "../img/specialSourse/12.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "爬虫与数据分析"
             }, {
                 source_id: "13",
                 source_img_url: "../img/specialSourse/13.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "微信APP高级实战"
             }, {
                 source_id: "14",
                 source_img_url: "../img/specialSourse/14.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "基于商城系统的跨平台移动应用开发"
             }, {
                 source_id: "15",
                 source_img_url: "../img/specialSourse/15.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "Web前端技术框架选型与应用"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0000_2038484_9559.png",
+                live_name: "UIPath机器自动化流程技术实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0001_1966834_e9d2_2.png",
+                live_name: "基于Django框架的pythonWeb项目实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0002_1719582_d298_3.png",
+                live_name: "软件高质量代码体系最佳实践"
             }]
         }, {
             teacher_logo: "../img/Angular/2019092910331174248120.jpg",
@@ -311,29 +311,29 @@
             source: [{
                 source_id: "20",
                 source_img_url: "../img/specialSourse/20.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "微服务构架设计与实战"
             }, {
                 source_id: "21",
                 source_img_url: "../img/specialSourse/21.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "大规模分布式系统架构设计与实践课程"
             }, {
                 source_id: "22",
                 source_img_url: "../img/specialSourse/22.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "软件安全设计与开发"
             }, {
                 source_id: "23",
                 source_img_url: "../img/specialSourse/23.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "JavaWeb核心应用开发"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0000_2038484_9559.png",
+                live_name: "UIPath机器自动化流程技术实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0001_1966834_e9d2_2.png",
+                live_name: "基于Django框架的pythonWeb项目实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0002_1719582_d298_3.png",
+                live_name: "软件高质量代码体系最佳实践"
             }]
         }, {
             teacher_logo: "../img/Angular/2019092910331174248120.jpg",
@@ -342,33 +342,33 @@
             source: [{
                 source_id: "24",
                 source_img_url: "../img/specialSourse/24.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "软件需求开发与管理"
             }, {
                 source_id: "25",
                 source_img_url: "../img/specialSourse/25.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "有效产品设计和需求表达"
             }, {
                 source_id: "26",
                 source_img_url: "../img/specialSourse/26.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "业务需求表达实战营"
             }, {
                 source_id: "27",
                 source_img_url: "../img/specialSourse/27.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "用户体验设计实战营"
             }, {
                 source_id: "28",
                 source_img_url: "../img/specialSourse/28.png",
-                source_name: "爬虫与数据分析系"
+                source_name: "互联网产品经理实战营"
             }],
             live: [{
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0000_2038484_9559.png",
+                live_name: "UIPath机器自动化流程技术实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0001_1966834_e9d2_2.png",
+                live_name: "基于Django框架的pythonWeb项目实战"
             }, {
-                live_img_url: "../img/specialSourse/4.png",
-                live_name: "爬虫与数据分析系"
+                live_img_url: "../img/specialSourse/img1_0002_1719582_d298_3.png",
+                live_name: "软件高质量代码体系最佳实践"
             }]
         }]
     </script>
@@ -817,11 +817,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content6">
+                        <div class="teacher">
                             <div class="content0_title">
                                 <span>授课老师</span>
                             </div>
-                            <div class="content6_main">
+                            <div class="teacher_main">
                                 <div class="single_box_teacher">
                                     <img src="../img/specialSourse/1/img_0000s_0000_lu.png">
                                 </div>
@@ -850,7 +850,6 @@
                             </div>
                             <img src="../img/specialSourse/2/img1_0005_图片11.png">
                         </div>
-
                         <div class="content0">
                             <div class="content1_title">
                                 <div></div>
@@ -862,11 +861,9 @@
                                         <img src="../img/specialSourse//2/01.png">
                                     </div>
                                     <div class="single_box_content">
-
                                         获得“SAFe Agilist'
                                         国际权威认证的规模
                                         化敏捷证书
-
                                     </div>
                                 </div>
                                 <div class="single_box">
@@ -878,7 +875,6 @@
                                         模化的产品线乃止在
                                         企业中整体引入敏捷
                                         思想和实践
-
                                     </div>
                                 </div>
                                 <div class="single_box">
@@ -892,7 +888,6 @@
                                         切身体验敏捷的工作方
                                         式，并从业界领先公司
                                         的敏捷案例中获得启迪
-
                                     </div>
                                 </div>
                                 <div class="single_box">
@@ -904,7 +899,6 @@
                                         理相关的若干实践案
                                         例、书籍推荐及电子
                                         学习资料
-
                                     </div>
                                 </div>
                                 <div class="single_box">
@@ -916,7 +910,6 @@
                                         爱好者社群，交流专:
                                         业话题，结交志同道
                                         合的朋友
-
                                     </div>
                                 </div>
                             </div>
@@ -1094,18 +1087,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content5">
+                        <div class="teacher">
                             <div class="content1_title">
                                 <div></div>
                                 <span>服务案例</span>
                             </div>
-                            <div class="content5_main">
+                            <div class="teacher_main">
                                 <div class="single_box_teacher">
                                     <img src="../img/specialSourse/2/img_0000s_0000_图片33.png">
                                 </div>
                                 <div class="single_box_content">
                                     <div class="single_box_title">
-                                        鹿传明老师
+                                        林丹伟老师
                                     </div>
                                     <div class="single_box_word">
                                         厦门大学EMBA,中睿信息创始人，PMP，Scrum 敏捷教练, iScrum 缔造者之一，企业高级
@@ -1349,121 +1342,1402 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content5">
+                        <div class="content6">
                             <div class="content1_title">
                                 <div></div>
                                 <span>课程大纲</span>
                             </div>
-                            <div class="content5_main">
+                            <div class="content6_main">
                                 <div class="single_box">
-                                    <img src="../img/specialSourse/3/img_0006s_0001_矢量智能对象.png">
-                                    <span class="single_box_content">
-                                        项目群经理、项目
-                                        经理、项目骨干
-                                    </span>
+                                    <div class="single_box_wrapper">
+                                        <div class="single_box_title">承担老师或教练角色，培训需要改变的人
+                                        </div>
+                                        <div class="single_box_content">
+                                            <span>学会通过培训在企业内传播项目管理思想和文化</span>
+                                            <span>学会采用教练的方式培养项目成员</span>
+                                        </div>
+                                        <div class="single_box_footer_blue">
+                                        </div>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <div class="single_box_title">找到抓手,逐步定义项目评价指标
+                                        </div>
+                                        <div class="single_box_content">
+                                            <span>给项目启动一个合理的理由</span>
+                                            <span>建立从项目产出到成果到收益的关联关系</span>
+                                            <span>写出一份让领导瞩目的业务论证文档</span>
+                                            <span>为项目的收益后评估打下基础</span>
+                                        </div>
+                                        <div class="single_box_footer_blue1">
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div class="single_box">
-                                    <img src="../img/specialSourse/3/img_0006s_0000_矢量智能对象.png">
-                                    <span class="single_box_content">
-                                        参与项目管理相
-                                        关工作的骨干、
-                                        有志于从事项目
-                                        管理相关职业的
-                                        项目管理爱好者
+                                    <div class="">
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <div class="single_box_title">“项目”的工作模式
+                                        </div>
+                                        <div class="single_box_content">
+                                            <span>为打破部门门墙而诞生的项目</span>
+                                            <span>项目”到底是什么?</span>
+                                            <span>项目与生俱来的五个特点是一切项目挑战的根源</span>
+                                            <span>项目管理和管理项目不是一回事</span>
+                                            <span>中国的项目经理为什么是有责无权的?</span>
+                                            <span>中外文化的差异造成了国外方法论在中国企业落地难的普遍现象</span>
+                                        </div>
+                                        <div class="single_box_footer_blue1">
+                                        </div>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <div class="single_box_title">明确各自的角色和职责，才能凝聚成团队
+                                        </div>
+                                        <div class="single_box_content">
+                                            <span>识别项目中的三种利益相关方</span>
+                                            <span>项目中也有层级划分?</span>
+                                            <span>搞清楚项目内九种关键的项目角色的制衡关系</span>
+                                            <span>建立科学的项目组织结构图是项目可控的基础</span>
+                                            <span>赋予不同项目成员一个清晰的角色和职责</span>
+                                        </div>
+                                        <div class="single_box_footer_blue2">
+                                        </div>
+                                    </div>
 
-                                    </span>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_wrapper">
+                                        <div class="single_box_title">以终为始，根据项目终点反推项目路径
+                                        </div>
+                                        <div class="single_box_content">
+                                            <span>捕获客户的质量期望是起点</span>
+                                            <span>分清管理产品与专业产品的区别</span>
+                                            <span>基于产品的规划技术</span>
+                                        </div>
+                                        <div class="single_box_footer_blue2">
+                                        </div>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <div class="single_box_title">认清领导的意图，确保项目的价值
+                                        </div>
+                                        <div class="single_box_content">
+                                            <span>给项目启动一个合理的理由</span>
+                                            <span>建立从项目产出到成果到收益的关联关系</span>
+                                            <span>写出一份让领导瞩目的业务论证文档</span>
+                                            <span>为项目的收益后评估打下基础</span>
+                                        </div>
+                                        <div class="single_box_footer_orange">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content7">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>课程部分案例来源</span>
+                            </div>
+                            <div class="content7_main">
+                                <div class="single_box">
+                                    <div class="single_box_wrapper_left">
+                                        <img src="../img/specialSourse/3/img_0005s_0000_0003.png">
+                                    </div>
+                                    <div class="single_box_wrapper_right">
+                                        <span>某知名互联网招聘公司集团信息管理部;</span>
+                                        <span>某知名航空公司集团信息管理部项目群管理办公室;</span>
+                                        <span>某知名外资半导体公司芯片类全球产品项目管理办公室;</span>
+                                        <span>某知名外资移动电话制造商全球供应链运营项目管理办公室;</span>
+                                        <span>某知名民营速运集团下属信息技术公司;</span>
+                                        <span>某知名央企下属研究所科研管理办公室;</span>
+                                        <span>某知名国营烟草企业组织级PMO;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content8">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>课程部分案例来源</span>
+                            </div>
+                            <div class="content8_main">
+                                <div class="single_box">
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0004s_0003_某公司服务案例1.png">
+                                        <span>某公司服务案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0004s_0002_某公司服务案例2.png">
+                                        <span>某公司服务案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0004s_0001_某公司服务案例3.png">
+                                        <span>某公司服务案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0004s_0000_某公司服务案例4.png">
+                                        <span>某公司服务案例</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content9">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>培训案例</span>
+                            </div>
+                            <div class="content9_main">
+                                <div class="single_box">
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0003s_0003_培训案例1.png">
+                                        <span>某公司培训案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0003s_0002_培训案例2.png">
+                                        <span>某公司培训案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0003s_0001_培训案例3.png">
+                                        <span>某公司培训案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0003s_0000_培训案例4.png">
+                                        <span>某公司培训案例</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content10">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>学员心声</span>
+                            </div>
+                            <div class="content10_main">
+                                <div class="single_box">
+                                    <span>这是一个可以在企业中可以落地的项目管理方法。</span>
+                                    <span>对七大主题、九大角色印象深刻，受到很多启发。</span>
+                                    <span>这是一种更符合中国企业文化的项目管理方法，可以和日常工作更好地合。</span>
+                                    <span>解答了很多项目管理中的困惑，学到了真正能用的东西。</span>
+                                    <span>在项目管理过程中，对人和组织的关注是至关重要的。</span>
+                                    <span>解决了很多在PMP中难主落地的问题。</span>
+                                    <img src="../img/specialSourse/3/img_0002s_0000_tu.png">
+                                    <!-- <div class="single_box_wrapper">
+
+                                    </div> -->
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content11">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>课程特点</span>
+                            </div>
+                            <div class="content2_title">
+                                <div class="color_box_black"></div>
+                                <div class="contet2_content">每次培训完毕，中睿都会根据学员反馈
+                                    进行整理总结，确保培训效果达标，真正学有所成。
+                                </div>
+                                <div class="color_box_black"></div>
+                            </div>
+                            <div class="content11_main">
+                                <img src="../img/specialSourse/3/img_0001s_0000_course3.png">
+                            </div>
+                        </div>
+                        <div class="teacher">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>服务案例</span>
+                            </div>
+                            <div class="teacher_main">
+                                <div class="single_box_teacher">
+                                    <img src="../img/specialSourse/3/img_0000s_0000_xiao.png">
+                                </div>
+                                <div class="single_box_content">
+                                    <div class="single_box_title">
+                                        肖扬老师
+                                    </div>
+                                    <div class="single_box_word">
+                                        厦门大学EMBA,中睿信息创始人，PMP，Scrum 敏捷教练, iScrum 缔造者之一，企业高级
+                                        顾问,实战派研发项目管理专家，世界五百强[南方航空] [联想]、[中兴通讯]、[中国电信]
+                                        等企业常年特聘培训师及服务顾问。
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="page_content_left3">
+                        <div class="left_banner">
+                            <img src="../img/specialSourse/4/img_0000_课程口号及简介.png">
+                        </div>
+                        <div class="content0">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>课程亮点</span>
+                            </div>
+                            <div class="content0_main">
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/4/01.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        这是一个门将PMO负
+                                        责人由演员变为导演
+                                        的课
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/4/02.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        全面掌握全球最权威的
+                                        项目管理最佳实践方法
+                                        -PMO最佳实践框架
 
-                        <div class="target">
-                            <div class="target_title">课程技能测试(鲲测评)</div>
-                            <div class="target_content">
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/4/03.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        学会定位PMO
+                                        的价值-项目
+                                        商业论证
+
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/4/04.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        迅速提升管理技术- -
+                                        基于角色的项目组织，
+                                        结构、基于产品的规
+                                        划技术和项目评价的
+                                        指标
+
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/2/05.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        学以致用-现场分析和点
+                                        拨学员实际工作中遇到的
+                                        问题，并指导学员在课堂
+                                        上项目管理方法和工具与
+                                        自己的实际工作相结合
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content1">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>课程框架</span>
+                            </div>
+                            <div class="content1_main">
+                                <div class="single_box">
+                                    <span>PMO是组织级项目管理体系运转的核心</span>
+                                    <span>企业精益-通过科学的绩效和激励机制实现PMO的价值</span>
+                                    <span>如何在中国特色下建设PMO</span>
+                                    <span>矩阵型组织结构是PMO的基础</span>
+                                    <span>PMO的在企业中的定位与使命</span>
+                                    <span>PMO在不同类型组织结构中的演变</span>
+                                    <img src="../img/specialSourse/4/img_0003s_0000_椭圆-18-拷贝-9.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content2">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>课程案例</span>
+                            </div>
+                            <div class="content2_main">
+                                <div class="single_box">
+                                    <div class="single_box_wrapper">
+                                        <span>基于ISO21500的组织级项目管理体系全景图</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>以营销为导向的产品项目管理结构案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>以研发为导向的产品项目管理结构案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>端到端的产品项目管理结构案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>某知名企业信息技术中心PMO与组织级项目管理体系建立的实施路径</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>某知名能源企业PMO与组织级项目管理体系建立的实施路径</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>某知名国内互联网公司IT项目成员考核方案 </span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>某知名美资芯片研发制造公司产品项目经理绩效评价模型 </span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>某知名民营IT科技公司项目考核与激励体系</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content3">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>案例来源</span>
+                            </div>
+                            <div class="content3_main">
+                                <div class="single_box">
+                                    <div class="single_box_wrapper">
+                                        <span>基于ISO21500的组织级项目管理体系全景图</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>以营销为导向的产品项目管理结构案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>以研发为导向的产品项目管理结构案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>端到端的产品项目管理结构案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>某知名企业信息技术中心PMO与组织级项目管理体系建立的实施路径</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>某知名能源企业PMO与组织级项目管理体系建立的实施路径</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>某知名国内互联网公司IT项目成员考核方案 </span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>某知名美资芯片研发制造公司产品项目经理绩效评价模型 </span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <span>某知名民营IT科技公司项目考核与激励体系</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content4">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>服务案例</span>
+                            </div>
+                            <div class="content4_main">
+                                <div class="single_box">
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0004s_0003_某公司服务案例1.png">
+                                        <span>某公司服务案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0004s_0002_某公司服务案例2.png">
+                                        <span>某公司服务案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0004s_0001_某公司服务案例3.png">
+                                        <span>某公司服务案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0004s_0000_某公司服务案例4.png">
+                                        <span>某公司服务案例</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content5">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>培训案例</span>
+                            </div>
+                            <div class="content5_main">
+                                <div class="single_box">
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0003s_0003_培训案例1.png">
+                                        <span>某公司培训案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0003s_0002_培训案例2.png">
+                                        <span>某公司培训案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0003s_0001_培训案例3.png">
+                                        <span>某公司培训案例</span>
+                                    </div>
+                                    <div class="single_box_wrapper">
+                                        <img src="../img/specialSourse/3/img_0003s_0000_培训案例4.png">
+                                        <span>某公司培训案例</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content6">
+                            <div class="content1_title">
+                                <div></div>
+                                <span>学员评价</span>
+                            </div>
+                            <div class="content6_main">
+                                <div class="single_box">
+                                    <span>这是一个可以在企业中可以落地的项目管理方法</span>
+                                    <span>对PMO的系统化职能和实施路径印象深刻，受到很多启发</span>
+                                    <span>解答了很多项目管理中的困惑，学到了真正能用的东西</span>
+                                    <span>这是一种更符合中国企业文化的项目管理方法，可以和日常工作更好地结合</span>
+                                    <span>在项目管理过程中，对人和组织的关注是至关重要的</span>
+                                    <img src="../img/specialSourse/4/img_0000s_0000_学员心声6.png">
+                                    <!-- <div class="single_box_wrapper">
+        
+                                            </div> -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher">
+                            <div class="content0_title">
+                                <span>授课老师</span>
+                            </div>
+                            <div class="teacher_main">
+                                <div class="single_box_teacher">
+                                    <img src="../img/specialSourse/4/img11_0000_xiao.png">
+                                </div>
+                                <div class="single_box_content">
+                                    <div class="single_box_title">
+                                        肖扬老师
+                                    </div>
+                                    <div class="single_box_word">
+                                        美国OCU大学国际金融专业MBA，英国内阁办公室注册的项目管理PRINCE2、项目群管理MSP、项目组合管理MOP项目管理培训师资格。
+                                        曾在摩托罗拉、飞思卡尔、索尼爱立信、LG和BSI等多家世界500强的外资企业从事全球总部层面研发和国际供应链运营管理的顶层设计、跨国大型项目、项目群和PMO的建设和管理工作。
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="page_content_left4">
-
-                        <div class="target">
-                            <div class="target_title">课程技能测试(鲲测评)</div>
-                            <div class="target_content">
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
+                        <div class="left_banner">
+                            <img src="../img/specialSourse/5/img_0000_课程口号及简介.png">
+                        </div>
+                        <div class="content0">
+                            <div class="content3_title">
+                                <span>课程亮点</span>
+                            </div>
+                            <div class="content0_main">
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/5/img_0007s_0002_01.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        这是一个门将PMO负
+                                        责人由演员变为导演
+                                        的课
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/5/img_0007s_0002_01.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        这是一个门将PMO负
+                                        责人由演员变为导演
+                                        的课
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/5/img_0007s_0002_01.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        这是一个门将PMO负
+                                        责人由演员变为导演
+                                        的课
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="page_content_left5">
+                        <div class="content1">
+                            <div class="content4_title">
+                                <span>课程亮点</span>
+                            </div>
+                            <div class="content1_main">
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <span>
+                                            学习有效地处理和协调多项目中的矛盾
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <span>
+                                            学习有效地处理和协调多项目中的矛盾
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <span>
+                                            学习有效地处理和协调多项目中的矛盾
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <span>
+                                            学习有效地处理和协调多项目中的矛盾
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <span>
+                                            学习有效地处理和协调多项目中的矛盾
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <span>
+                                            学习有效地处理和协调多项目中的矛盾
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content2">
+                            <div class="content3_title">
+                                <span>培训与服务部分典型客户</span>
+                            </div>
+                            <div class="content2_main">
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/5/img_0005s_0004_矢量智能对象.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span> 地产行业</span>
+                                        雅居乐地产、广东空港置业有限公司、广州市市政工程监理有限公司...
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/5/img_0005s_0003_矢量智能对象.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>金融行业</span>
+                                        广西铁路投资集团、广发银行、工商银行、广发证券、易方达基金、招商基金...
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/5/img_0005s_0002_矢量智能对象.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>IT行业</span>
+                                        用友软件、汇丰软件、中兴新支点、网易、欧科集团、奥凯咨询、慧杨科技、华为技术 ...
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/5/img_0005s_0001_矢量智能对象.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span> 通信行业</span>
+                                        广东移动、广州联通、广东电信...
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <img src="../img/specialSourse/5/img_0005s_0000_矢量智能对象.png">
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>制造行业</span>
+                                        欧派家居、美的生活电器、海格通信集团、欧司朗照明、卡尔蔡司光学(中国)、约克空调、阿诗丹顿电器、广东好易科技...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content3">
+                            <div class="content4_title">
+                                <span>课程框架</span>
+                            </div>
+                            <div class="content3_main">
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <img src="../img/specialSourse/5/img11_0000_组-12.png">
+                                        <span>多项目、项目组合管理下的干系人期望管理</span>
+                                        <span>项目管理办公室</span>
+                                        <span>项目管理方法与多项目管理下的困惑</span>
+                                        <span>多项目管理、项目组合管理影响因素及相应策略</span>
+                                        <span>多项目管理、项目组合管理的最佳实践</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content4">
+                            <div class="content3_title">
+                                <span>课程框架内容</span>
+                            </div>
+                            <div class="content4_main">
+                                <span>
+                                    <font color="#ffffff">项目</font>管理方法与多项目管理下的困惑
+                                </span>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <div class="content_span_blue">
+                                            <span>项目在组织中的位置</span>
+                                            <span>案例：项目组合、项目集、项目之间的关系</span>
+                                            <span>案例：项目成功因素分析</span>
+                                            <span>多项目管理、项目组合管理概论</span>
+                                            <span>案例：企业所面临的残酷现实</span>
+                                            <span>案例：企业项目管理现状与问题</span>
+                                            <span>案例：什么阻碍了企业战略目标的实现？</span>
+                                            <span>多项目管理相关定义</span>
+                                            <span>案例：单项目管理</span>
+                                            <span>案例：多项目管理的差异</span>
+                                        </div>
 
-                        <div class="target">
-                            <div class="target_title">课程技能测试(鲲测评)</div>
-                            <div class="target_content">
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <div class="content_span_black">
+                                            <span>案例：当前的多项目环境特点与发展趋势</span>
+                                            <span>项目管理的新发展—多项目管理、项目组合管理趋势</span>
+                                            <span>案例：多项目管理、项目组合管理与单项目管理的异同</span>
+                                            <span>多项目管理、项目组合管理所面临的问题</span>
+                                            <span>案例：资源冲突、资源匮乏、资源利用率</span>
+                                            <span>案例：多项目管理/项目组合管理面临的独特挑战</span>
+                                            <span>用户满意度、组织战略</span>
+                                            <span>案例：多项目管理的成功判断</span>
+                                            <span>OPM3项目管理成熟度模型</span>
+                                            <span>案例：多项目管理、项目组合管理所需技能</span>
+                                            <span>项目管理的系统思路</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content4_main1">
+                                <span>
+                                    多项目管理、项目组合管理影响因素及相应策略
+                                </span>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <div class="content_span_black">
+                                            <span>项目在组织中的位置</span>
+                                            <span>案例：项目组合、项目集、项目之间的关系</span>
+                                            <span>案例：项目成功因素分析</span>
+                                            <span>多项目管理、项目组合管理概论</span>
+                                            <span>案例：企业所面临的残酷现实</span>
+                                            <span>案例：企业项目管理现状与问题</span>
+                                            <span>案例：什么阻碍了企业战略目标的实现？</span>
+                                            <span>多项目管理相关定义</span>
+                                            <span>案例：单项目管理</span>
+                                            <span>案例：多项目管理的差异</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content4_main2">
+                                <span>
+                                    <font color="#ffffff">多项目管</font>理、项目组合管理影响因素及相应策略
+                                </span>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <div class="content_span_black">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <div class="content_span_black">
+                                            <span>案例：多项目管理、项目组合管理最佳实践</span>
+                                            <span>案例：多项目环境下的范围管理关键</span>
+                                            <span>案例：CPM(关键路径法）在多项目环境中的优缺点</span>
+                                            <span>案例：资源对多项目进度的影响</span>
+                                            <span>CCPM（关键链法）内容及其特点</span>
+                                            <span>多项目的关键链进度排定和资源进度计划生成</span>
+                                            <span>案例：关键资源分配（让资源与项目工作匹配）和冲突解决</span>
+                                            <span>案例：风险应对及监控（多项目环境下的最佳风险模型）</span>
+                                            <span>多项目环境下的时间管理</span>
+                                            <span>多项目环境下的成本管理</span>
+                                            <span>多项目环境下的质量管理</span>
+                                            <span>案例：多项目环境下的团队建设</span>
+                                            <span>案例：多项目沟通体系</span>
+                                            <span>案例：多项目管理、项目组合管理的风险管理与危机应对</span>
+                                            <span>案例：多项目管理、项目组合管理的整体系统协调</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content4_main3">
+                                <span>
+                                    多项目、项目组合
+                                    管理下的干系人期望管理
+                                </span>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <div class="content_span_black">
+                                            <span>案例：多项目管理、项目组合管理下干系人</span>
+                                            <span>案例：干系人对多项目管理的意义</span>
+                                            <span>期望值管理</span>
+                                            <span>如何实现多项目环境下的干系人满意</span>
+                                            <span>项目管理成熟度模型（OPM3）</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content4_main4">
+                                <span>
+                                    课程框架内容-项目管理办公室
+                                </span>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <div class="content_span_black">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <div class="content_span_black">
+                                            <span>案例：项目管理办公室</span>
+                                            <span>什么是PMO</span>
+                                            <span>案例：PMO和项目团队的关系</span>
+                                            <span>案例：PMO和项目组合管理的关系</span>
+                                            <span>项目管理办公室和项目办公室的关系</span>
+                                            <span>案例：PMO在组织结构中的位置</span>
+                                            <span>PMO的干系人</span>
+                                            <span>案例：PMO的基本职能</span>
+                                            <span>组织现状调研和PMO概念普及阶段</span>
+                                            <span>案例：PMO建设对多项目管理和项目组合管理的影响</span>
+                                            <span>PMO在项目论证中的作用与职责</span>
+                                            <span>PMO在项目启动和计划阶段的作用与职责</span>
+                                            <span>PMO的筹建</span>
+                                            <span>PMO的试运行</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content5">
+                            <div class="content4_title">
+                                <span>服务案例</span>
+                            </div>
+                            <div class="content5_main">
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <span>企业转型变革项目</span>
+                                        <span>【项目群描述】</span>
+                                        <span>为推进企业的发展，对企业进行变革。包括成立PMO，加强企业项目管理文化</span>
+                                        <span>氛围，优化项目管理流程，对组织架构进行变革。</span>
+                                        <span>【项目群成果】</span>
+                                        <span>成立控制型PMO，设立了计划与控制、风险与问题管理、信息与项目绩效监督等角色。</span>
+                                        <span>优化并完善现有的Iscrum研发管理流程，使其更符合企业的实际情况，提升开发效率，降低项目失败风险。</span>
+                                        <span> 项目协作工具的应用、创建与落地。</span>
+                                        <span>对组织架构进行变革，由弱矩阵转变为强矩阵，提高了项目经理权限，提升了项目组成员的工作效率，加强了项目团体内部的协作
+                                            ，加快了组织内部对项目变化的响应。</span>
+                                        <span> 组织内部项目管理文化与知识管理体系建设。</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content6">
+                            <div class="content3_title">
+                                <span>培训案例</span>
+                            </div>
+                            <div class="content6_main">
+                                <div class="single_box">
+                                    <div class="single_box_wrapper">
+                                        <div class="single_box_content">
+                                            <img src="../img/specialSourse/5/img_0003s_0003_333333333.png" alt="">
+                                        </div>
+                                        <div class="single_box_footer">易方达基金项目管理培训</div>
+                                    </div>
+                                    <div> </div>
+                                    <div class="single_box_wrapper">
+                                        <div class="single_box_content">
+                                            <img src="../img/specialSourse/5/img_0003s_0001_222222.png" alt="">
+                                        </div>
+                                        <div class="single_box_footer">多项目管理公开班培训</div>
+                                    </div>
+
+                                </div>
+                                <div> </div>
+                                <div class="single_box">
+                                    <div class="single_box_wrapper">
+                                        <div class="single_box_content">
+                                            <img src="../img/specialSourse/5/img_0003s_0002_444444444.png" alt="">
+                                        </div>
+                                        <div class="single_box_footer">招商基金项目管理培训</div>
+                                    </div>
+                                    <div> </div>
+                                    <div class="single_box_wrapper">
+                                        <div class="single_box_content">
+                                            <img src="../img/specialSourse/5/img_0003s_0000_111111111.png" alt="">
+                                        </div>
+                                        <div class="single_box_footer">VIVO多项目管理培训</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content7">
+                            <div class="content4_title">
+                                <span>服务案例</span>
+                            </div>
+                            <div class="content7_main">
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <img src="../img/specialSourse/5/img_0002s_0000_组-9-拷贝-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content8">
+                            <div class="content3_title">
+                                <span>关联课程</span>
+                            </div>
+                            <div class="content8_main">
+                                <div class="single_box">
+                                    <div class="single_box_content">
+                                        <img src="../img/specialSourse/5/img_0001s_0000_形状-9.png" alt="">
+                                        <span>微力下的项目管理</span>
+                                        <span>微力下的项目管理办公室（PMO）</span>
+                                        <span>多变商业环境下的项目管理</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher">
+                            <div class="content4_title">
+                                <span>授课老师</span>
+                            </div>
+                            <div class="teacher_main">
+                                <div class="single_box_teacher">
+                                    <img src="../img/specialSourse/5/img_0000s_0000_图层-22.png">
+                                </div>
+                                <div class="single_box_content">
+                                    <div class="single_box_title">
+                                        黄月明老师
+                                    </div>
+                                    <div class="single_box_word">
+                                        国家项目管理师(CPMP)、国际项目管理师(PMI-PMP®)、国际商业分析师(PMI-PBA®)、敏捷项目管理师(PMI-ACP®)、英国OGCPRINCE2®
+                                        项目管理专业人士、英国OGC MSP® 项目群管理专业人士、美国（PMI®）协会会员。
+                                        </br>黄月明老师拥有15年项目管理经验和１2年培训经验，曾任技术主管、项目经理、项目总监等职位、现为中睿信息科技有限公司副总经理，主管PMO，首席项目管理专家和企业咨询顾问。
+                                        </br>
+                                        黄老师是同时拥有国内及国际项目管理认证的，具有丰富的项目管理经验项目管理专家，是中国大陆区首批商业分析师，其充分地学习和实践了国内外项目管理方法论，能协助企业提升员工的项目管理能力和提升企业的整体项目管理水平,曾为上数十家企事业单位提供了项目管理的培训和顾问服务。
+
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="page_content_left6">
+                        <div class="left_banner">
+                            <img src="../img/specialSourse/6/img_0002_课程口号及简介.png">
+                        </div>
+                        <div class="content0">
+                            <div class="content0_title">
+                                <span>课程亮点</span>
+                            </div>
+                            <div class="content0_main">
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">01</span></div>
+                                    <div>
+                                        掌握技术型管理者必备知识及技能，明确个人管理技能进阶方式
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div>
+                                        <span class="content0_main_span">02</span>
+                                    </div>
+                                    <div>
+                                        掌握如何设定目标、制定计划、执行任务、监控、达成目标的方法
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">03</span></div>
+                                    <div>
+                                        学习不同的计划方法(CPM、PERT、关键链、Scrum、Kanban等)与监控方法（挣值分析、累计流量图、燃尽图等）的选择与使用
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">04</span></div>
+                                    <div>
+                                        掌握如何建设团队，考察、培养、激励人才的方法
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">05</span></div>
+                                    <div>
+                                        掌握与上司、下级等沟通的技巧
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">06</span></div>
+                                    <div>
+                                        分享了解IT业界管理最佳实践、经验和技巧
 
-                        <div class="target">
-                            <div class="target_title">课程技能测试(鲲测评)</div>
-                            <div class="target_content">
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">07</span></div>
+                                    <div>
+                                        授课老师资深从程序员到团队领导、部门经理、公司总经理的转型经验分享
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content1">
+                            <div class="content0_title">
+                                <span>课程内容</span>
+                            </div>
+                            <div class="content1_main">
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>技术转型管理的角色定位转化
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-领导力能力测评</span>
+                                        <span>-管理人员与技术人员素质模型对比分析</span>
+                                        <span>-典型技术管理者的管理误区</span>
+                                        <span>-管理角色的定位与转型</span>
+                                        <span>-管理者的通用技能模型</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>流程设计与改进
+
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-流程体系的建立</span>
+                                        <span>-流程的层次与框架</span>
+                                        <span>-流程的成熟度模型</span>
+                                        <span>-IT项目的过程模型</span>
+                                        <span>-过程模型的轻与重</span>
+                                        <span>-如何保障产品质量</span>
+                                        <span>-案例：IT项目典型流程</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>目标计划与监控
+
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-计划若干问题与误区探讨</span>
+                                        <span>-计划过程-刘易斯16步模型</span>
+                                        <span>-PMBOK计划制定方法演练</span>
+                                        <span>-如何在资源约束的情况下制定计划（关键链）</span>
+                                        <span>-任务分派的要点与方法</span>
+                                        <span>-敏捷与精益的计划方法</span>
+                                        <span>-监控的步骤及方法详解</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>团队建设与激励</div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-团队建设相关的组织行为科学理论</span>
+                                        <span>-高效团队的要素</span>
+                                        <span>-团队发展的5个阶段及管理要点</span>
+                                        <span>-如何进行人岗匹配</span>
+                                        <span>-激励人员的要素及手段</span>
+                                        <span>-管理外包人员</span>
+                                        <span>-管理冲突</span>
+                                        <span>-游戏化管理的精要</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>管理者沟通与协调技巧
+
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-沟通模型、要素与基本形态</span>
+                                        <span>-常见沟通障碍分析</span>
+                                        <span>-技术类人才沟通力提升方向</span>
+                                        <span>-与上司沟通的技巧</span>
+                                        <span>-与平级、下属沟通的技巧</span>
+                                        <span>-专业技术人士沟通情商要点</span>
+                                        <span>-在职场中的特殊沟通方法，在使用IM、Email沟通时要注意什么</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content2">
+                            <div class="content0_title">
+                                <span>培训案例</span>
+                            </div>
+                            <div class="content2_main">
+                                <div class="single_box">
+
+                                </div>
+                                <img src="../img/specialSourse/6/img_0001_2018_09_18_16_44.58.png" alt="">
+                            </div>
+                        </div>
+                        <div class="content3">
+                            <div class="content0_title">
+                                <span>关联课程</span>
+                            </div>
+                            <div class="content3_main">
+                                <div class="frag">Scrum敏捷
+                                    项目管理实战
+                                </div>
+                                <div class="frag">软件研发项
+                                    目管理实战</div>
+                                <div class="frag">打造高效软
+                                    件研发团队
+                                </div>
+                                <div class="frag">IT人员从技术
+                                    走向管理实务
+                                </div>
+                                <div class="frag">Leading SAFe
+                                    规模化敏捷框架
+                                </div>
+                                <div class="single_box">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="teacher">
+                            <div class="content0_title">
+                                <span>授课老师</span>
+                            </div>
+                            <div class="teacher_main">
+                                <div class="single_box_teacher">
+                                    <img src="../img/specialSourse/1/img_0000s_0000_lu.png">
+                                </div>
+                                <div class="single_box_content">
+                                    <div class="single_box_title">
+                                        鹿传明老师
+                                    </div>
+                                    <div class="single_box_word">
+                                        厦门大学EMBA,中睿信息创始人，PMP，Scrum 敏捷教练, iScrum 缔造者之一，企业高级
+                                        顾问,实战派研发项目管理专家，世界五百强[南方航空] [联想]、[中兴通讯]、[中国电信]
+                                        等企业常年特聘培训师及服务顾问。
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="page_content_left7">
+                        <div class="left_banner">
+                            <img src="../img/specialSourse/8/img_0000_课程口号及简介.png">
+                        </div>
+                        <div class="content0">
+                            <div class="content0_title">
+                                <span>课程亮点</span>
+                            </div>
+                            <div class="content0_main">
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">01</span></div>
+                                    <div>
+                                        项目管理知识体系与软件过程知识体系精粹
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div>
+                                        <span class="content0_main_span">02</span>
+                                    </div>
+                                    <div>
+                                        项目管理的轻与重，对比分析CMMI、RUP、瀑布等”重型”过程与Scrum、Kanban等“轻型”过程
 
-                        <div class="target">
-                            <div class="target_title">课程技能测试(鲲测评)</div>
-                            <div class="target_content">
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">03</span></div>
+                                    <div>
+                                        项目范围管理与软件需求
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">04</span></div>
+                                    <div>
+                                        项目计划过程实战演练：使用不同的方法创建主进度计划与迭代计划
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">05</span></div>
+                                    <div>
+                                        项目监控与配置管理
+
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">06</span></div>
+                                    <div>
+                                        研发团队管理：软件研发项目团队的建立、建设与绩效
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">07</span></div>
+                                    <div>
+                                        软件质量保证与质量控制
+
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">08</span></div>
+                                    <div>
+                                        研发项目风险管理
+
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">09</span></div>
+                                    <div>
+                                        大量工具讲解：WBS、PERT、Kanban、Volere需求过程、禅道、特ambition等等
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div><span class="content0_main_span">10</span></div>
+                                    <div>
+                                        学习中睿基于10年+战场服务打造符合中国国情的iScrum敏捷项目管理体系
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="page_content_left8">
+                        <div class="content1">
+                            <div class="content0_title">
+                                <span>课程内容</span>
+                            </div>
+                            <div class="content1_main">
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>项目管理的轻与重
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
 
-                        <div class="target">
-                            <div class="target_title">课程技能测试(鲲测评)</div>
-                            <div class="target_content">
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
+
+
+
+                                        <span>-项目管理体系发展</span>
+                                        <span>-软件过程框架浅析</span>
+                                        <span>-分析对比RUP、CMMI、Scrum、Kanban等</span>
+                                        <span>- 轻=重，分析项目管理</span>
+                                        <span>的实施策略与方案</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>项目管理知识与软件过程精粹
+
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-项目经理的管理误区</span>
+                                        <span>-项目管理本质探讨</span>
+                                        <span>-项目管理知识体系</span>
+                                        <span>-软件工程知识体系</span>
+                                        <span>-项目经理的技能修炼</span>
+                                        <span>-软件项目与传统项目的对比</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>项目范围管理与软件需求
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-范围与需求的痛点分析</span>
+                                        <span>-WBS与创建项目范围</span>
+                                        <span>-软件需求核心概念及流程</span>
+                                        <span>-Volere需求过程精粹</span>
+                                        <span>-中睿软件需求过程讲解</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>制定项目进度计划</div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-进度计划的误区及痛点分析</span>
+                                        <span>-制定正确项目目标</span>
+                                        <span>-刘易斯计划16步法</span>
+                                        <span>-使用CPM创建里程碑计划</span>
+                                        <span>-使用Agile与Lean框架创建迭代计划</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>项目监控与配置管理
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-沟通模型、要素与基本形态</span>
+                                        <span>-常见沟通障碍分析</span>
+                                        <span>-技术类人才沟通力提升方向</span>
+                                        <span>-与上司沟通的技巧</span>
+                                        <span>-与平级、下属沟通的技巧</span>
+                                        <span>-专业技术人士沟通情商要点</span>
+                                        <span>-在职场中的特殊沟通方法，在使用IM、Email沟通时要注意什么</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>研发团队管理
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-团队建设组织行为科学理论</span>
+                                        <span>-高效团队的要素</span>
+                                        <span>-研发团队的组织架构</span>
+                                        <span>-团队发展的5个阶段及管理要点</span>
+                                        <span>-激励人员的要素及手段</span>
+                                        <span>-研发团队的绩效管理</span>
+                                        <span>-管理冲突</span>
+                                        <span>-游戏化管理的精要</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>研发项目风险管理
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-【讨论】软件项目典型风险分析</span>
+                                        <span>-微软MSF风险管理过程</span>
+                                        <span>-风险管理的过程</span>
+                                        <span>-风险识别</span>
+                                        <span>-建立风险表</span>
+                                        <span>-评估风险影响</span>
+                                        <span>-风险缓解、监测与管理</span>
+                                    </div>
+                                </div>
+                                <div class="single_box">
+                                    <div class="single_box_title">
+                                        <div></div>
+                                        <div>iScrum符合中国国情的敏捷项目管理课程体系
+
+
+                                        </div>
+                                    </div>
+                                    <div class="single_box_content">
+                                        <span>-为什么纯粹的敏捷不适合中国？</span>
+                                        <span>-软件过程成功的三要点分析：管理、需求、架构</span>
+                                        <span>-iScrum过程介绍详解：需求过程、架构过程、项目管理过程</span>
+                                        <span>-iScrum各阶段文档模板展示</span>
+                                        <span>-多个客户案例分享</span>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="page_content_left9">
+                        <div class="content4">
+                            <div class="content0_title">
+                                <span>课程模板</span>
+                            </div>
+                            <div class="content4_main">
+                                <span class="frag">Scrum的全套模板</span>
+                                <span class="frag">Kanban的全套模板</span>
+                                <span class="frag">中睿信息iScrum过程模板</span>
+                                <div class="single_box">
 
-                        <div class="target">
-                            <div class="target_title">课程技能测试(鲲测评)</div>
-                            <div class="target_content">
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
-                                <div>Web</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content2">
+                            <div class="content0_title">
+                                <span>培训案例</span>
+                            </div>
+                            <div class="content2_main">
+                                <div class="single_box">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content3">
+                            <div class="content0_title">
+                                <span>关联课程</span>
+                            </div>
+                            <div class="content3_main">
+                                <div class="frag">Leading SAFe
+                                    规模化敏捷框架
+                                </div>
+                                <div class="frag">微权力下的项目管理</div>
+                                <div class="frag">Scrum敏捷
+                                    项目管理实战
+                                </div>
+                                <div class="frag">打造高效
+                                    软件研发团队
+                                </div>
+                                <div class="frag">IT人员从技术
+                                    走向管理实务
+                                </div>
+                                <div class="single_box">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="teacher">
+                            <div class="content0_title">
+                                <span>授课老师</span>
+                            </div>
+                            <div class="teacher_main">
+                                <div class="single_box_teacher">
+                                    <img src="../img/specialSourse/1/img_0000s_0000_lu.png">
+                                </div>
+                                <div class="single_box_content">
+                                    <div class="single_box_title">
+                                        鹿传明老师
+                                    </div>
+                                    <div class="single_box_word">
+                                        厦门大学EMBA,中睿信息创始人，PMP，Scrum 敏捷教练, iScrum 缔造者之一，企业高级
+                                        顾问,实战派研发项目管理专家，世界五百强[南方航空] [联想]、[中兴通讯]、[中国电信]
+                                        等企业常年特聘培训师及服务顾问。
+                                    </div>
+                                </div>
+                                <div class="single_box_teacher">
+                                    <img src="../img/specialSourse/8/img_0000s_0000_图层-1.png">
+                                </div>
+                                <div class="single_box_content">
+                                    <div class="single_box_title">
+                                        黄月明老师
+                                    </div>
+                                    <div class="single_box_word">
+                                        国家项目管理师(CPMP)、国际项目管理师(PMI-PMP®)、国际商业分析师(PMI-PBA®)、敏捷项目管理师(PMI-ACP®)、英国OGC
+                                        PRINCE2® 项目管理专业人士、英国OGC MSP® 项目群管理专业人士、美国（PMI®）协会会员。
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1486,41 +2760,49 @@
                     <div class="source">
                         <div class="source_title">推介课程</div>
                         <div class="source_content">
-                            <div class="source_content_box">
-                                <img src="../img/specialSourse/1.png">
-                                <a href="javascript:;" onclick='changePage(0)'>
-                                    <div class="">爬虫与数据分析系</div>
-                                </a>
-                            </div>
-                            <div class="source_content_box">
-                                <img src="../img/specialSourse/1.png">
-                                <a href="#">
-                                    <div class="">爬虫与数据分析系</div>
-                                </a>
-                            </div>
+                            <div class="source_content_box"><img src="../img/specialSourse/6.png"> <a
+                                    href="javascript:;" onclick="changePage(6)">
+                                    <div>IT人员从技术走向管理实务</div>
+                                </a></div>
+                            <div class="source_content_box"><img src="../img/specialSourse/7.png"> <a
+                                    href="javascript:;" onclick="changePage(7)">
+                                    <div>软件研发项目管理实战</div>
+                                </a></div>
+                            <div class="source_content_box"><img src="../img/specialSourse/12.png"> <a
+                                    href="javascript:;" onclick="changePage(12)">
+                                    <div>OOAD与UML建模实战课程</div>
+                                </a></div>
+                            <div class="source_content_box"><img src="../img/specialSourse/13.png"> <a
+                                    href="javascript:;" onclick="changePage(13)">
+                                    <div>高级软件架构设计实战</div>
+                                </a></div>
+                            <div class="source_content_box"><img src="../img/specialSourse/0.png"> <a
+                                    href="javascript:;" onclick="changePage(0)">
+                                    <div>Scrum敏捷项目管理实战</div>
+                                </a></div>
                         </div>
                     </div>
                     <div class="live">
                         <div class="live_title">活动直播</div>
                         <div class="live_content">
-                            <div class="source_content_box">
-                                <img src="../img/specialSourse/1.png">
-                                <a href="#">
-                                    <div class="">爬虫与数据分析系</div>
-                                </a>
-                            </div>
-                            <div class="source_content_box">
-                                <img src="../img/specialSourse/1.png">
-                                <a href="#">
-                                    <div class="">爬虫与数据分析系</div>
-                                </a>
-                            </div>
-                            <div class="source_content_box">
-                                <img src="../img/specialSourse/1.png">
-                                <a href="#">
-                                    <div class="">爬虫与数据分析系</div>
-                                </a>
-                            </div>
+                            <div class="source_content_box"><img
+                                    src="../img/specialSourse/img1_0000_2038484_9559.png"><a href="javascript:;"
+                                    onclick="changePage(0)">
+                                    <div>UIPath机器自动化流程技术实战
+                                    </div>
+                                </a> </div>
+                            <div class="source_content_box"><img
+                                    src="../img/specialSourse/img1_0001_1966834_e9d2_2.png"><a href="javascript:;"
+                                    onclick="changePage(0)">
+                                    <div>基于Django框架的pythonWeb项目实战
+                                    </div>
+                                </a> </div>
+                            <div class="source_content_box"><img
+                                    src="../img/specialSourse/img1_0002_1719582_d298_3.png"><a href="javascript:;"
+                                    onclick="changePage(0)">
+                                    <div>软件高质量代码体系最佳实践
+                                    </div>
+                                </a> </div>
                         </div>
                     </div>
                 </div>

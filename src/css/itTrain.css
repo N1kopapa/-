@@ -494,15 +494,18 @@ a {
     -o-transition: box-shadow 300ms;
     transition: box-shadow 300ms;
 }
-.courses_list_card>span:first-of-type{
+/* 替换开始 */
+.courses_list_card>span:first-of-type {
     position: absolute;
     top: 12%;
     font-size: 30px;
     color: #e0e0e0;
     z-index: 1;
-    opacity: 20%;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
 }
-.flex>.courses_list_card:last-of-type>a {   
+/* 替换结束 */
+.flex>.courses_list_card:last-of-type>a {
     position: absolute;
     right: 30%;
     bottom: 50%;

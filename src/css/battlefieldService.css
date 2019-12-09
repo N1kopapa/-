@@ -1040,7 +1040,7 @@ a {
 }
 
 .fixed_ad {
-    width: 70px;
+    width: 60px;
     background-color: #FFFFFF;
     position: fixed;
     left: 50px;
@@ -1055,13 +1055,13 @@ a {
     -o-transition: top 500ms;
     transition: top 500ms;
 }
-
+/* 替换开始 */
 .fixed_ad>div {
     /*width: 30px;
     height: 30px;*/
-    margin: 30px auto;
+    margin: 20px auto;
 }
-
+/* 替换结束 */
 .scroll_top {
     width: 27px;
     height: 15px;
